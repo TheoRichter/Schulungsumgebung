@@ -28,16 +28,16 @@ Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
 und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
 Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**<br />
 # !!! ACHTUNG nur bei einem STRATO-Server !!!
+**ANFANG** <br />
 Um Proxmox installieren zukönnen müßen wir Änderungen in **/etc/networks/interfaces** vornehmen.<br />
 Mit dem Befehl **_ip a_** finden wir die Netzwerkeinstellungen:<br />
 ![ipa](./grafics/ipa.png)<br />
 Unsere Netzwerkschnittstelle heißt **eno1** die IP-Addresse ist: **81.169.138.128** mit der Subnetmaske: **255.255.255.255** oder **/32**.<br />
-Mit dem Befehl **_ip r_** ermitten wir den gateway.<br />
+Mit dem Befehl **_ip r_** ermitteln wir den gateway.<br />
 ![iproute](./grafics/iproute.png)<br />
 Unser Gateway ist 81.169.138.1<br />
+**ENDE**<br />
 Neustart des System mit der Eingabe **_systemctl reboot_**.<br />
-
-
 ## SSH-Dienst absichern
 Jetz legen wir mit **_useradd -m {Benutzername}_** einen neuen Benutzer an, und mit **_passwd {Benutzername}_** erstellen wir das Passwort.<br />
 Sicherungskopie der Originalen sshd_config Datei erstellen **_cp /etc/ssh/{sshd_config,sshd_config.orig}_**<br />
