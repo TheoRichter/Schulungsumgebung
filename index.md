@@ -13,8 +13,8 @@ E-Mail: office@proxmox.com
 
 https://www.proxmox.com
 
-Firmenbuchnummer: FN 258879f<br> 
-Firmenbuchgericht: Handelsgericht Wien<br>
-Geschäftsführer: Martin Maurer, Tim Marx<br> 
+**Firmenbuchnummer:** FN 258879f<br> 
+**Firmenbuchgericht:** Handelsgericht Wien<br>
+**Geschäftsführer:** Martin Maurer, Tim Marx<br> 
 
 UID-Nr.: ATU 61587900
