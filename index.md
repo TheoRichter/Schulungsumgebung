@@ -1,5 +1,5 @@
 # Aufagbenstellung
-Erstellen einer  Online Schulungsmöglichkeit bestehend aus Windows und Linux Betrieb-Systemen.
+Erstellen einer  Online Schulungsmöglichkeit bestehend aus Windows und Linux Betriebs-Systemen.
 # L&ouml;sungsansatz
 ![PROXMOX_VE](./1-INSTALLATION/grafics/pve_logo.png)
 
