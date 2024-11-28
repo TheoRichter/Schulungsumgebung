@@ -31,7 +31,7 @@ Löschen der vom System automatisch erstellte SSH-Key mit Befehl **_rm /etc/ssh/
 SSH-Key ed25519 erstellen **_ssh-keygen -o -a 9999 -t ed25519 -N "" -f /etc/ssh/ssh_host_ed25519_key -C "$(whoami)@$(hostname)-$(date -I)"_**<br />
 SSH-Key rsa erstellen **_ssh-keygen -o -a 9999 -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key -C "$(whoami)@$(hostname)-$(date -I)"_**<br />
 Download der neuen SSH-Serverkonfiguration: sshd_config<br />
-**_wget http://web.webolch.de/bauanleitung/downloads/linux/pve.svws.nrw/etc/ssh/sshd_config_**<br />
+**_wget https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/sshd_config_**<br />
 **_mv sshd_config /etc/ssh/_**<br />
 Nach dem Download überschreiben wir den alten Inhalt der Datei im Verzeichniss /etc/ssh/sshd_config.<br />
 SSH-Dienst restarten: **_systemctl restart ssh_**<br />
