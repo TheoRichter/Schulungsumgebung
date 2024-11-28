@@ -23,7 +23,7 @@ Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root
 Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
 **_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc curl htop lsof ethtool ifupdown2 && systemctl reboot_**<br />
 <br />
-### SSH-Dienst absichern
+## SSH-Dienst absichern
 Jetz legen wir mit useradd -m {Benutzername} neue Benutzer an, und mit passwd {Benutzername} erstellen wir das Passwort.<br />
 Sicherungskopie der Originalen sshd_config Datei erstellen: cp /etc/ssh/{sshd_config,sshd_config.orig}<br />
 Um nur ausgewählten Benutzern den Zugung über den SSH-Dienst zu erlauben, erstellen wir mit groupadd sshgroup die neue Gruppe mit Namen sshgroup.<br />
