@@ -1,2 +1,1 @@
-# INSTALLATION von PROXMOX
-#### auf einem Server im Internet unter Debian 12 BROCKWORM
+# INSTALLATION von PROXMOX  #### auf einem Server im Internet unter Debian 12 brookworm
