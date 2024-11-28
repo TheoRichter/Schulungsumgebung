@@ -81,10 +81,10 @@ Wenn alles geklappt erscheint diese Bildschirmausgabe.<br />
 Erstellen der Linux Bridge vmbr0 mit der IP 10.1.0.2/24 und der Linux Bridge vmbr1 mit der IP 10.0.0.0/31<br />
 ![LinuxBridge](./grafics/LinuxBridge.png)<br>
 #### Ergänzungen in der in der Datei /etc/network/interfaces <br />
-Eintragungen /etc/network/interfaces **VORHER**<br />
+Eintragungen HETZNER **/etc/network/interfaces VORHER**<br />
 ![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)<br />
 Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untenstehend ab.<br />
-Eintragungen /etc/network/interfaces **NACHHER**<br />
+Eintragungen HETZNER **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br />
 
