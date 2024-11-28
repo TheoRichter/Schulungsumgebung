@@ -57,6 +57,8 @@ Entfernen des Debian-Kernels mit dem Befehl **_apt remove linux-image-amd64 'lin
 Auf unserem Windows PC öffnen wir einen Browser und geben die IP-Address unserer Proxmox VE ein. https://Die-IP-Addresse:8006<br />
 Wenn alles geklappt hat müsste das dann so Aussehen.<br />
 ![ProxmoxVElogin](./grafics/ProxmoxVElogin.png)<br />
+## Hier die Eingabe Daten der ersten Anmeldung
+![ProxmoxErsteAnmeldung](./grafics/ersteAnmeldung.png)<br />
 
 Mit der Eingabe **_ _** <br />
 ![interfaces_org](./grafics/interfaces_hetzner_org.png)<br>
