@@ -39,7 +39,7 @@ Unser Gateway ist 81.169.138.1<br />
 Eintragungen ** /etc/network/interfaces VORHER**<br />
 ![interfaces_vorher](./grafics/interfaces_vorher.png)<br />
 Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untenstehend ab.<br />
-Eintragungen ** /etc/network/interfaces NACHHER**<br />
+Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_nachher](./grafics/interfaces_nachher.png)<br />
 **ENDE**<br />
