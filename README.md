@@ -26,8 +26,8 @@ Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
 Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
 **Die-IP-Addresse Debian-bookworm-latest-amd64-base** in **Die-IP-Addresse pve.deine-domain pve**<br />
 und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
-Mit **_mcedit /etc/hostname_** änder wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**<br />
-Mit der Eingabe **_systemctl reboot_** Starten wir das System neu<br />
+Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**<br />
+Mit der Eingabe **_systemctl reboot_** Starten wir das System neu.<br />
 ## SSH-Dienst absichern
 Jetz legen wir mit **_useradd -m {Benutzername}_** einen neuen Benutzer an, und mit **_passwd {Benutzername}_** erstellen wir das Passwort.<br />
 Sicherungskopie der Originalen sshd_config Datei erstellen **_cp /etc/ssh/{sshd_config,sshd_config.orig}_**<br />
