@@ -89,6 +89,8 @@ Erstellen der Linux Bridge vmbr0 mit der IP 10.1.0.2/24 und der Linux Bridge vmb
 #### Ergänzungen in der in der Datei /etc/network/interfaces <br />
 Eintragungen **HETZNER /etc/network/interfaces VORHER**<br />
 ![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)<br />
+Eintragungen **STRATO /etc/network/interfaces VORHER**<br />
+![stratopve_interfaces_vorher](./grafics/stratopve_interfaces_vorher.png)<br />
 Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untenstehend ab.<br />
 Eintragungen **HETZNER /etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
