@@ -92,7 +92,7 @@ Eintragungen **HETZNER /etc/network/interfaces VORHER**<br />
 Eintragungen **STRATO /etc/network/interfaces VORHER**<br />
 ![stratopve_interfaces_vorher](./grafics/stratopve_interfaces_vorher.png)<br />
 Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untenstehend ab.<br />
-Eintragungen **HETZNER /etc/network/interfaces NACHHER**<br />
+Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br />
 
