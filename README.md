@@ -24,9 +24,7 @@ Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
 **_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc curl htop lsof ethtool ifupdown2 && systemctl reboot_**<br />
 Jetzt <br />
 ![interfaces_org](./grafics/interfaces_hetzner_org.png)<br>
-<br />
 ![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)<br>
-<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br>
 
 
