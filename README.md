@@ -19,7 +19,7 @@ UID-Nr.: ATU 61587900
 
 # PROXMOX auf einem HETZNER-Server installieren.
 Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab.<br /> 
-Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@DIE-IP-ADDRESSE_** am Server an.<br /> 
+Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Addresse_** am Server an.<br /> 
 Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
 **_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc && systemctl reboot_**
 ## SSH-Dienst absichern
@@ -54,7 +54,7 @@ Neustarten des Rechners mit **_systemctl reboot_**<br />
 Installation des Proxmox VE Pakete mit dem Befehl **_apt install -y proxmox-ve postfix open-iscsi chrony_**<br />
 Entfernen des Debian-Kernels mit dem Befehl **_apt remove linux-image-amd64 'linux-image-6.1*'_**<br />
 ## Anmeldung bei der Proxmox VE
-Auf unserem Windows PC öffnen wir einen Browser und geben die IP-Address unserer Proxmox VE ein. https://DIE-IP-ADDRESSE:8006<br />
+Auf unserem Windows PC öffnen wir einen Browser und geben die IP-Address unserer Proxmox VE ein. https://Die-IP-Addresse:8006<br />
 Wenn alles geklappt hat müsste das dann so Aussehen.<br />
 ![ProxmoxVElogin](./grafics/ProxmoxVElogin.png)<br />
 
