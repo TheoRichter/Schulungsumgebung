@@ -1,6 +1,3 @@
-![Achtung](./1-INSTALLATION/grafics/Achtung.png)
-#
-
 # Vorwort
 Wir haben uns diese Bauanleitungen aus Webseiten und Bildern aus dem Internet zusammen gesucht!
 # Aufagbenstellung
