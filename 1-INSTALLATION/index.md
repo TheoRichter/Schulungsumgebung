@@ -1,4 +1,4 @@
-# PROXMOX auf einem HETZNER-Server installieren.
+# PROXMOX auf einem Internet-Server installieren.
 
 ![interfaces_org](./grafics/interfaces_hetzner_org.png)<br>
 ![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)<br>
