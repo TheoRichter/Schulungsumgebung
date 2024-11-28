@@ -1,6 +1,6 @@
 # PROXMOX auf einem Internet-Server installieren.
 ### Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab.
-#### Nach der Installation melden wir uns per Textconsole mit der Eingabe **ssh root@DIE-IP-ADDRESSE** am Server an. 
+#### Nach der Installation melden wir uns per Textconsole mit der Eingabe _ssh root@DIE-IP-ADDRESSE_ am Server an. 
 
 
 
