@@ -1,7 +1,5 @@
-# Vorwort
-Seid nun mehr einen Jahr beschäftige ich mich mit der Open Source-Software Proxmox und bin begeistert von den sich ergebenden Möglichkeiten.
 # Aufagbenstellung
-Erstellen eines  Online Schulungsm&ouml;glichkeit bestehend aus Windows und Linux Umgebungen.
+Erstellen einer  Online Schulungsmöglichkeit bestehend aus Windows und Linux Betrieb-Systemen.
 # L&ouml;sungsansatz
 ![PROXMOX_VE](./1-INSTALLATION/grafics/pve_logo.png)
 
