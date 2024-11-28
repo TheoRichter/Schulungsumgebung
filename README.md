@@ -37,12 +37,12 @@ Nach dem Download überschreiben wir den alten Inhalt der Datei im Verzeichniss 
 SSH-Dienst restarten: **_systemctl restart ssh_**<br />
 Status SSH-Dienst überpüfen: **_systemctl status --lines=20 ssh_**
 ## Vorbereitung der Proxmox Installation.
-Um Proxmox zu installieren benötigen wir noch einige Programme **_apt install -y curl htop lsof ethtool ifupdown2_**<br />
+Um Proxmox zu installieren benötigen wir noch einige Programme: **_apt install -y curl htop lsof ethtool ifupdown2_**<br />
 Jetzt Booten wir unseren Server neu mit **_systemctl reboot_**<br />
 In die Datei /etc/apt/sources.list den Eintrag **_echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bookworm pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list_** für das Proxmox VE-Repository hinzufügen.<br />
 Mit dem Befehl **_wget https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg_**<br />
 wird der Proxmox VE-Repository-Schlüssel hinzugefügt. Bitte den Befehl als root (oder als sudo) ausführen.<br />
-verifizieren **_sha512sum /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg<br />
+verifizieren **_sha512sum /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg
 7da6fe34168adc6e479327ba517796d4702fa2f8b4f0a9833f5ea6e6b48f6507a6da403a274fe201595edc86a84463d50383d07f64bdde2e3658108db7d6dc87 /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg_**<br />
 Jetzt aktualisieren wir das Sytem mit der Eingabe **_apt update && apt full-upgrade -y_**<br />
 Installation des Proxmox VE Kernels mit dem Befehl **_apt install -y proxmox-default-kernel_**<br />
