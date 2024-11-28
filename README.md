@@ -24,19 +24,18 @@ Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
 **_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc curl htop lsof ethtool ifupdown2 && systemctl reboot_**
 ## SSH-Dienst absichern
 Jetz legen wir mit **_useradd -m {Benutzername}_** einen neuen Benutzer an, und mit **_passwd {Benutzername}_** erstellen wir das Passwort.<br />
-Sicherungskopie der Originalen sshd_config Datei erstellen: cp /etc/ssh/{sshd_config,sshd_config.orig}<br />
-Um nur ausgewählten Benutzern den Zugung über den SSH-Dienst zu erlauben, erstellen wir mit groupadd sshgroup die neue Gruppe mit Namen sshgroup.<br />
-Mit cd /sbin in das Verzeichniss sbin und mit usermod –a -G sshgroup {Benutzername} weisen wir den Benutzer zu.<br />
-Löschen der vom System automatisch erstellte SSH-Key mit Befehl: rm /etc/ssh/ssh_host_*<br />
-SSH-Key ed25519 erstellen: ssh-keygen -o -a 9999 -t ed25519 -N "" -f /etc/ssh/ssh_host_ed25519_key -C "$(whoami)@$(hostname)-$(date -I)"<br />
-SSH-Key rsa erstellen: ssh-keygen -o -a 9999 -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key -C "$(whoami)@$(hostname)-$(date -I)"<br />
+Sicherungskopie der Originalen sshd_config Datei erstellen **_cp /etc/ssh/{sshd_config,sshd_config.orig}_**<br />
+Um nur ausgewählten Benutzern den Zugung über den SSH-Dienst zu erlauben, erstellen wir mit groupadd sshgroup_** die neue Gruppe mit Namen sshgroup.<br />
+Mit der Eingabe (_Bitte nicht Kopieren!!_) **_usermod –a -G sshgroup {Benutzername}_** weisen wir den Benutzer der **sshgroup** zu.<br />
+Löschen der vom System automatisch erstellte SSH-Key mit Befehl **_rm /etc/ssh/ssh_host_* _**<br />
+SSH-Key ed25519 erstellen **_ssh-keygen -o -a 9999 -t ed25519 -N "" -f /etc/ssh/ssh_host_ed25519_key -C "$(whoami)@$(hostname)-$(date -I)"_**<br />
+SSH-Key rsa erstellen **_ssh-keygen -o -a 9999 -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key -C "$(whoami)@$(hostname)-$(date -I)"_**<br />
 Download der neuen SSH-Serverkonfiguration: sshd_config<br />
-wget http://web.webolch.de/bauanleitung/downloads/linux/pve.svws.nrw/etc/ssh/sshd_config<br />
-mv sshd_config /etc/ssh/<br />
+**_wget http://web.webolch.de/bauanleitung/downloads/linux/pve.svws.nrw/etc/ssh/sshd_config _**<br />
+**_mv sshd_config /etc/ssh/_**<br />
 Nach dem Download überschreiben wir den alten Inhalt der Datei im Verzeichniss /etc/ssh/sshd_config.<br />
-SSH-Konfiguration prüfen: /usr/sbin/ssh -t. Wenn keine Fehler angezeigt werden, kann der SSH-Server restartet werden.<br />
-SSH-Dienst restarten: systemctl restart ssh<br />
-Status SSH-Dienst überpüfen: systemctl status --lines=20 ssh<br />
+SSH-Dienst restarten: **_systemctl restart ssh_**<br />
+Status SSH-Dienst überpüfen: **_systemctl status --lines=20 ssh_**<br />
 <br />
 
 
