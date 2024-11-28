@@ -27,8 +27,7 @@ Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
 **Die-IP-Addresse Debian-bookworm-latest-amd64-base** in **Die-IP-Addresse pve.deine-domain pve**<br />
 und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
 Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**<br />
-# !!ACHTUNG diese Netzwerkeinstellung!!
-# !!müssen wir nur bei einem STRATO-Server vornehmen!!!
+# !!! ACHTUNG nur bei einem STRATO-Server !!!
 Um Proxmox installieren zukönnen müßen wir in dem Ordner /etc/networks Änderungen an der Datei interfaces vornehmen.<br />
 Mit dem Befehl **_ip a_** finden wir die Netzwerkeinstellungen:<br />
 ![ipa](./grafics/ipa.png)<br />
