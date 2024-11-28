@@ -54,7 +54,8 @@ Neustarten des Rechners mit **_systemctl reboot_**<br />
 Installation des Proxmox VE Pakete mit dem Befehl **_apt install -y proxmox-ve postfix open-iscsi chrony_**<br />
 Entfernen des Debian-Kernels mit dem Befehl ** apt remove linux-image-amd64 'linux-image-6.1*' **<br />
 ## Anmeldung bei der Proxmox VE
-Auf unserem Windows PC öffnen wir einen Browser und geben die IP-Address unserer Proxmox VE ein. https://Die-IP-Addresse:8006<br />
+Auf unserem Windows PC öffnen wir einen Browser und geben die IP-Address unserer Proxmox VE ein.<br />
+https://Die-IP-Addresse:8006<br />
 Wenn alles geklappt hat müsste das dann so Aussehen.<br />
 ![ProxmoxVElogin](./grafics/ProxmoxVElogin.png)<br />
 ## Hier die Eingabe Daten der ersten Anmeldung
