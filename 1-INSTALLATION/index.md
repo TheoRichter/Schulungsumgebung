@@ -1,7 +1,8 @@
 # PROXMOX auf einem Internet-Server installieren.
 ### Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab.
 Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@DIE-IP-ADDRESSE_** am Server an.<br /> 
-Aktualisieren, Installieren und Neustart des Debian 12 mit der Eingabe. **_apt update && apt upgrade -y && apt autoremove -y && apt intsall -y mc curl htop lsof ethtool ifupdown2 && systemctl reboot_**<br />
+Aktualisieren, Installieren und Neustart des Debian 12 mit der Eingabe.<br />
+**_apt update && apt upgrade -y && apt autoremove -y && apt intsall -y mc curl htop lsof ethtool ifupdown2 && systemctl reboot_**<br />
 <br />
 
 ### Ändern der Netzwerkeinstellung bei HETZNER.
