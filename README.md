@@ -21,7 +21,12 @@ UID-Nr.: ATU 61587900
 Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab.<br /> 
 Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Addresse_** am Server an.<br /> 
 Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
-**_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc && systemctl reboot_**
+**_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc_**
+## Anpassen der Datei /etc/hostname und der Datei /etc/hosts
+Mit **_mcedit /etc/hosts_** änder wir die Eintragung **Die-IP-Addresse Debian-bookworm-latest-amd64-base** in **Die-IP-Addresse pve.die-domain pve**<br />
+und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
+Mit **_mcedit /etc/hostname_** änder wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**<br />
+Mit der Eingabe **_systemctl reboot_** Starten wir das System neu<br />
 ## SSH-Dienst absichern
 Jetz legen wir mit **_useradd -m {Benutzername}_** einen neuen Benutzer an, und mit **_passwd {Benutzername}_** erstellen wir das Passwort.<br />
 Sicherungskopie der Originalen sshd_config Datei erstellen **_cp /etc/ssh/{sshd_config,sshd_config.orig}_**<br />
@@ -64,9 +69,14 @@ Wenn alles geklappt erscheint diese Bildschirmausgabe.<br />
 ### Schritt 1:
 Erstellen der Linux Bridge vmbr0 mit der IP 10.1.0.2/24 und der Linux Bridge vmbr1 mit der IP 10.0.0.0/31<br />
 ![LinuxBridge](./grafics/LinuxBridge.png)<br>
+Ergänzungen in der in der Datei /etc/network/interfaces <br />
+Eintragungen /etc/network/interfaces Vorher<br />
+![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)<br>
+
+
+
 Mit der Eingabe **_ _** <br />
 ![interfaces_org](./grafics/interfaces_hetzner_org.png)<br>
-![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)<br>
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br>
 
 
