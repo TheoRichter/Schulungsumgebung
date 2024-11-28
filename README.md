@@ -17,7 +17,7 @@ https://www.proxmox.com
 
 UID-Nr.: ATU 61587900
 
-# Links
+# Locale-Links
 [Installation](1-INSTALLATION/index.md)<br>
 [UFW-DNS-ReverseProxy](2-UFW-DNS-ReverseProxy/index.md)<br>
 [Doscker](3-DOCKER/index.md)<br>
