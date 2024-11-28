@@ -1,0 +1,125 @@
+#-----------------------------------------------------------
+# General - /etc/ssh/sshd_config
+#-----------------------------------------------------------
+Port 22                                                         # Custom SSH Port muss bei uns auf 22 wegen proxmox bleiben  
+Protocol 2                                                      # The one and only Protocol
+
+AddressFamily inet                                              # Use any for IPv4 and IPv6 Net. Use inet for only IPv4
+# ListenAddress $IP_INTERN                                      # Set Listening Intern Address
+# ListenAddress $IP_EXTERN                                      # Set Listening Extern Address
+
+#-----------------------------------------------------------
+# HostKey - Only the curvy one
+#-----------------------------------------------------------
+HostKey /etc/ssh/ssh_host_ed25519_key                           # Allow only the vely vely secure ECDSA Pub-Key Authentication
+
+#-----------------------------------------------------------
+# Ciphers - Only the ultramodern ones
+#-----------------------------------------------------------
+KexAlgorithms curve25519-sha256@libssh.org                      # Key exchange methods to generate per-connection keys 
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-512                # Message authentication codes used to detect traffic modification 
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com    # Allow only sexy Encrypt-Ciphers. For Android-Connection add aes256-ctr
+HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-ed25519  # Accepted Pub-Key algorithms for the SSH-Server to authenticate to a SSH-Client 
+
+#-----------------------------------------------------------
+# Logging
+#-----------------------------------------------------------
+LogLevel VERBOSE                                                # INFO for more like key fingerprint logging
+SyslogFacility AUTHPRIV                                         # Logging Authentication Commands
+
+#-----------------------------------------------------------
+# Authentication:
+#-----------------------------------------------------------
+MaxSessions 2                                                   # Maximum allowed User Sessions
+MaxAuthTries 3                                                  # Maximum allowed Auth Attempts
+
+StrictModes yes                                                 # Prevents Configuration Errors
+LoginGraceTime 60                                               # Login Period Time to authenticate
+PermitRootLogin no                                              # Disable direct root Login
+
+PubkeyAuthentication yes                                        # Allow Pub-Key Authentication
+PasswordAuthentication yes                                      # Allow Password Authentication. Disable if no need
+
+IgnoreRhosts yes                                                # Disable User Rhost Files
+PermitEmptyPasswords no                                         # Disable Empty Passwords
+HostbasedAuthentication no                                      # Disable Host-based Authentication
+
+TCPKeepAlive yes                                                # Prevent from dropping the Connection
+ClientAliveCountMax 2                                           # Sends 2 times ClientAlive Message till drop
+ClientAliveInterval 1800                                        # Kills Connection after 30 Min inactivity
+
+#-----------------------------------------------------------
+# Security
+#-----------------------------------------------------------
+UsePAM yes                                                      # Allow PAM Authentication
+ChallengeResponseAuthentication yes                             # Allow PAM 
+#Compression no                                                 # Disable Compression for better Security
+
+# AllowUsers olum brunhilde                                     # Allow special Users. Here olum and brunhilde
+# AllowGroups ssh-pimps                                         # Allow special Group. Group here is ssh-pimps
+AllowGroups sshgroup
+# RekeyLimit 1G 1H                                              # Limiting amount of data transmitted with a single session key
+
+Banner none                                                     # Disable Banner
+DebianBanner no                                                 # Disable Banner for Debian-based Systems
+VersionAddendum none                                            # Disable SSH Protocol Banner
+
+PrintMotd no                                                    # Disable Message of the Day
+PrintLastLog yes                                                # Enable Date and Time of the last user login
+
+PermitTunnel no                                                 # Disable tun Device forwarding. Only SSH Connections!
+PermitUserRC no                                                 # Disable User RC Files
+PermitUserEnvironment no                                        # Disable User Environment Files
+
+# Disable Forwarding
+GatewayPorts no                                                 # Disable Remote Port Forwarding
+X11Forwarding no                                                # Disable X11 Forwarding/Tunneling (GUI)
+AllowTcpForwarding no                                           # Disable TCP Forwarding/Tunneling
+AllowAgentForwarding no                                         # Disable Agent Forwarding/Tunneling
+
+# Disable Kerberos Authentication                               # Disable Kerberos Authentication
+KerberosOrLocalPasswd no
+KerberosAuthentication no
+KerberosTicketCleanup yes
+GSSAPIAuthentication no
+GSSAPICleanupCredentials yes
+
+AuthorizedKeysFile  %h/.ssh/authorized_keys                     # Set AuthorizedKeysFile in a controlled manner
+
+#-----------------------------------------------------------
+# Misc
+#-----------------------------------------------------------
+UseDNS no                                                       # Disables DSN-Lookup for the Love of Speed
+AcceptEnv LANG LC_*                                             # Allow locale environment variables for Clients
+
+#-----------------------------------------------------------
+# SFTP
+#-----------------------------------------------------------
+# SFTP - Enable if need
+# Subsystem sftp /usr/lib/openssh/sftp-server -f AUTHPRIV -l INFO
+
+# Set special stuff to special SFTP-Users - Enable if you use SFTP
+# Match Group sftp-pimps
+#    ChrootDirectory /home/%u
+#    PermitTunnel no
+#    X11Forwarding no
+#    AllowTcpForwarding no
+#    AllowAgentForwarding no
+#    ForceCommand internal-sftp
+
+#-----------------------------------------------------------
+# Set special SSH-User/Group options
+#-----------------------------------------------------------
+# Match User olum,brunhilde
+#    PasswordAuthentication yes
+#    AllowTcpForwarding yes
+
+# Match Group ssh-pimps
+#    PasswordAuthentication yes
+#    AllowTcpForwarding yes
+
+#-----------------------------------------------------------
+# Documentation
+#-----------------------------------------------------------
+# https://man7.org/linux/man-pages/man1/ssh-keygen.1.html
+# https://man7.org/linux/man-pages/man5/sshd_config.5.html
