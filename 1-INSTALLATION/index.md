@@ -1,8 +1,8 @@
 ## INSTALLATION von PROXMOX
 
-![interfaces_org](./graphics/interfaces_hetzner_org.png)<br>
-![interfaces_vmbrs](./graphics/interfaces_hetzner_vmbrs.png)<br>
-![interfaces_fertig](./graphics/interfaces_hetzner_fertig.png)<br>
+![interfaces_org](./grafics/interfaces_hetzner_org.png)<br>
+![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)<br>
+![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br>
 
 
 
