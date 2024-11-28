@@ -1,1 +1,1 @@
-## INSTALLATION von ![PROXMOX_VE](./1-INSTALLATION/grafics/pve_logo.png)  auf einem Server im Internet unter Debian 12 brookworm
+## INSTALLATION von ![PROXMOX_VE](./grafics/pve_logo.png)  auf einem Server im Internet unter Debian 12 brookworm
