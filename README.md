@@ -60,7 +60,10 @@ Wenn alles geklappt erscheint diese Bildschirmausgabe.<br />
 ![ProxmoxVElogin](./grafics/ProxmoxVElogin.png)<br />
 ## Hier die Eingabe Daten der ersten Anmeldung
 ![ProxmoxErsteAnmeldung](./grafics/ersteAnmeldung.png)<br />
-
+## Netzwerkeinstellungen
+1. Schritt:<br />
+Erstellen der Linux Bridge vmbr0 mit der IP 10.1.0.2/24 und der Linux Bridge vmbr1 mit der IP 10.0.0.0/31<br />
+![LinuxBridge](./grafics/LinuxBridge.png)<br>
 Mit der Eingabe **_ _** <br />
 ![interfaces_org](./grafics/interfaces_hetzner_org.png)<br>
 ![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)<br>
