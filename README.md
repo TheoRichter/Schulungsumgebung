@@ -20,6 +20,6 @@ UID-Nr.: ATU 61587900
 # Locale-Links
 [Installation](1-INSTALLATION/index.md)<br>
 [UFW-DNS-ReverseProxy](2-UFW-DNS-ReverseProxy/index.md)<br>
-[Doscker](3-DOCKER/index.md)<br>
+[Docker](3-DOCKER/index.md)<br>
 [Apache-Guacamole](4-APACHE-GUACAMOLE/index.md)<br>
 [Windows](5-WINDOWS/index.md)<br>
