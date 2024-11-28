@@ -18,7 +18,3 @@ Firmenbuchgericht: Handelsgericht Wien<br>
 Geschäftsführer: Martin Maurer, Tim Marx<br> 
 
 UID-Nr.: ATU 61587900
-
-
-
-## [Quellen](index.md)
