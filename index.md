@@ -1,5 +1,5 @@
 # Vorwort
-Wir haben uns diese Bauanleitungen aus Webseiten und Bildern aus dem Internet zusammen gesucht!
+Seid nun mehr einen Jahr beschäftige ich mich mit der Open Source-Software Proxmox und bin begeistert von den sich ergebenden Möglichkeiten.
 # Aufagbenstellung
 Erstellen eines  Online Schulungsm&ouml;glichkeit bestehend aus Windows und Linux Umgebungen.
 # L&ouml;sungsansatz
