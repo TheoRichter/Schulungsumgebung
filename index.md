@@ -6,6 +6,8 @@ Wir haben uns diese Bauanleitungen aus Webseiten und Bildern aus dem Internet zu
 # Aufagbenstellung
 Erstellen eines  Online Schulungsm&ouml;glichkeit bestehend aus Windows und Linux Umgebungen.
 # L&ouml;sungsansatz
+![PROXMOX_VE](./1-INSTALLATION/grafics/pve_logo.png)
+
 Firmeninformation
 Firma: Proxmox Server Solutions GmbH
 Adresse: Bräuhausgasse 37, 1050 Vienna, Austria
