@@ -36,7 +36,7 @@ Download der neuen SSH-Serverkonfiguration: sshd_config<br />
 Nach dem Download überschreiben wir den alten Inhalt der Datei im Verzeichniss /etc/ssh/sshd_config.<br />
 SSH-Dienst restarten: **_systemctl restart ssh_**<br />
 Status SSH-Dienst überpüfen: **_systemctl status --lines=20 ssh_**
-##Vorbereitung der Proxmox Installation.
+## Vorbereitung der Proxmox Installation.
 Um Proxmox zu installieren benötigen wir noch einige Programme **_apt install -y curl htop lsof ethtool ifupdown2_**<br />
 Jetzt Booten wir unseren Server neu mit **_systemctl reboot_**<br />
 In die Datei /etc/apt/sources.list den Eintrag **_echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bookworm pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list_** für das Proxmox VE-Repository hinzufügen.<br />
