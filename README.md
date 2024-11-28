@@ -33,7 +33,7 @@ Mit dem Befehl **_ip a_** finden wir die Netzwerkeinstellungen:<br />
 ![ipa](./grafics/ipa.png)<br />
 Unsere Netzwerkschnittstelle heißt **eno1** die IP-Addresse ist: **81.169.138.128** mit der Subnetmaske: **255.255.255.255** oder **/32**.<br />
 Mit dem Befehl **_ip r_** ermitten wir den gateway.<br />
-![iproute](./grafics/iprroute.png)<br />
+![iproute](./grafics/iproute.png)<br />
 Unser Gateway ist 81.169.138.1<br />
 Neustart des System mit der Eingabe **_systemctl reboot_**.<br />
 
