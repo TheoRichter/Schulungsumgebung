@@ -17,7 +17,7 @@ https://www.proxmox.com
 
 UID-Nr.: ATU 61587900
 
-# PROXMOX auf einem HETZNER-Server installieren.
+# PROXMOX auf einem Internet-Server installieren.
 Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab.<br /> 
 Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Addresse_** am Server an.<br /> 
 Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
@@ -27,7 +27,17 @@ Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
 **Die-IP-Addresse Debian-bookworm-latest-amd64-base** in **Die-IP-Addresse pve.deine-domain pve**<br />
 und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
 Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**<br />
-Mit der Eingabe **_systemctl reboot_** Starten wir das System neu.<br />
+# !!ACHTUNG diese Netzwerkeinstellung müssen wir nur bei einen STRATO-Server vornehmen!!!
+Um Proxmox installieren zukönnen müßen wir in dem Ordner /etc/networks Änderungen an der Datei interfaces vornehmen.<br />
+Mit dem Befehl **_ip a_** finden wir die Netzwerkeinstellungen:<br />
+![ipa](./grafics/ipa.png)<br />
+Unsere Netzwerkschnittstelle heißt **eno1** die IP-Addresse ist: **81.169.138.128** mit der Subnetmaske: **255.255.255.255** oder **/32**.<br />
+Mit dem Befehl **_ip r_** ermitten wir den gateway.<br />
+![iproute](./grafics/iprroute.png)<br />
+Unser Gateway ist 81.169.138.1<br />
+Neustart des System mit der Eingabe **_systemctl reboot_**.<br />
+
+
 ## SSH-Dienst absichern
 Jetz legen wir mit **_useradd -m {Benutzername}_** einen neuen Benutzer an, und mit **_passwd {Benutzername}_** erstellen wir das Passwort.<br />
 Sicherungskopie der Originalen sshd_config Datei erstellen **_cp /etc/ssh/{sshd_config,sshd_config.orig}_**<br />
@@ -83,8 +93,6 @@ Eintragungen /etc/network/interfaces **NACHHER**<br />
 
 
 
-# PROXMOX auf einem STRATO-Server installieren.
-Ändern der Netzwerkeinstellung bei STRATO.<br />
 
 <br />
 <br />
