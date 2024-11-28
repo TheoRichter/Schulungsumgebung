@@ -95,7 +95,9 @@ Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untens
 Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br />
-
+### Schritt 2:
+Erstellen einer Debian 12 CT über die Schaltfläche ![ErstelleCT](./grafics/ErstelleCT.png) mit dem Namen z.B. ufw.webolch.de die die Funktion der Fritzbox übernimmt.<br />
+Erstellen der Netzwerkarte mit der ID net1 Name eth1 und der Linux Bridge vmbr1 mit der IP 10.0.0.1/31 Gateway 10.0.0.0<br />
 
 
 
