@@ -42,9 +42,6 @@ Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untens
 Eintragungen ** /etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_nachher](./grafics/interfaces_nachher.png)<br />
-
-
-
 **ENDE**<br />
 Neustart des System mit der Eingabe **_systemctl reboot_**.<br />
 ## SSH-Dienst absichern
