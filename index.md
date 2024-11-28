@@ -5,9 +5,9 @@ Erstellen eines  Online Schulungsm&ouml;glichkeit bestehend aus Windows und Linu
 # L&ouml;sungsansatz
 ![PROXMOX_VE](./1-INSTALLATION/grafics/pve_logo.png)
 
-Firmeninformation<br> 
-Firma: Proxmox Server Solutions GmbH<br> 
-Adresse: Bräuhausgasse 37, 1050 Vienna, Austria<br> 
+**Firmeninformation**<br> 
+**Firma:** Proxmox Server Solutions GmbH<br> 
+**Adresse:** Bräuhausgasse 37, 1050 Vienna, Austria<br> 
 
 E-Mail: office@proxmox.com
 
