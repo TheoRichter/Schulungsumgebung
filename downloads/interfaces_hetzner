@@ -18,13 +18,13 @@ iface lo inet6 loopback
 
 auto enp5s0
 iface enp5s0 inet static
-	address 95.216.14.210/26
-	gateway 95.216.14.193
-	up route add -net 95.216.14.0 netmask 255.255.255.192 gw 95.216.14.193 dev enp5s0
+	address xxx.xxx.xxx.xxx/26
+	gateway xxx.xxx.xxx.xxx
+	up route add -net xxx.xxx.xxx.xxx netmask xxx.xxx.xxx.xxx gw xxx.xxx.xxx.xxx dev enp5s0
 	post-up echo 1 > /proc/sys/net/ipv4/ip_forward
 	post-up iptables -t nat -A PREROUTING -i enp5s0 -p tcp -m multiport ! --dport 22,8006 -j DNAT --to 10.0.0.1
 	post-up iptables -t nat -A PREROUTING -i enp5s0 -p udp -j DNAT --to 10.0.0.1
-# route 95.216.14.192/26 via 95.216.14.193 10.0.0.1 linux  ufw
+# route xxx.xxx.xxx.xxx/26 via xxx.xxx.xxx.xxx 10.0.0.1 linux  ufw
 
 iface enp5s0 inet6 static
 	address 2a01:4f9:2a:f30::2/64
