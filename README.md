@@ -105,7 +105,8 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir uns<br />
 **Download:**<br />
 **_wget -q --show-progress http://web.webolch.de/bauanleitung/downloads/linux/SH-Scripte/ufw.sh_**<br />
 Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
-Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf** im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
+Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf**<br />
+im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
 
 
