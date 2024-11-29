@@ -101,9 +101,9 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 ## Installation der UFW mit Certbot (Reverse-Proxy)
 ### Neuer LXC-Container mit 2CPU, 512KiB RAM und 1GB Festplattenspeicher benötigt.
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
-Nach der Anmeldung über die Konsole als Benutzer root laden wir uns<br />
+Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **ufw.sh** in unser root Verzeichniss.<br />
 **Download:**<br />
-**_wget -q --show-progress http://web.webolch.de/bauanleitung/downloads/linux/SH-Scripte/ufw.sh_**<br />
+**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/ufw.sh_**<br />
 Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
 Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf**<br />
 im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
