@@ -103,7 +103,7 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir uns<br />
 **Download:**<br />
-**wget -q --show-progress http://web.webolch.de/bauanleitung/downloads/linux/SH-Scripte/ufw.sh**
+**_wget -q --show-progress http://web.webolch.de/bauanleitung/downloads/linux/SH-Scripte/ufw.sh_**<br />
 mit Namen: ufw.sh herunter.<br />
 Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
 Nach Bendigung der Installation bitte die vier Dateien im Ordner /etc/ngnix/sites-available/ auf eure Vorgaben Anpassen.<br />
