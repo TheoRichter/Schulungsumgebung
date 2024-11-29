@@ -156,6 +156,7 @@ Durch das Klicken auf ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine e
 ![Windows_11_neu](./grafics/Windows_11_neu.png)<br />
 ![Windows_12_neu](./grafics/Windows_12_neu.png)<br />
 ![Windows_13_neu](./grafics/Windows_13_neu.png)<br />
+**Hier steht dann bei Gesamtgröße 41.0 GB und bei Freier Speich: 41.0 GB**<br />
 ![Windows_14_neu](./grafics/Windows_14_neu.png)<br />
 ![Windows_15_neu](./grafics/Windows_15_neu.png)<br />
 ![Windows_16_neu](./grafics/Windows_16_neu.png)<br />
