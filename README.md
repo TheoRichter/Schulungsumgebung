@@ -85,7 +85,6 @@ Wenn alles geklappt erscheint diese Bildschirmausgabe.<br />
 ## Hier die Eingabe Daten der ersten Anmeldung
 ![ProxmoxErsteAnmeldung](./grafics/ersteAnmeldung.png)<br />
 ## Netzwerkeinstellungen
-### Schritt 1:
 Erstellen der Linux Bridge vmbr0 mit der IP 10.1.0.2/24 und der Linux Bridge vmbr1 mit der IP 10.0.0.0/31<br />
 ![LinuxBridge](./grafics/LinuxBridge.png)<br>
 #### Ergänzungen in der in der Datei /etc/network/interfaces <br />
@@ -97,7 +96,6 @@ Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untens
 Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br />
-### Schritt 2:
 ## Installation der UFW mit Certbot (Reverse-Proxy)
 ### Neuer LXC-Container mit 2CPU, 512KiB RAM und 1GB Festplattenspeicher benötigt.
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
