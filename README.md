@@ -18,7 +18,6 @@ https://www.proxmox.com
 UID-Nr.: ATU 61587900
 # Ausblick
 ![Ausblick](./grafics/Ausblick.png)
-
 # PROXMOX auf einem Internet-Server installieren.
 Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab.<br /> 
 Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Adresse_** am Server an.<br /> 
