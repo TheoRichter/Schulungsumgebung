@@ -16,15 +16,17 @@ https://www.proxmox.com
 **Geschäftsführer:** Martin Maurer, Tim Marx<br> 
 
 UID-Nr.: ATU 61587900
+# Ausblick
+![Ausblick](./grafics/Ausblick.png)
 
 # PROXMOX auf einem Internet-Server installieren.
 Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab.<br /> 
-Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Addresse_** am Server an.<br /> 
+Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Adresse_** am Server an.<br /> 
 Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
 **_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc_**
 ## Anpassen der Datei /etc/hostname und der Datei /etc/hosts
 Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
-**Die-IP-Addresse Debian-bookworm-latest-amd64-base** in **Die-IP-Addresse pve.deine-domain pve**<br />
+**Die-IP-Adresse Debian-bookworm-latest-amd64-base** in **Die-IP-Adresse pve.deine-domain pve**<br />
 und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
 Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**<br />
 # !!! ACHTUNG nur bei einem STRATO-Server !!!
@@ -76,7 +78,7 @@ Neustarten des Rechners mit **_systemctl reboot_**<br />
 Installation des Proxmox VE Pakete mit dem Befehl **_apt install -y proxmox-ve postfix open-iscsi chrony_**<br />
 Entfernen des Debian-Kernels mit dem Befehl ** apt remove linux-image-amd64 'linux-image-6.1*' **<br />
 ## Anmeldung bei der Proxmox VE
-Auf unserem Windows PC öffnen wir einen Browser und geben die IP-Address unserer Proxmox VE ein.<br />
+Auf unserem Windows PC öffnen wir einen Browser und geben die IP-Adresse unserer Proxmox VE ein.<br />
 https://Die-IP-Addresse:8006<br />
 Wenn alles geklappt erscheint diese Bildschirmausgabe.<br />
 ![ProxmoxVElogin](./grafics/ProxmoxVElogin.png)<br />
@@ -100,8 +102,8 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 ### Neuer LXC-Container mit 2CPU, 512KiB RAM und 1GB Festplattenspeicher benötigt.
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
 Erstellen der Linux Bridges:<br>
-net0 Name eth0 als vmbr0 mit der IP 10.1.0.1/24 ohne Gateway<br />
-net1 Name eth1 als vmbr1 mit der IP 10.0.0.1/31 Gateway 10.0.0.0<br />
+ID: net0 Name: eth0 Bridge: vmbr0 mit der IP-Adresse: 10.1.0.1/24 ohne Gateway<br />
+ID: net1 Name: eth1 Bridge: vmbr1 mit der IP-Adresse: 10.0.0.1/31 Gateway: 10.0.0.0<br />
 
 
 
