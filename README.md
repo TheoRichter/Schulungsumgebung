@@ -38,11 +38,11 @@ Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **h3014859.stratoserve
 **ANFANG** <br />
 Um Proxmox installieren zukönnen müßen wir Änderungen in **/etc/networks/interfaces** vornehmen.<br />
 Mit dem Befehl **_ip a_** finden wir die Netzwerkeinstellungen:<br />
-![ipa](./grafics/ipa.png)<br />
-Unsere Netzwerkschnittstelle heißt **eno1** die IP-Addresse ist: **81.169.138.128** mit der Subnetmaske: **255.255.255.255** oder **/32**.<br />
+![ip-a](./grafics/ip-a.png)<br />
+Unsere Netzwerkschnittstelle heißt **eno1** die IP-Addresse ist: **xxx.xxx.xxx.xxx** mit der Subnetmaske: **255.255.255.255** oder **/32**.<br />
 Mit dem Befehl **_ip r_** ermitteln wir den gateway.<br />
 ![iproute](./grafics/iproute.png)<br />
-Unser Gateway ist 81.169.138.1<br />
+Unser Gateway wird angezeigt<br />
 Eintragungen ** /etc/network/interfaces VORHER**<br />
 ![interfaces_vorher](./grafics/interfaces_vorher.png)<br />
 Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untenstehend ab.<br />
