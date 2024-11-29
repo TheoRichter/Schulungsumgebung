@@ -50,7 +50,7 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_nachher](./grafics/interfaces_nachher.png)<br />
 **ENDE**<br />
-Neustart des System mit der Eingabe **_systemctl reboot_**.<br />
+### Jetzt starten wir des System mit der Eingabe **_systemctl reboot_** neu.<br />
 ## SSH-Dienst absichern
 Jetz legen wir mit **_useradd -m {Benutzername}_** einen neuen Benutzer an, und mit **_passwd {Benutzername}_** erstellen wir das Passwort.<br />
 Sicherungskopie der Originalen sshd_config Datei erstellen **_cp /etc/ssh/{sshd_config,sshd_config.orig}_**<br />
