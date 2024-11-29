@@ -165,8 +165,6 @@ Durch das Klicken auf ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine e
 ![Windows_19_neu](./grafics/Windows_19_neu.png)<br />
 <br />
 <br />
-<br />
-<br />
 
 
 
