@@ -101,9 +101,13 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 ## Installation der UFW mit Certbot (Reverse-Proxy) mittels SH-Skript
 ### Neuer LXC-Container mit 2CPU, 512KiB RAM und 1GB Festplattenspeicher benötigt.
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
-Erstellen der Linux Bridges:<br>
-ID: net0 Name: eth0 Bridge: vmbr0 mit der IP-Adresse: 10.1.0.1/24 ohne Gateway<br />
-ID: net1 Name: eth1 Bridge: vmbr1 mit der IP-Adresse: 10.0.0.1/31 Gateway: 10.0.0.0<br />
+Nach der Anmeldung über die Konsole als Benutzer root laden wir uns<br />
+**Download:**<br />
+**wget -q --show-progress http://web.webolch.de/bauanleitung/downloads/linux/SH-Scripte/ufw.sh**
+mit Namen: ufw.sh herunter.<br />
+Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
+Nach Bendigung der Installation bitte die vier Dateien im Ordner /etc/ngnix/sites-available/ auf eure Vorgaben Anpassen.<br />
+Mit der Eingabe certbot startet die Installation des Reverse-Proxies.<br />
 
 
 
