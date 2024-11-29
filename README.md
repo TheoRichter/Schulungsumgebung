@@ -145,7 +145,7 @@ Durch das Klicken auf ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine e
 ![Windows_1_neu](./grafics/Windows_1_neu.png)<br />
 ![Windows_2_neu](./grafics/Windows_2_neu.png)<br />
 ![Windows_3_neu](./grafics/Windows_3_neu.png)<br />
-**Bitte hier die Zahl der Disk-Größe(GiB): 26 auf 41 Ändern.**<br />
+**Bei Disk-Größe(GiB): die Zahl 26 auf die Zahl 41 Ändern.**<br />
 ![Windows_4_neu](./grafics/Windows_4_neu.png)<br />
 ![Windows_5_neu](./grafics/Windows_5_neu.png)<br />
 ![Windows_6_neu](./grafics/Windows_6_neu.png)<br />
