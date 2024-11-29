@@ -126,7 +126,7 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **do
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
 Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
-## Installation von Windows 11
+## Vorbereitung der Installation von Windows 11
 Um Windows 11 zu installieren müssen wir die drei ISOs hier Speichern:<br />
 ![ISOs](./grafics/ISOs.png)<br />
 ## Download-Adressen
@@ -137,6 +137,7 @@ https://www.microsoft.com/de-de/software-download/windows11<br />
 https://schneegans.de/windows/unattend-generator/<br />
 ### virtio-win-0.1.240.iso
 https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.240-1/virtio-win-0.1.240.iso<br />
+## Installation von Windows 11
 
 
 
