@@ -98,13 +98,12 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br />
 ### Schritt 2:
-## Installation der UFW mit Certbot (Reverse-Proxy) mittels SH-Skript
+## Installation der UFW mit Certbot (Reverse-Proxy)
 ### Neuer LXC-Container mit 2CPU, 512KiB RAM und 1GB Festplattenspeicher benötigt.
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir uns<br />
 **Download:**<br />
 **_wget -q --show-progress http://web.webolch.de/bauanleitung/downloads/linux/SH-Scripte/ufw.sh_**<br />
-mit Namen: ufw.sh herunter.<br />
 Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
 Nach Bendigung der Installation bitte die vier Dateien im Ordner /etc/ngnix/sites-available/ auf eure Vorgaben Anpassen.<br />
 Mit der Eingabe certbot startet die Installation des Reverse-Proxies.<br />
