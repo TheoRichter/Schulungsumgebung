@@ -141,6 +141,7 @@ https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/
 Durch das Klicken auf ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellen.<br />
 <br />
 <br />
+**Die Angaben für Knoten:, VM ID: und Name: bitte Anpassen.**<br />
 ![Windows_1_neu](./grafics/Windows_1_neu.png)<br />
 ![Windows_2_neu](./grafics/Windows_2_neu.png)<br />
 ![Windows_3_neu](./grafics/Windows_3_neu.png)<br />
