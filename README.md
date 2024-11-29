@@ -128,7 +128,8 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **do
 Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
 ## Installation von Windows 11
 ### Neue VM mit 4CPUs, 4096GB RAM und 41GB Festplattenspeicher benötigt.
-Um Windows 11 zu installieren benötigen wir drei ISOs:<br />
+Um Windows 11 zu installieren müssen wir drei ISOs hier Speichern:<br />
+![ISOs](./grafics/ISOs.png)<br />
 https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.240-1/virtio-win-0.1.240.iso<br />
 https://www.microsoft.com/de-de/software-download/windows11<br>
 ![Windows11Download](./grafics/Windows11Download.png)<br />
