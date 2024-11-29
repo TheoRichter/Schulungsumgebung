@@ -115,6 +115,7 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **gu
 Mit dem Aufruf **_bash guac_debian11_install_upgrade_debian12.sh_** beginnt die Installation.<br />
 BITTE nach dem Neustart den Status des Tomcat9 mit **_systemctl status tomcat9 --no-pager_**<br />
 und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_** Überprüfen.<br />
+
 <br />
 
 
