@@ -24,11 +24,16 @@ Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietser
 Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Adresse_** am Server an.<br /> 
 Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
 **_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc_**
-## Anpassen der Datei /etc/hostname und der Datei /etc/hosts
+## Anpassen der Datei /etc/hostname und der Datei /etc/hosts (bei HETZNER)
 Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
 **Die-IP-Adresse Debian-bookworm-latest-amd64-base** in **Die-IP-Adresse pve.deine-domain pve**<br />
 und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
 Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**<br />
+## Anpassen der Datei /etc/hostname und der Datei /etc/hosts (bei STRATO)
+Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
+**127.0.1.1 h3014859.stratoserver.net h3014859** in **Die-IP-Adresse pve.deine-domain pve**<br />
+und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
+Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **h3014859.stratoserver.net h3014859** in **pve**<br />
 # !!! ACHTUNG nur bei einem STRATO-Server !!!
 **ANFANG** <br />
 Um Proxmox installieren zukönnen müßen wir Änderungen in **/etc/networks/interfaces** vornehmen.<br />
