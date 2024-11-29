@@ -97,7 +97,7 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br />
 ### Schritt 2:
 ## Installation der UFW mit Certbot (Reverse-Proxy) mittels SH-Skript
-**Neuer LXC-Container mit 2CPU, 512KiB RAM und 1GB Festplattenspeicher benötigt.**<br />
+### Neuer LXC-Container mit 2CPU, 512KiB RAM und 1GB Festplattenspeicher benötigt.
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
 Erstellen der Netzwerkarte mit der ID net1 Name eth1 und der Linux Bridge vmbr1 mit der IP 10.0.0.1/31 Gateway 10.0.0.0<br />
 
