@@ -138,7 +138,13 @@ https://schneegans.de/windows/unattend-generator/<br />
 ### virtio-win-0.1.240.iso
 https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.240-1/virtio-win-0.1.240.iso<br />
 ## Installation von Windows 11
-
+Durch das Klicken auf ![VM](./grafics/VM.png)VM.png wir eine neue virtuelle Maschine erstellen.<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
 
 
