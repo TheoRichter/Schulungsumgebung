@@ -50,7 +50,7 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_nachher](./grafics/interfaces_nachher.png)<br />
 **ENDE**<br />
-### Jetzt starten wir des System mit der Eingabe **_systemctl reboot_** neu.<br />
+### Jetzt starten wir des System mit der Eingabe _systemctl reboot_ neu.<br />
 ## SSH-Dienst absichern
 Jetz legen wir mit **_useradd -m {Benutzername}_** einen neuen Benutzer an, und mit **_passwd {Benutzername}_** erstellen wir das Passwort.<br />
 Sicherungskopie der Originalen sshd_config Datei erstellen **_cp /etc/ssh/{sshd_config,sshd_config.orig}_**<br />
@@ -102,7 +102,7 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br />
 ## Installation der UFW mit Certbot (Reverse-Proxy)
-### Neuer LXC-Container mit 1CPU, 512KiB RAM und 2GB Festplattenspeicher benötigt.
+### Neuen LXC-Container mit 1CPU, 512KiB RAM und 2GB Festplattenspeicher benötigt.
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **ufw.sh** in unser root Verzeichniss.<br />
 **Download:**<br />
@@ -112,7 +112,7 @@ Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und
 im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
 ## Installation von Apache Guacamole
-### Neuer LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
+### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
 ### !!!Installierbar leider nur mit Template debian-11-standard_11.7-1_amd64.tar.zst!!!
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **guac_debian11_install_upgrade_debian12.sh** in unser root Verzeichniss.<br />
 **Download:**<br />
@@ -121,11 +121,13 @@ Mit dem Aufruf **_bash guac_debian11_install_upgrade_debian12.sh_** beginnt die 
 BITTE nach dem Neustart den Status des Tomcat9 mit **_systemctl status tomcat9 --no-pager_**<br />
 und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_** Überprüfen.<br />
 ## Installation von Docker
-### Neuer LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
+### Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in unser root Verzeichniss.<br />
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
 Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
+## Installation von Windows 11
+### Neue VM mit 4CPUs, 4096GB RAM und 41GB Festplattenspeicher benötigt.
 
 
 
