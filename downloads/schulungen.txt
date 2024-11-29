@@ -1,0 +1,2 @@
+pc-1:3001:8001:8101:pc-1-WebServer:9001:pc-1-PHPmyAdmin:10001:root:1.0.1:10.1.0.3:netzlaufwerk
+pc-2:3002:8002:8102:pc-2-WebServer:9002:pc-2-PHPmyAdmin:10002:root:1.0.1:10.1.0.3:netzlaufwerk
