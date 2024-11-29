@@ -97,7 +97,7 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br />
 ## Installation der UFW mit Certbot (Reverse-Proxy)
-### Neuer LXC-Container mit 2CPU, 512KiB RAM und 1GB Festplattenspeicher benötigt.
+### Neuer LXC-Container mit 1CPU, 512KiB RAM und 2GB Festplattenspeicher benötigt.
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **ufw.sh** in unser root Verzeichniss.<br />
 **Download:**<br />
@@ -115,8 +115,13 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **gu
 Mit dem Aufruf **_bash guac_debian11_install_upgrade_debian12.sh_** beginnt die Installation.<br />
 BITTE nach dem Neustart den Status des Tomcat9 mit **_systemctl status tomcat9 --no-pager_**<br />
 und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_** Überprüfen.<br />
+## Installation von Docker
+### Neuer LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
+Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in unser root Verzeichniss.<br />
+**Download:**<br />
+**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
+Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
 
-<br />
 
 
 
