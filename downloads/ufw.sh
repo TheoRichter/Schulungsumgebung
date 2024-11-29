@@ -34,7 +34,7 @@ if ! [ $( id -u ) = 0 ]; then
     exit 1
 fi
 #
-wget -q --show-progress http://web.webolch.de/bauanleitung/downloads/linux/bash/.bashrc
+wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/.bashrc
 cp .bashrc.1 .bashrc
 #
 echo
@@ -90,7 +90,7 @@ ufw allow 8443
 ufw enable
 ufw status numbered
 apt install -y dnsmasq
-wget http://web.webolch.de/bauanleitung/downloads/linux/zip/ufw.zip
+wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/ufw.zip
 unzip ufw.zip
 mv dnsmasq.conf /etc
 mv ufw /etc/default
