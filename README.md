@@ -113,6 +113,13 @@ Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
 Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf**<br />
 im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
+## Installation von Docker
+### Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
+![docker_netwerk](./grafics/docker_netwerk.png)<br />
+Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in unser root Verzeichniss.<br />
+**Download:**<br />
+**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
+Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
 ## Installation von Apache Guacamole
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
 ### !!!Installierbar leider nur mit Template debian-11-standard_11.7-1_amd64.tar.zst!!!
@@ -122,13 +129,6 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **gu
 Mit dem Aufruf **_bash guac_debian11_install_upgrade_debian12.sh_** beginnt die Installation.<br />
 BITTE nach dem Neustart den Status des Tomcat9 mit **_systemctl status tomcat9 --no-pager_**<br />
 und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_** Überprüfen.<br />
-## Installation von Docker
-### Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
-![docker_netwerk](./grafics/docker_netwerk.png)<br />
-Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in unser root Verzeichniss.<br />
-**Download:**<br />
-**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
-Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
 ## Vorbereitung der Installation von Windows 11
 Um Windows 11 zu installieren müssen wir die drei ISOs hier Speichern:<br />
 ![ISOs](./grafics/ISOs.png)<br />
