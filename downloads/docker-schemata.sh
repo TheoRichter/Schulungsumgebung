@@ -39,7 +39,7 @@ DB_NAME=""
 DB_USER=""
 DB_MYSQL_PW=""
 SCHULFORM=""
-ANZAHL="7"
+ANZAHL="5"
 ################################################################################ 
 clear
 ################################################################################
@@ -86,43 +86,24 @@ curl --user "root:${MariaDB_ROOT_PASSWORD}" \
 ###################################################################################################################################################################
 ### ANFANG der for schleife #######################################################################################################################################
 ###################################################################################################################################################################
-  for (( i=1; i<=$ANZAHL; i++ ))
-  do
+ for (( i=1; i<=$ANZAHL; i++ ))
+ do
+  #################################################################################################################################################################
+  ### Angelegt der SQLITE Datenbankscehemata fuer die Schulformen: Grundschule, Foerderschule, Gymnasium, Berufskolleg und Sekundarschule                       ###
+  #################################################################################################################################################################
   if [[ "$i" == "1" ]]; then
    SCHULFORM="Grundschule"
-  fi
-  if [[ "$i" == "2" ]]; then
-   SCHULFORM="Hauptschule"
-  fi
-  if [[ "$i" == "3" ]]; then
-   SCHULFORM="Gymnasium"
-  fi
-  if [[ "$i" == "4" ]]; then
-   SCHULFORM="Berufskolleg"
-  fi
-  if [[ "$i" == "5" ]]; then
-   SCHULFORM="Realschule"
-  fi
-  if [[ "$i" == "6" ]]; then
-   SCHULFORM="Forderschule"
-  fi
-  if [[ "$i" == "7" ]]; then
-   SCHULFORM="Gesamtschule"
-  fi
-  # SQLITE DatenbankPfad
-  DB_PATH=/$Pfad/SVWS-TestDBs/$SCHULFORM/$SCHULFORM.sqlite
-  #################################################################################################################################################################
-  ### Angelegt der SQLITE Datenbankscehemata fuer die Schulformen: Grundschule, Hauptschule, Gymnasium, Realschule, Forderschule, Gesamtschule und Berufskolleg ###
-  #################################################################################################################################################################
-  DB_NAME=$SCHULFORM
-  DB_USER=$SCHULFORM
-  DB_MYSQL_PW=$SCHULFORM
-  echo
-  echo -e -n "${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${WEISS}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!### ${NC}"
-  echo
-  echo
-  echo -e -n "${WEISS}####### ${TUERKIS}Anlegen DatenbankSchemata ${GELB}$i ${TUERKIS}von ${GELB}$ANZAHL ${TUERKIS}mit dem Namen: ${GELB}${DB_NAME} ${TUERKIS}im ${HELLGRAU}Docker-Container: ${GELB}$STACK ${WEISS}####### ${NC}"
-  echo
+   DB_NAME=$SCHULFORM
+   DB_USER=$SCHULFORM
+   DB_MYSQL_PW=$SCHULFORM
+    # SQLITE DatenbankPfad
+    DB_PATH=/$Pfad/SVWS-TestMDBs/Grundschule/Grundschule_Stundenplan.sqlite
+    echo
+    echo -e -n "${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${WEISS}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!### ${NC}"
+    echo
+    echo
+    echo -e -n "${WEISS}####### ${TUERKIS}Anlegen DatenbankSchemata ${GELB}$i ${TUERKIS}von ${GELB}$ANZAHL ${TUERKIS}mit dem Namen: ${GELB}${DB_NAME} ${TUERKIS}im ${HELLGRAU}Docker-Container: ${GELB}$STACK ${WEISS}####### ${NC}"
+    echo
     curl --user "root:${MariaDB_ROOT_PASSWORD}" \
      -k --insecure \
      -X "POST" "https://${SERVERNAME}:${SVWSPort}/api/schema/root/import/sqlite/${DB_NAME}" \
@@ -131,8 +112,103 @@ curl --user "root:${MariaDB_ROOT_PASSWORD}" \
      -F "database=@${DB_PATH}" \
      -F "schemaUsername=${DB_USER}" \
      -F "schemaUserPassword=${DB_MYSQL_PW}" 
-  clear
-  done
+    clear
+  fi
+  if [[ "$i" == "2" ]]; then
+   SCHULFORM="Foerderschule"
+   DB_NAME=$SCHULFORM
+   DB_USER=$SCHULFORM
+   DB_MYSQL_PW=$SCHULFORM
+    # SQLITE DatenbankPfad
+    DB_PATH=/$Pfad/SVWS-TestMDBs/Foerderschule/FS-Test-Daten-01/FS-Test-Daten-01.sqlite
+    echo
+    echo -e -n "${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${WEISS}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!### ${NC}"
+    echo
+    echo
+    echo -e -n "${WEISS}####### ${TUERKIS}Anlegen DatenbankSchemata ${GELB}$i ${TUERKIS}von ${GELB}$ANZAHL ${TUERKIS}mit dem Namen: ${GELB}${DB_NAME} ${TUERKIS}im ${HELLGRAU}Docker-Container: ${GELB}$STACK ${WEISS}####### ${NC}"
+    echo
+    curl --user "root:${MariaDB_ROOT_PASSWORD}" \
+     -k --insecure \
+     -X "POST" "https://${SERVERNAME}:${SVWSPort}/api/schema/root/import/sqlite/${DB_NAME}" \
+     -H "accept: application/json" \
+     -H "Content-Type: multipart/form-data" \
+     -F "database=@${DB_PATH}" \
+     -F "schemaUsername=${DB_USER}" \
+     -F "schemaUserPassword=${DB_MYSQL_PW}" 
+    clear
+  fi
+  if [[ "$i" == "3" ]]; then
+   SCHULFORM="Gymnasium"
+   DB_NAME=$SCHULFORM
+   DB_USER=$SCHULFORM
+   DB_MYSQL_PW=$SCHULFORM
+    # SQLITE DatenbankPfad
+    DB_PATH=/$Pfad/SVWS-TestMDBs/GOST_Abitur/Abi-Test-Daten-01/GymAbi.sqlite
+    echo
+    echo -e -n "${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${WEISS}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!### ${NC}"
+    echo
+    echo
+    echo -e -n "${WEISS}####### ${TUERKIS}Anlegen DatenbankSchemata ${GELB}$i ${TUERKIS}von ${GELB}$ANZAHL ${TUERKIS}mit dem Namen: ${GELB}${DB_NAME} ${TUERKIS}im ${HELLGRAU}Docker-Container: ${GELB}$STACK ${WEISS}####### ${NC}"
+    echo
+    curl --user "root:${MariaDB_ROOT_PASSWORD}" \
+     -k --insecure \
+     -X "POST" "https://${SERVERNAME}:${SVWSPort}/api/schema/root/import/sqlite/${DB_NAME}" \
+     -H "accept: application/json" \
+     -H "Content-Type: multipart/form-data" \
+     -F "database=@${DB_PATH}" \
+     -F "schemaUsername=${DB_USER}" \
+     -F "schemaUserPassword=${DB_MYSQL_PW}" 
+    clear
+  fi
+  if [[ "$i" == "4" ]]; then
+   SCHULFORM="Berufskolleg"
+   DB_NAME=$SCHULFORM
+   DB_USER=$SCHULFORM
+   DB_MYSQL_PW=$SCHULFORM
+    # SQLITE DatenbankPfad
+    DB_PATH=/$Pfad/SVWS-TestMDBs/Berufskolleg/BK-Test-Daten-01/BK-Test-Daten-01.sqlite
+    echo
+    echo -e -n "${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${WEISS}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!### ${NC}"
+    echo
+    echo
+    echo -e -n "${WEISS}####### ${TUERKIS}Anlegen DatenbankSchemata ${GELB}$i ${TUERKIS}von ${GELB}$ANZAHL ${TUERKIS}mit dem Namen: ${GELB}${DB_NAME} ${TUERKIS}im ${HELLGRAU}Docker-Container: ${GELB}$STACK ${WEISS}####### ${NC}"
+    echo
+    curl --user "root:${MariaDB_ROOT_PASSWORD}" \
+     -k --insecure \
+     -X "POST" "https://${SERVERNAME}:${SVWSPort}/api/schema/root/import/sqlite/${DB_NAME}" \
+     -H "accept: application/json" \
+     -H "Content-Type: multipart/form-data" \
+     -F "database=@${DB_PATH}" \
+     -F "schemaUsername=${DB_USER}" \
+     -F "schemaUserPassword=${DB_MYSQL_PW}" 
+    clear
+  fi
+  if [[ "$i" == "5" ]]; then
+   SCHULFORM="Sekundarschule"
+   MDB_PW="kakadu"
+   DB_NAME=$SCHULFORM
+   DB_USER=$SCHULFORM
+   DB_MYSQL_PW=$SCHULFORM
+    # SQLITE DatenbankPfad
+    DB_PATH=/$Pfad/SVWS-TestMDBs/Sekundarschule/SE-Test-Daten-01/SE-Test-Daten-01.mdb
+    echo
+    echo -e -n "${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${WEISS}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!### ${NC}"
+    echo
+    echo
+    echo -e -n "${WEISS}####### ${TUERKIS}Anlegen DatenbankSchemata ${GELB}$i ${TUERKIS}von ${GELB}$ANZAHL ${TUERKIS}mit dem Namen: ${GELB}${DB_NAME} ${TUERKIS}im ${HELLGRAU}Docker-Container: ${GELB}$STACK ${WEISS}####### ${NC}"
+    echo
+    curl --user "root:${MARIADB_ROOT_PASSWORD}" \
+      -k --insecure \
+      -X "POST" "https://${SERVERNAME}:${SVWSPort}/api/schema/root/migrate/mdb/${DB_NAME}" \
+      -H "accept: application/json" \
+      -H "Content-Type: multipart/form-data" \
+      -F "database=@${DB_PATH}" \
+      -F "databasePassword=${MDB_PW}" \
+      -F "schemaUsername=${DB_USER}" \
+      -F "schemaUserPassword=${DB_MYSQL_PW}"
+    clear
+  fi
+ done
 ###################################################################################################################################################################
 ### ENDE der for schleife #########################################################################################################################################
 ###################################################################################################################################################################
