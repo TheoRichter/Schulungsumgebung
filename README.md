@@ -165,9 +165,9 @@ Durch das Klicken auf ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine e
 ![Windows_18_neu](./grafics/Windows_18_neu.png)<br />
 ![Windows_19_neu](./grafics/Windows_19_neu.png)<br />
 ## Automatisches Update und Upgrade
-## Einrichten und Anpassen von Cerbot
-## Einrichten und Anpassen des Docker
-## Einrichten und Anpassen des Apache Guacamole
+## Einrichten und Anpassen von _Cerbot_
+## Einrichten und Anpassen von _Docker_
+## Einrichten und Anpassen von _Apache Guacamole_
 
 
 
