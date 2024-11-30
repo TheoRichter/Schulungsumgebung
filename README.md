@@ -122,7 +122,7 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **do
 Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
 ## Installation von Apache Guacamole
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
-![guac-netwerk](./grafics/guac-netwerk.png)<br />
+![guac-netzwerk](./grafics/guac-netzwerk.png)<br />
 ### !!!Installierbar leider nur mit Template debian-11-standard_11.7-1_amd64.tar.zst!!!
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **guac_debian11_install_upgrade_debian12.sh** in unser root Verzeichniss.<br />
 **Download:**<br />
