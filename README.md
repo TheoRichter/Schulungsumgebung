@@ -115,13 +115,14 @@ im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
 ## Installation von Docker
 ### Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
-![docker_netwerk](./grafics/docker_netwerk.png)<br />
+![docker-netwerk](./grafics/docker-netwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in unser root Verzeichniss.<br />
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
 Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
 ## Installation von Apache Guacamole
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
+![guac-netwerk](./grafics/guac-netwerk.png)<br />
 ### !!!Installierbar leider nur mit Template debian-11-standard_11.7-1_amd64.tar.zst!!!
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **guac_debian11_install_upgrade_debian12.sh** in unser root Verzeichniss.<br />
 **Download:**<br />
