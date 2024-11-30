@@ -21,7 +21,7 @@ UID-Nr.: ATU 61587900
 # PROXMOX auf einem Internet-Server installieren.
 Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab.<br /> 
 Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Adresse_** am Server an.<br /> 
-Aktualisieren, Installieren und Neustarten des Debian 12 mit der Eingabe.<br />
+Aktualisieren und Installieren des Debian 12 mit der Eingabe.<br />
 **_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc_**
 ## Anpassen der Datei /etc/hostname und der Datei /etc/hosts (bei HETZNER)
 Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
