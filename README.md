@@ -153,7 +153,6 @@ Durch das Klicken auf ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine e
 ![Windows_6_neu](./grafics/Windows_6_neu.png)<br />
 ![Windows_7_neu](./grafics/Windows_7_neu.png)<br />
 ![Windows_8_neu](./grafics/Windows_8_neu.png)<br />
-![Windows_9_neu](./grafics/Windows_9_neu.png)<br />
 ![Windows_10_neu](./grafics/Windows_10_neu.png)<br />
 ![Windows_11_neu](./grafics/Windows_11_neu.png)<br />
 ![Windows_12_neu](./grafics/Windows_12_neu.png)<br />
