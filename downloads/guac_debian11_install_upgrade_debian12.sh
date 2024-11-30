@@ -43,9 +43,9 @@ echo -e "${WEISS}Instaliere folgende Pakete ${GELB}net-tools dnsutils nmap ufw z
 echo
 sleep 3
 apt install net-tools dnsutils nmap ufw zip unzip ssh nginx wget mc freerdp2-dev freerdp2-x11 -y
-wget http://web.webolch.de/bauanleitung/downloads/linux/SH-Scripte/guac-install.sh
+wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/guac-install.sh
 bash guac-install.sh
-wget http://web.webolch.de/bauanleitung/downloads/linux/guacamole.webolchi.de/ssl-Guacamole/guac.zip
+wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/guac.zip
 unzip *.zip 
 mv ssl-Guacamole/guacd /etc/ssl/guacd
 mv ssl-Guacamole/server.xml /etc/tomcat9
