@@ -106,14 +106,14 @@ Um LXC-Container zu Erstellen müssen wir die zwei Templates hier Speichern:<br 
 ## Installation der UFW mit Certbot (Reverse-Proxy)
 ### Neuen LXC-Container mit 1CPU, 512KiB RAM und 2GB Festplattenspeicher benötigt.
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
-Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **ufw.sh** in unser root Verzeichniss.<br />
+Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **ufw.sh** im root Verzeichniss.<br />
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/ufw.sh_**<br />
 Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
 ## Installation von Docker
 ### Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
 ![docker-netwerk](./grafics/docker-netwerk.png)<br />
-Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in unser root Verzeichniss.<br />
+Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** im root Verzeichniss.<br />
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
 Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
@@ -121,7 +121,7 @@ Mit dem Aufruf **_bash docker-schulungen.sh_** beginnt die Installation.<br />
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
 ![guac-netzwerk](./grafics/guac-netzwerk.png)<br />
 ### !!!Installierbar leider nur mit Template debian-11-standard_11.7-1_amd64.tar.zst!!!
-Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **guac_debian11_install_upgrade_debian12.sh** in unser root Verzeichniss.<br />
+Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **guac_debian11_install_upgrade_debian12.sh** im root Verzeichniss.<br />
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/guac_debian11_install_upgrade_debian12.sh_**<br />
 Mit dem Aufruf **_bash guac_debian11_install_upgrade_debian12.sh_** beginnt die Installation.<br />
