@@ -1,7 +1,7 @@
 # Aufagbenstellung
 Erstellen einer  Online Schulungsmöglichkeit bestehend aus Windows und Linux Betriebs-Systemen.
 # L&ouml;sungsansatz
-![PROXMOX_VE](./grafics/pve_logo.png)
+![PROXMOX_VE](./grafics/proxmox_logo.png)
 
 **Firmeninformation**<br> 
 **Firma:** Proxmox Server Solutions GmbH<br> 
