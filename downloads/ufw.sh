@@ -67,26 +67,8 @@ ufw allow 139
 ufw allow 445
 ufw allow 3000
 ufw allow 3306
-ufw allow 7040/udp
-ufw allow 7041/udp
-ufw allow 7050/udp
-ufw allow 7051/udp
-ufw allow 7060/udp
-ufw allow 7061/udp
-ufw allow 7070/udp
-ufw allow 7071/udp
-ufw allow 7080/udp
-ufw allow 7081/udp
-ufw allow 7090/udp
-ufw allow 7091/udp
-ufw allow 7100/udp
-ufw allow 7101/udp
-ufw allow 7200/udp
-ufw allow 7201/udp
-ufw allow 7300/udp
-ufw allow 7301/udp
-ufw allow 8089/udp
 ufw allow 8443
+ufw allow 9443
 ufw enable
 ufw status numbered
 apt install -y dnsmasq
