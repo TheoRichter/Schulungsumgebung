@@ -162,7 +162,7 @@ Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.<br />
 ![Windows_18_neu](./grafics/Windows_18_neu.png)<br />
 ![Windows_19_neu](./grafics/Windows_19_neu.png)<br />
 ## Automatisches Update und Upgrade
-## Einrichten und Anpassen von _Cerbot_
+## Einrichten und Anpassen von _Cerbot_ im LXC-Container ![ufw_logo](./grafics/ufw_logo.png)
 Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf**<br />
 im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
