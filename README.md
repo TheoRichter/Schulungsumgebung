@@ -166,8 +166,8 @@ Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.<br />
 Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf**<br />
 im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
-## Einrichten und Anpassen von _Docker_
-## Einrichten und Anpassen von _Apache Guacamole_
+## Einrichten und Anpassen von _Docker_ im LXC-Container ![docker_logo](./grafics/docker_logo.png)
+## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container ![guac_logo](./grafics/guac_logo.png)
 
 
 
