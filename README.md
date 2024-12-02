@@ -163,14 +163,14 @@ Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.<br />
 ![Windows_19_neu](./grafics/Windows_19_neu.png)<br />
 ## Automatisches Update und Upgrade
 ![pve_logo](./grafics/pve_logo.png)<br />
-**Download der Dateien :**<br /> 
+**Download der Dateien pveupgrade.sh und reboot.sh:**<br /> 
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/pveupgrade.sh_**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/reboot.sh_**<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der folgenden Zeilen in die Datei **/etc/crontab**<br />
 1 1	* * *	root	/usr/local/sbin/pveupgrade.sh<br />
 1 3	1 1,2,3,4,5,6,7,8,9,10,11,12 *	root	/usr/local/sbin/reboot.sh<br />
 ![ufw_logo](./grafics/ufw_logo.png), ![docker_logo](./grafics/docker_logo.png) und ![guac_logo](./grafics/guac_logo.png)<br />
-**Download der Datei :**<br /> 
+**Download der Datei update.sh:**<br /> 
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/update.sh_**<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/crontab**<br />
 1 1	* * *	root	/usr/local/sbin/update.sh<br />
