@@ -117,15 +117,11 @@ echo -e -n "${TUERKIS}Subdomain Config Kopieren ${NC}"
 echo
 sleep 1
 mv guac.conf /etc/nginx/sites-available 
-mv svws.conf /etc/nginx/sites-available 
+mv docker.conf /etc/nginx/sites-available 
 mv pve.conf /etc/nginx/sites-available 
-mv metrik.conf /etc/nginx/sites-available
-mv laufbahn.conf /etc/nginx/sites-available
 ln -s /etc/nginx/sites-available/pve.conf /etc/nginx/sites-enabled/pve.conf
 ln -s /etc/nginx/sites-available/guac.conf /etc/nginx/sites-enabled/guac.conf
-ln -s /etc/nginx/sites-available/svws.conf /etc/nginx/sites-enabled/svws.conf
-ln -s /etc/nginx/sites-available/laufbahn.conf /etc/nginx/sites-enabled/laufbahn.conf
-ln -s /etc/nginx/sites-available/metrik.conf /etc/nginx/sites-enabled/metrik.conf
+ln -s /etc/nginx/sites-available/docker.conf /etc/nginx/sites-enabled/docker.conf
 echo
 echo -e -n "${TUERKIS}certbot installieren und aufrufen ${NC}"
 echo
