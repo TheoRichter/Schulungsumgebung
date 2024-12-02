@@ -110,9 +110,6 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **uf
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/ufw.sh_**<br />
 Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
-Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf**<br />
-im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
-Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
 ## Installation von Docker
 ### Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
 ![docker-netwerk](./grafics/docker-netwerk.png)<br />
@@ -166,6 +163,9 @@ Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.<br />
 ![Windows_19_neu](./grafics/Windows_19_neu.png)<br />
 ## Automatisches Update und Upgrade
 ## Einrichten und Anpassen von _Cerbot_
+Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf**<br />
+im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
+Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
 ## Einrichten und Anpassen von _Docker_
 ## Einrichten und Anpassen von _Apache Guacamole_
 
