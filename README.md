@@ -169,8 +169,11 @@ Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der folgenden Zeilen in die Datei **/etc/crontab**<br />
 1 1	* * *	root	/usr/local/sbin/pveupgrade.sh<br />
 1 3	1 1,2,3,4,5,6,7,8,9,10,11,12 *	root	/usr/local/sbin/reboot.sh<br />
-<br />
 ![ufw_logo](./grafics/ufw_logo.png), ![docker_logo](./grafics/docker_logo.png) und ![guac_logo](./grafics/guac_logo.png)<br />
+**Download der Datei :**<br /> 
+**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/update.sh_**<br />
+in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/crontab**<br />
+1 1	* * *	root	/usr/local/sbin/update.sh<br />
 ## Einrichten und Anpassen von _Cerbot_ im LXC-Container <br />![ufw_logo](./grafics/ufw_logo.png)
 Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf**<br />
 im Ordner /etc/ngnix/sites-available/ auf eure Subdomains Anpassen.<br />
