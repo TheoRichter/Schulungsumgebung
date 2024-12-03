@@ -204,7 +204,6 @@ Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br /
 | listen [::]:80; | listen [::]:80; | listen [::]:80;  |
 |     |     |     |
 | }   | }   | }   |
-
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
 ![certbot_1](./grafics/certbot_email.png)<br />
 Nach der Eingabe der Email-Addresse drücken wir Enter.<br />
