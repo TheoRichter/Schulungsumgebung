@@ -177,7 +177,7 @@ Download der Datei **_update.sh_**:<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/[crontab](./downloads/crontab_lxc)**<br />
 **1 1	* * *	root	/usr/local/sbin/update.sh**<br />
 ## Einrichten und Anpassen von _Cerbot_ im LXC-Container <br />![ufw_logo](./grafics/ufw_logo.png)
-Meldung bei https://ihre-domain.de:8006
+Mit **certbot** wird die Meldung verhindert.<br />
 ![sichereVerbindung](./grafics/sichereVerbindung.png)<br />
 ![certbot](./grafics/certbot.png)<br />
 Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br />
