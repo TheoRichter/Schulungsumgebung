@@ -178,8 +178,28 @@ in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei *
 **1 1	* * *	root	/usr/local/sbin/update.sh**<br />
 ## Einrichten und Anpassen von _Cerbot_ im LXC-Container <br />![ufw_logo](./grafics/ufw_logo.png)
 ![certbot](./grafics/certbot.png)<br />
-Nach Beendigung der Installation bitte die Dateien **guac.conf, docker.con** und **pve.conf**<br />
-im Ordner **/etc/ngnix/sites-available/** auf eure Subdomains Anpassen.<br />
+Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br />
+| docker.conf | guac.conf | pve.conf |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | server {
+
+        server_name pve.subdomain.de;
+	location / {
+                proxy_pass      https://10.1.0.2:8006;
+	    }
+
+    proxy_set_header HOST $host;
+    proxy_set_header X-REAL-IP $remote_addr;
+    proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_http_version 1.1;
+    proxy_set_header Connection "upgrade";
+
+	listen 80;
+	listen [::]:80;
+}    |
+| git diff     | git diff       |       |
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
 ## Einrichten und Anpassen von _Docker_ im LXC-Container <br />![docker_logo](./grafics/docker_logo.png)
 ## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container <br />![guac_logo](./grafics/guac_logo.png)
