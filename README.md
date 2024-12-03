@@ -180,7 +180,7 @@ in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei *
 ![certbot](./grafics/certbot.png)<br />
 Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br />
 | docker.conf | guac.conf | pve.conf |
-| :---        |     :---: |     ---: |
+| :---        |     :--- |     :--- |
 | server {    | server {  | server { |
 | server_name docker.subdomain.de; | server_name guac.subdomain.de; | server_name pve.subdomain.de; |
 | location / {  | location / {  | location / {  |
