@@ -199,6 +199,7 @@ Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br /
 | listen [::]:80;      | listen [::]:80;      | listen [::]:80;      |
 |     |     |     |
 | }      | }      | }      |
+<br />
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
 ## Einrichten und Anpassen von _Docker_ im LXC-Container <br />![docker_logo](./grafics/docker_logo.png)
 ## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container <br />![guac_logo](./grafics/guac_logo.png)
