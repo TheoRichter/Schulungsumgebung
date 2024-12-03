@@ -180,25 +180,25 @@ in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei *
 ![certbot](./grafics/certbot.png)<br />
 Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br />
 | docker.conf | guac.conf | pve.conf |
-| :---         |     :---:      |          ---: |
-| server {    |
-| server_name pve.subdomain.de;      |
-| location / {    |
-| proxy_pass      https://10.1.0.2:8006;      |
-|     }    |
-|      |
-| proxy_set_header HOST $host;    |
-| proxy_set_header X-REAL-IP $remote_addr;      |
-| proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;    |
-|       |
-| proxy_set_header Upgrade $http_upgrade;    |
-| proxy_http_version 1.1;      |
-| proxy_set_header Connection "upgrade";    |
-|       |
-| listen 80;    |
-| listen [::]:80;      |
-|     |
-| }      |
+| :---        |     :---: |     ---: |
+| server {    | server {  | server { |
+| server_name docker.subdomain.de; | server_name docker.subdomain.de; | server_name docker.subdomain.de; |
+| location / {  | location / {  | location / {  |
+| proxy_pass      https://10.1.0.3:9443; | proxy_pass      https://10.1.0.4:3000; | proxy_pass      https://10.1.0.2:8006; |
+|     }    |     }    |     }    |
+|      |      |      |
+| proxy_set_header HOST $host;    | proxy_set_header HOST $host;    | proxy_set_header HOST $host;    |
+| proxy_set_header X-REAL-IP $remote_addr;      | proxy_set_header X-REAL-IP $remote_addr;      | proxy_set_header X-REAL-IP $remote_addr;      |
+| proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;    | proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;    | proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;    |
+|       |       |       |
+| proxy_set_header Upgrade $http_upgrade;    | proxy_set_header Upgrade $http_upgrade;    | proxy_set_header Upgrade $http_upgrade;    |
+| proxy_http_version 1.1;      | proxy_http_version 1.1;      | proxy_http_version 1.1;      |
+| proxy_set_header Connection "upgrade";    | proxy_set_header Connection "upgrade";    | proxy_set_header Connection "upgrade";    |
+|       |       |       |
+| listen 80;    | listen 80;    | listen 80;    |
+| listen [::]:80;      | listen [::]:80;      | listen [::]:80;      |
+|     |     |     |
+| }      | }      | }      |
 Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
 ## Einrichten und Anpassen von _Docker_ im LXC-Container <br />![docker_logo](./grafics/docker_logo.png)
 ## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container <br />![guac_logo](./grafics/guac_logo.png)
