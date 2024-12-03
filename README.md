@@ -179,6 +179,7 @@ in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei *
 ## Einrichten und Anpassen von _Cerbot_ im LXC-Container <br />![ufw_logo](./grafics/ufw_logo.png)
 ![certbot](./grafics/certbot.png)<br />
 Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br />
+**Bitte in der Spalte den Eintrag hinter server_name durch Ihre Subdomain Ersetzen.**<br />
 | docker.conf | guac.conf | pve.conf |
 | :---        |     :--- |     :--- |
 | server {    | server {  | server { |
