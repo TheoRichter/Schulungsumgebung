@@ -211,7 +211,7 @@ Nach der Eingabe der Email-Addresse drücken wir Enter.<br />
 ![certbot_2](./grafics/certbot_email_Yes.png)<br />
 Nach der Eingabe von **Y** mit Enter bestätigen.<br />
 ![certbot_3](./grafics/certbot_email_Yes_Yes.png)<br />
-Ich habe auch **Y** eingegeben und mit Enter bestätigen. (Es geht bestimmt auch **N** dann bekommt Ihr keine Mails!)<br />
+Ich habe auch **Y** eingegeben und mit Enter bestätigen. (Es geht bestimmt auch **N** dann gibt es keine Mails!)<br />
 ![certbot_4](./grafics/Certbot_HTTPS.png)<br />
 Hier stehen Ihr eingeben Subdomains.<br />
 ![certbot_5](./grafics/certbot_https_successfully.png)<br />
