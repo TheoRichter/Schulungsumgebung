@@ -177,8 +177,9 @@ Download der Datei **_update.sh_**:<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/[crontab](./downloads/crontab_lxc)**<br />
 **1 1	* * *	root	/usr/local/sbin/update.sh**<br />
 ## Einrichten und Anpassen von _Cerbot_ im LXC-Container <br />![ufw_logo](./grafics/ufw_logo.png)
-Mit **certbot** wird diese Meldung verhindert.<br /><br />
+Bei dieser eingabe von https://Die-IP-Addresse:8006 im Browser erschien diese Melung.<br />
 ![sichereVerbindung](./grafics/sichereVerbindung.png)<br />
+Mit **certbot** wird diese Meldung verhindert.<br />
 Hier werden die drei Datein im Ordner **/etc/ngnix/sites-available/** und die Links im Ordner **/etc/nginx/sites-enabled/** angezeigt.<br />
 ![certbot](./grafics/certbot.png)<br />
 Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br />
