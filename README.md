@@ -167,11 +167,13 @@ Mit OK bestätigen.<br />
 Nach der Bestätigung mit OK müßte es jetzt so aussehen.<br />
 ![docker_bash-docker-schulungen-sh-3](./grafics/docker_bash-docker-schulungen-sh-3.png)<br />
 | **Inhalt der Datei: schulungen-erklaerungen.txt** |
+| :--: |
 |   1 :    2      :        3        :       4          :     5         :      6       :       7       :    8   :          9          :     10    :     11   : 12 |
 | STACK:MariaDBPort:WebserverPortHTTP:WebserverPortHTTPS:  WebserverName:PHPmyAdminPort: PHPmyAdminName:SVWSPort:MariaDB_ROOT_PASSWORD:SVWSVersion:SERVERNAME:Pfad |
 | pc-1:       3001:             8001:              8101: pc-1-WebServer:          9001:pc-1-PHPmyAdmin:   10001:                 root:      1.0.1:  10.1.0.3:netzlaufwerk |
 | pc-2:       3002:             8002:              8102: pc-2-WebServer:          9002:pc-2-PHPmyAdmin:   10002:                 root:      1.0.1:  10.1.0.3:netzlaufwerk |
 | BITTE NICHT LOESCHEN !!!! |
+
 Mit der Eingabe **docker start portainer** starten wir den Portainer.<br />
 Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
 Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
