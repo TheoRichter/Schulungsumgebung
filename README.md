@@ -167,7 +167,7 @@ Mit OK bestätigen.<br />
 Nach der Bestätigung mit OK müßte es jetzt so aussehen.<br />
 ![docker_bash-docker-schulungen-sh-3](./grafics/docker_bash-docker-schulungen-sh-3.png)<br />
 Inhalt der Datei: schulungen-erklaerungen.txt<br /> 
-![schulungen-erklaerungen](./grafics/schulungen-erklaerungen.png)<br />
+![schulungen-erklaerung](./grafics/schulungen-erklaerung.png)<br />
 
 Mit der Eingabe **docker start portainer** starten wir den Portainer.<br />
 Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
