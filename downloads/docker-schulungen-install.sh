@@ -33,7 +33,7 @@ if ! [ $( id -u ) = 0 ]; then
     echo
     exit 1
 fi
-wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/.bashrc
+wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/.bashrc
 cp .bashrc.1 .bashrc
 #
 echo
@@ -54,7 +54,7 @@ sleep 1
 ###apt install task-german -y#
 ##############################
 dpkg-reconfigure locales
-wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/ssh.zip
+wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/ssh.zip
 unzip ssh.zip
 mv sshd_config /etc/ssh
 systemctl restart ssh
@@ -69,7 +69,7 @@ mkdir /netzlaufwerk/
 ###mkdir /netzlaufwerk/Programme
 git clone https://github.com/SVWS-NRW/SVWS-TestMDBs /netzlaufwerk/SVWS-TestMDBs/
 ###cd /netzlaufwerk
-###wget -q --show-progress http://web.webolch.de/bauanleitung/downloads/linux/zip/SVWS-TestDBs.zip
+###wget -q --show-progress https:/raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/SVWS-TestDBs.zip
 ###unzip SVWS-TestDBs.zip
 ###rm SVWS-TestDBs.zip
 ###ls -a -l
@@ -92,7 +92,7 @@ echo
 echo -e -n "${TUERKIS} Ausgabe des Samba-Server Status  ${NC}"
 echo
 systemctl status smbd.service --no-pager
-###wget -q --show-progress http://web.webolch.de/bauanleitung/downloads/linux/zip/Admin.zip
+###wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/Admin.zip
 ###unzip Admin.zip
 ###mv Admin /netzlaufwerk/Programme
 chmod -R 777 /netzlaufwerk/
