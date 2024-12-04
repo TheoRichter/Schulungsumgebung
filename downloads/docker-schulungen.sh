@@ -30,8 +30,7 @@ TITLE="DOCKER mit Containern"
 MENU="Bitte eine Auswahl treffen:"
 
 OPTIONS=(1 "Vollst. Docker Installation mit Docker-Container und Datenbankschemata."
-         2 "Download der schulungen.txt zur Eingabe der Schuldaten und Kopieren der SchulDatenbanken."
-         3 "Nur Docker-Container und Datenbankschemata  !?! ### Docker muss installiert sein und die Datei schulungen.txt muss konfiguriert sein ### !?!")
+         2 "Download der schulungen.txt zur Eingabe der Schuldaten und Kopieren der SchulDatenbanken.")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
