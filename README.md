@@ -159,6 +159,7 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **do
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
 Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
+![docker_bash-docker-schulungen-sh](./grafics/docker_bash-docker-schulungen-sh.png)<br />
 Mit der Eingabe auf der Konsole als root **docker start portainer** starten wir den Portainer.<br />
 Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
 Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
@@ -172,7 +173,6 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **gu
 Mit dem Aufruf **_bash guac_debian11_install_upgrade_debian12.sh_** beginnt die Installation.<br />
 BITTE nach dem Neustart den Status des Tomcat9 mit **_systemctl status tomcat9 --no-pager_**<br />
 und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_** Überprüfen.<br />
-Bitte hier Klicken: [Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container](#einrichten-und-anpassen-von-apache-guacamole-im-lxc-container-).<br />
 ## Vorbereitung der Installation von Windows 11
 Um Windows 11 zu installieren müssen wir die drei ISOs hier Speichern:<br />
 ![ISOs](./grafics/ISOs.png)<br />
