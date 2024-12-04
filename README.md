@@ -176,6 +176,10 @@ Download der Datei **_update.sh_**:<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/update.sh_**<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/[crontab](./downloads/crontab_lxc)**<br />
 **1 1	* * *	root	/usr/local/sbin/update.sh**<br />
+## Einrichten und Anpassen von _Docker_ im LXC-Container <br />![docker_logo](./grafics/docker_logo.png)
+
+## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container <br />![guac_logo](./grafics/guac_logo.png)
+
 ## Einrichten und Anpassen von _Cerbot_ im LXC-Container <br />![ufw_logo](./grafics/ufw_logo.png)
 Bei dieser Eingabe von https://Die-IP-Addresse:8006 im Browser erschien diese Melung.<br />
 ![sichereVerbindung](./grafics/sichereVerbindung.png)<br />
@@ -217,8 +221,6 @@ Hier stehen Ihr eingeben Subdomains.<br />
 ![certbot_5](./grafics/certbot_https_successfully.png)<br />
 Bei der Eingabe von https://ihre-subdomain.de im Browser erschien die obige Melung jetzt nicht mehr.<br />
 Als Beispiel hier mal https://stratopve.webolchi.de<br />
-## Einrichten und Anpassen von _Docker_ im LXC-Container <br />![docker_logo](./grafics/docker_logo.png)
-## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container <br />![guac_logo](./grafics/guac_logo.png)
 
 
 
