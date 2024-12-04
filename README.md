@@ -164,7 +164,6 @@ Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
 ![docker_bash-docker-schulungen-sh-2](./grafics/docker_bash-docker-schulungen-sh-2.png)<br />
 
 
-
 Mit der Eingabe **docker start portainer** starten wir den Portainer.<br />
 Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
 Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
