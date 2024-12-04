@@ -45,15 +45,15 @@ clear
 case $CHOICE in
         1)
             echo -e -n "${HELLROT}Die Auswahl ist $CHOICE mit Namen Proxmox-Schulungsumgebung ${NC}"
-            wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen-install.sh
+            wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/docker-schulungen-install.sh
             bash docker-schulungen-install.sh
             echo
             ;;
         2)
-            wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/schulungen.txt
-            wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/schulungen-erklaerung.txt
-            wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-container-schulungen.sh
-            wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schemata.sh
+            wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/schulungen.txt
+            wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/schulungen-erklaerung.txt
+            wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/docker-container-schulungen.sh
+            wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/docker-schemata.sh
             echo
             echo -e -n "${HELLBLAU}Download der ${WEISS}schulungen-erklaerung.txt ${HELLBLAU}zur Erklaerung der ${WEISS}schulungen.txt und zur Anpassung an das Schulungssystem ${NC}"
             echo
