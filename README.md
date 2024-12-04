@@ -160,7 +160,9 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **do
 **_wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/docker-schulungen.sh_**<br />
 Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
 ![docker_bash-docker-schulungen-sh](./grafics/docker_bash-docker-schulungen-sh.png)<br />
+Mit OK bestätigen.<br />
 ![docker_bash-docker-schulungen-sh-1](./grafics/docker_bash-docker-schulungen-sh-1.png)<br />
+Mit OK bestätigen.<br />
 ![docker_bash-docker-schulungen-sh-2](./grafics/docker_bash-docker-schulungen-sh-2.png)<br />
 
 
