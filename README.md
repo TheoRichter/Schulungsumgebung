@@ -176,12 +176,8 @@ Download der Datei **_update.sh_**:<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/update.sh_**<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/[crontab](./downloads/crontab_lxc)**<br />
 **1 1	* * *	root	/usr/local/sbin/update.sh**<br />
-## Einrichten und Anpassen von _Docker_ im LXC-Container <br />![docker_logo](./grafics/docker_logo.png)
-
-## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container <br />![guac_logo](./grafics/guac_logo.png)
-
 ## Einrichten und Anpassen von _Cerbot_ im LXC-Container <br />![ufw_logo](./grafics/ufw_logo.png)
-Bei dieser Eingabe von https://Die-IP-Addresse:8006 im Browser erschien diese Melung.<br />
+Bei der Eingabe von https://Die-IP-Addresse:8006 im Browser erschien diese Melung.<br />
 ![sichereVerbindung](./grafics/sichereVerbindung.png)<br />
 Mit **certbot** wird diese Meldung verhindert.<br />
 Hier werden die drei Datein im Ordner **/etc/ngnix/sites-available/** und die Links im Ordner **/etc/nginx/sites-enabled/** angezeigt.<br />
@@ -189,7 +185,7 @@ Hier werden die drei Datein im Ordner **/etc/ngnix/sites-available/** und die Li
 Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br />
 **Bitte in der Spalte den Eintrag hinter server_name durch Ihre Subdomain Ersetzen.**<br />
 | docker.conf | guac.conf | pve.conf |
-| :---        |     :--- |     :--- |
+| :---        | :---      | :---     |
 | server {    | server {  | server { |
 | server_name docker.subdomain.de; | server_name guac.subdomain.de; | server_name pve.subdomain.de; |
 | location / {  | location / {  | location / {  |
@@ -221,6 +217,13 @@ Hier stehen Ihr eingeben Subdomains.<br />
 ![certbot_5](./grafics/certbot_https_successfully.png)<br />
 Bei der Eingabe von https://ihre-subdomain.de im Browser erschien die obige Melung jetzt nicht mehr.<br />
 Als Beispiel hier mal https://stratopve.webolchi.de<br />
+## Einrichten und Anpassen von _Docker_ im LXC-Container <br />![docker_logo](./grafics/docker_logo.png)
+Mit der Eingabe auf der Konsole als root **docker start portainer** starten wir den Portainer.<br />
+Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
+Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
+### Erklärungen zur Installation der C
+## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container <br />![guac_logo](./grafics/guac_logo.png)
+
 
 
 
