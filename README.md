@@ -168,7 +168,8 @@ Nach der Bestätigung mit OK müßte es jetzt so aussehen.<br />
 ![docker_bash-docker-schulungen-sh-3](./grafics/docker_bash-docker-schulungen-sh-3.png)<br />
 Inhalt der Datei: schulungen-erklaerung.txt<br /> 
 ![schulungen-erklaerung](./grafics/schulungen-erklaerung.png)<br />
-
+Nach der Anpassung der Datei **schulungen.txt** geben wir **_bash docker-container-schulungen.sh_** um mit der Installation fortzufahren.<br />
+![docker_bash-docker-schulungen-sh-4](./grafics/docker_bash-docker-schulungen-sh-4.png)<br />
 Mit der Eingabe **docker start portainer** starten wir den Portainer.<br />
 Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
 Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
