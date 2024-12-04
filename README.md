@@ -176,6 +176,7 @@ Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
 ![portainer-1](./grafics/portainer-1.png)<br />
 ![portainer-2](./grafics/portainer-2.png)<br />
 ![portainer-3](./grafics/portainer-3.png)<br />
+Um die SVWS-Server zu nutzen müssen wir die Container starten.
 ![portainer-4](./grafics/portainer-4.png)<br />
 ## Installation von Apache Guacamole
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
