@@ -161,6 +161,7 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **do
 Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
 ![docker_bash-docker-schulungen-sh](./grafics/docker_bash-docker-schulungen-sh.png)<br />
 ![docker_bash-docker-schulungen-sh-1](./grafics/docker_bash-docker-schulungen-sh-1.png)<br />
+![docker_bash-docker-schulungen-sh-2](./grafics/docker_bash-docker-schulungen-sh-2.png)<br />
 
 
 
