@@ -34,7 +34,7 @@ if ! [ $( id -u ) = 0 ]; then
     exit 1
 fi
 #
-wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/.bashrc
+wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/.bashrc
 cp .bashrc.1 .bashrc
 #
 echo
@@ -67,12 +67,30 @@ ufw allow 139
 ufw allow 445
 ufw allow 3000
 ufw allow 3306
+ufw allow 7040/udp
+ufw allow 7041/udp
+ufw allow 7050/udp
+ufw allow 7051/udp
+ufw allow 7060/udp
+ufw allow 7061/udp
+ufw allow 7070/udp
+ufw allow 7071/udp
+ufw allow 7080/udp
+ufw allow 7081/udp
+ufw allow 7090/udp
+ufw allow 7091/udp
+ufw allow 7100/udp
+ufw allow 7101/udp
+ufw allow 7200/udp
+ufw allow 7201/udp
+ufw allow 7300/udp
+ufw allow 7301/udp
+ufw allow 8089/udp
 ufw allow 8443
-ufw allow 9443
 ufw enable
 ufw status numbered
 apt install -y dnsmasq
-wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/ufw.zip
+wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/ufw.zip
 unzip ufw.zip
 mv dnsmasq.conf /etc
 mv ufw /etc/default
@@ -103,7 +121,7 @@ mv docker.conf /etc/nginx/sites-available
 mv pve.conf /etc/nginx/sites-available 
 ln -s /etc/nginx/sites-available/pve.conf /etc/nginx/sites-enabled/pve.conf
 ln -s /etc/nginx/sites-available/guac.conf /etc/nginx/sites-enabled/guac.conf
-ln -s /etc/nginx/sites-available/docker.conf /etc/nginx/sites-enabled/docker.conf
+ln -s /etc/nginx/sites-available/svws.conf /etc/nginx/sites-enabled/docker.conf
 echo
 echo -e -n "${TUERKIS}certbot installieren und aufrufen ${NC}"
 echo
