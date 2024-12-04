@@ -60,7 +60,7 @@ Löschen der vom System automatisch erstellte SSH-Key mit Befehl **_rm /etc/ssh/
 SSH-Key ed25519 erstellen **_ssh-keygen -o -a 9999 -t ed25519 -N "" -f /etc/ssh/ssh_host_ed25519_key -C "$(whoami)@$(hostname)-$(date -I)"_**<br />
 SSH-Key rsa erstellen **_ssh-keygen -o -a 9999 -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key -C "$(whoami)@$(hostname)-$(date -I)"_**<br />
 Download der neuen SSH-Serverkonfiguration: sshd_config<br />
-**_wget https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/sshd_config_**<br />
+**_wget https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/sshd_config_**<br />
 **_mv sshd_config /etc/ssh/_**<br />
 Nach dem Download überschreiben wir den alten Inhalt der Datei im Verzeichniss /etc/ssh/sshd_config.<br />
 SSH-Dienst restarten: **_systemctl restart ssh_**<br />
@@ -109,7 +109,7 @@ Um LXC-Container zu Erstellen müssen wir die zwei Templates hier Speichern:<br 
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **ufw.sh** in das root Verzeichniss.<br />
 **Download:**<br />
-**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/ufw.sh_**<br />
+**_wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/ufw.sh_**<br />
 Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
 Bei der Eingabe von https://Die-IP-Addresse:8006 im Browser erschien diese Melung.<br />
 ![sichereVerbindung](./grafics/sichereVerbindung.png)<br />
@@ -157,10 +157,14 @@ Als Beispiel hier mal https://stratopve.webolchi.de<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in das root Verzeichniss.<br />
 ![docker_login](./grafics/docker_login.png)<br />
 **Download:**<br />
-**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
+**_wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/docker-schulungen.sh_**<br />
 Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
 ![docker_bash-docker-schulungen-sh](./grafics/docker_bash-docker-schulungen-sh.png)<br />
-Mit der Eingabe auf der Konsole als root **docker start portainer** starten wir den Portainer.<br />
+![docker_bash-docker-schulungen-sh_1](./grafics/docker_bash-docker-schulungen-sh-1.png)<br />
+
+
+
+Mit der Eingabe **docker start portainer** starten wir den Portainer.<br />
 Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
 Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
 ## Installation von Apache Guacamole
@@ -169,7 +173,7 @@ Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
 ### !!!Installierbar leider nur mit Template debian-11-standard_11.7-1_amd64.tar.zst!!!
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **guac_debian11_install_upgrade_debian12.sh** in das root Verzeichniss.<br />
 **Download:**<br />
-**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/guac_debian11_install_upgrade_debian12.sh_**<br />
+**_wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/guac_debian11_install_upgrade_debian12.sh_**<br />
 Mit dem Aufruf **_bash guac_debian11_install_upgrade_debian12.sh_** beginnt die Installation.<br />
 BITTE nach dem Neustart den Status des Tomcat9 mit **_systemctl status tomcat9 --no-pager_**<br />
 und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_** Überprüfen.<br />
@@ -210,15 +214,15 @@ Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.<br />
 ## Automatisches Update und Upgrade
 ![pve_logo](./grafics/pve_logo.png)<br />
 Download der Dateien **_pveupgrade.sh_** und **_reboot.sh_**:<br /> 
-**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/pveupgrade.sh_**<br />
-**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/reboot.sh_**<br />
+**_wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/pveupgrade.sh_**<br />
+**_wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/reboot.sh_**<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der folgenden Zeilen in die Datei **/etc/[crontab](./downloads/crontab_pve)**<br />
 **1 1	* * *	root	/usr/local/sbin/pveupgrade.sh**<br />
 **1 3	1 1,2,3,4,5,6,7,8,9,10,11,12 *	root	/usr/local/sbin/reboot.sh**<br />
 <br>
 ![ufw_logo](./grafics/ufw_logo.png), ![docker_logo](./grafics/docker_logo.png) und ![guac_logo](./grafics/guac_logo.png)<br />
 Download der Datei **_update.sh_**:<br /> 
-**_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/update.sh_**<br />
+**_wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/update.sh_**<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/[crontab](./downloads/crontab_lxc)**<br />
 **1 1	* * *	root	/usr/local/sbin/update.sh**<br />
 
