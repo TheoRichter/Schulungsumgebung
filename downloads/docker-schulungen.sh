@@ -23,7 +23,7 @@ WEISS='\033[1;37m'
 NC='\033[0m' # No Color
 #
 HEIGHT=10
-WIDTH=135
+WIDTH=95
 CHOICE_HEIGHT=4
 BACKTITLE="Art der Installation"
 TITLE="DOCKER mit Containern"
