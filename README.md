@@ -164,6 +164,7 @@ Mit OK bestätigen.<br />
 ![docker_bash-docker-schulungen-sh-1](./grafics/docker_bash-docker-schulungen-sh-1.png)<br />
 Mit OK bestätigen.<br />
 ![docker_bash-docker-schulungen-sh-2](./grafics/docker_bash-docker-schulungen-sh-2.png)<br />
+![docker_bash-docker-schulungen-sh-3](./grafics/docker_bash-docker-schulungen-sh-3.png)<br />
 
 
 Mit der Eingabe **docker start portainer** starten wir den Portainer.<br />
