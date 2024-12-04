@@ -155,6 +155,7 @@ Als Beispiel hier mal https://stratopve.webolchi.de<br />
 ### Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
 ![docker-netwerk](./grafics/docker-netwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in das root Verzeichniss.<br />
+![docker_login](./grafics/docker_login.png)<br />
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
 Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
