@@ -157,10 +157,10 @@ Als Beispiel hier mal https://stratopve.webolchi.de<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in das root Verzeichniss.<br />
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
+Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
 Mit der Eingabe auf der Konsole als root **docker start portainer** starten wir den Portainer.<br />
 Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
 Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
-Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
 ## Installation von Apache Guacamole
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
 ![guac-netzwerk](./grafics/guac-netzwerk.png)<br />
