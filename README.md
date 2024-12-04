@@ -164,6 +164,7 @@ Mit OK bestätigen.<br />
 ![docker_bash-docker-schulungen-sh-1](./grafics/docker_bash-docker-schulungen-sh-1.png)<br />
 Mit OK bestätigen.<br />
 ![docker_bash-docker-schulungen-sh-2](./grafics/docker_bash-docker-schulungen-sh-2.png)<br />
+Nach der Bestätigung mit OK müßte es jetzt so aussehen.<br />
 ![docker_bash-docker-schulungen-sh-3](./grafics/docker_bash-docker-schulungen-sh-3.png)<br />
 
 
