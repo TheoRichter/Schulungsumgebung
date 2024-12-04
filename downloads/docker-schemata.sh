@@ -39,7 +39,7 @@ DB_NAME=""
 DB_USER=""
 DB_MYSQL_PW=""
 SCHULFORM=""
-ANZAHL="5"
+ANZAHL="4"
 ################################################################################ 
 clear
 ################################################################################
@@ -67,14 +67,14 @@ echo -e -n "${HELLGRUEN} OK ${NC}"
 echo
 sleep 3
 #
-##echo
-##echo -e -n "${HELLGRAU}STACK:${GELB}$STACK ${HELLGRAU}MariaDBPort:${GELB}$MariaDBPort ${HELLGRAU}WebserverPortHTTP:${GELB}$WebserverPortHTTP ${NC}"
-##echo
-##echo -e -n "${HELLGRAU}WebserverPortHTTPS:${GELB}$WebserverPortHTTPS${HELLGRAU}WebserverName:${GELB}$WebserverName ${HELLGRAU}PHPmyAdminPort:${GELB}$PHPmyAdminPort ${NC}"
-##echo
-##echo -e -n "${HELLGRAU}PHPmyAdminName:${GELB}$PHPmyAdminName  ${HELLGRAU}SVWSPort:${GELB}$SVWSPort ${HELLGRAU}MariaDB_ROOT_PASSWORD:${GELB}$MariaDB_ROOT_PASSWORD  ${NC}" 
-##echo
-##echo -e -n "${HELLGRAU}SVWSVersion:${GELB}$SVWSVersion ${HELLGRAU}SERVERNAME:${GELB}$SERVERNAME ${HELLGRAU}Pfad:${GELB}$Pfad ${NC}"
+echo
+echo -e -n "${HELLGRAU}STACK:${GELB}$STACK ${HELLGRAU}MariaDBPort:${GELB}$MariaDBPort ${HELLGRAU}WebserverPortHTTP:${GELB}$WebserverPortHTTP ${NC}"
+echo
+echo -e -n "${HELLGRAU}WebserverPortHTTPS:${GELB}$WebserverPortHTTPS${HELLGRAU}WebserverName:${GELB}$WebserverName ${HELLGRAU}PHPmyAdminPort:${GELB}$PHPmyAdminPort ${NC}"
+echo
+echo -e -n "${HELLGRAU}PHPmyAdminName:${GELB}$PHPmyAdminName  ${HELLGRAU}SVWSPort:${GELB}$SVWSPort ${HELLGRAU}MariaDB_ROOT_PASSWORD:${GELB}$MariaDB_ROOT_PASSWORD  ${NC}" 
+echo
+echo -e -n "${HELLGRAU}SVWSVersion:${GELB}$SVWSVersion ${HELLGRAU}SERVERNAME:${GELB}$SERVERNAME ${HELLGRAU}Pfad:${GELB}$Pfad ${NC}"
 #
 echo
 echo -e -n "${TUERKIS}svwsdb  wird geloescht! ${NC}"
@@ -120,7 +120,7 @@ curl --user "root:${MariaDB_ROOT_PASSWORD}" \
    DB_USER=$SCHULFORM
    DB_MYSQL_PW=$SCHULFORM
     # SQLITE DatenbankPfad
-    DB_PATH=/$Pfad/SVWS-TestMDBs/Foerderschule/FS-Test-Daten-01/FS-Test-Daten-01.sqlite
+    DB_PATH=/$Pfad/SVWS-TestMDBs/Foerderschule/FS-Test-Daten-01/FS-Test-daten-01.sqlite
     echo
     echo -e -n "${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${WEISS}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!### ${NC}"
     echo
@@ -183,31 +183,31 @@ curl --user "root:${MariaDB_ROOT_PASSWORD}" \
      -F "schemaUserPassword=${DB_MYSQL_PW}" 
     clear
   fi
-  if [[ "$i" == "5" ]]; then
-   SCHULFORM="Sekundarschule"
-   MDB_PW="kakadu"
-   DB_NAME=$SCHULFORM
-   DB_USER=$SCHULFORM
-   DB_MYSQL_PW=$SCHULFORM
+#  if [[ "$i" == "5" ]]; then
+#   SCHULFORM="Sekundarschule"
+#   MDB_PW="kakadu"
+#   DB_NAME=$SCHULFORM
+#   DB_USER=$SCHULFORM
+#   DB_MYSQL_PW=$SCHULFORM
     # SQLITE DatenbankPfad
-    DB_PATH=/$Pfad/SVWS-TestMDBs/Sekundarschule/SE-Test-Daten-01/SE-Test-Daten-01.mdb
-    echo
-    echo -e -n "${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${WEISS}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!### ${NC}"
-    echo
-    echo
-    echo -e -n "${WEISS}####### ${TUERKIS}Anlegen DatenbankSchemata ${GELB}$i ${TUERKIS}von ${GELB}$ANZAHL ${TUERKIS}mit dem Namen: ${GELB}${DB_NAME} ${TUERKIS}im ${HELLGRAU}Docker-Container: ${GELB}$STACK ${WEISS}####### ${NC}"
-    echo
-    curl --user "root:${MARIADB_ROOT_PASSWORD}" \
-      -k --insecure \
-      -X "POST" "https://${SERVERNAME}:${SVWSPort}/api/schema/root/migrate/mdb/${DB_NAME}" \
-      -H "accept: application/json" \
-      -H "Content-Type: multipart/form-data" \
-      -F "database=@${DB_PATH}" \
-      -F "databasePassword=${MDB_PW}" \
-      -F "schemaUsername=${DB_USER}" \
-      -F "schemaUserPassword=${DB_MYSQL_PW}"
-    clear
-  fi
+#    DB_PATH=/$Pfad/SVWS-TestMDBs/Sekundarschule/SE-Test-Daten-01/SE-Test-Daten-01.mdb
+#    echo
+#    echo -e -n "${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${WEISS}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!###${HELLROT}###!?!?!ACHTUNG DAS DAUERT JETZT ETWAS!?!?!### ${NC}"
+#    echo
+#    echo
+#    echo -e -n "${WEISS}####### ${TUERKIS}Anlegen DatenbankSchemata ${GELB}$i ${TUERKIS}von ${GELB}$ANZAHL ${TUERKIS}mit dem Namen: ${GELB}${DB_NAME} ${TUERKIS}im ${HELLGRAU}Docker-Container: ${GELB}$STACK ${WEISS}####### ${NC}"
+#    echo
+#    curl --user "root:${MARIADB_ROOT_PASSWORD}" \
+#      -k --insecure \
+#      -X "POST" "https://${SERVERNAME}:${SVWSPort}/api/schema/root/migrate/mdb/${DB_NAME}" \
+#      -H "accept: application/json" \
+#      -H "Content-Type: multipart/form-data" \
+#      -F "database=@${DB_PATH}" \
+#      -F "databasePassword=${MDB_PW}" \
+#      -F "schemaUsername=${DB_USER}" \
+#      -F "schemaUserPassword=${DB_MYSQL_PW}"
+#    clear
+#  fi
  done
 ###################################################################################################################################################################
 ### ENDE der for schleife #########################################################################################################################################
