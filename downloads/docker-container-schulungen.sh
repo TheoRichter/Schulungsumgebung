@@ -62,7 +62,7 @@ while read ZEILE; do
 #
   mkdir $STACK
   cd $STACK
-  wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-compose.zip
+  wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/docker-compose.zip
   unzip docker-compose.zip
   rm docker-compose.zip 
 ##ls -l
