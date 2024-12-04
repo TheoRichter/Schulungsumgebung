@@ -166,7 +166,7 @@ Mit OK bestätigen.<br />
 ![docker_bash-docker-schulungen-sh-2](./grafics/docker_bash-docker-schulungen-sh-2.png)<br />
 Nach der Bestätigung mit OK müßte es jetzt so aussehen.<br />
 ![docker_bash-docker-schulungen-sh-3](./grafics/docker_bash-docker-schulungen-sh-3.png)<br />
-Inhalt der Datei: schulungen-erklaerungen.txt<br /> 
+Inhalt der Datei: schulungen-erklaerung.txt<br /> 
 ![schulungen-erklaerung](./grafics/schulungen-erklaerung.png)<br />
 
 Mit der Eingabe **docker start portainer** starten wir den Portainer.<br />
