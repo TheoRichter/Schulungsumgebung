@@ -111,13 +111,56 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **uf
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/ufw.sh_**<br />
 Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
+Bei der Eingabe von https://Die-IP-Addresse:8006 im Browser erschien diese Melung.<br />
+![sichereVerbindung](./grafics/sichereVerbindung.png)<br />
+Mit **certbot** wird diese Meldung verhindert.<br />
+Hier werden die drei Datein im Ordner **/etc/ngnix/sites-available/** und die Links im Ordner **/etc/nginx/sites-enabled/** angezeigt.<br />
+![certbot](./grafics/certbot.png)<br />
+Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br />
+**Bitte in der Spalte den Eintrag hinter server_name durch Ihre Subdomain Ersetzen.**<br />
+| docker.conf | guac.conf | pve.conf |
+| :---        | :---      | :---     |
+| server {    | server {  | server { |
+| server_name docker.subdomain.de; | server_name guac.subdomain.de; | server_name pve.subdomain.de; |
+| location / {  | location / {  | location / {  |
+| proxy_pass      https://10.1.0.3:9443; | proxy_pass      https://10.1.0.4:3000; | proxy_pass      https://10.1.0.2:8006; |
+| }    | }    | }    |
+|      |      |      |
+| proxy_set_header HOST $host; | proxy_set_header HOST $host;  | proxy_set_header HOST $host;  |
+| proxy_set_header X-REAL-IP $remote_addr; | proxy_set_header X-REAL-IP $remote_addr; | proxy_set_header X-REAL-IP $remote_addr; |
+| proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; | proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; | proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; |
+|       |       |       |
+| proxy_set_header Upgrade $http_upgrade; | proxy_set_header Upgrade $http_upgrade; | proxy_set_header Upgrade $http_upgrade; |
+| proxy_http_version 1.1; | proxy_http_version 1.1;  | proxy_http_version 1.1; |
+| proxy_set_header Connection "upgrade"; | proxy_set_header Connection "upgrade"; | proxy_set_header Connection "upgrade"; |
+|       |       |       |
+| listen 80; | listen 80; | listen 80; |
+| listen [::]:80; | listen [::]:80; | listen [::]:80;  |
+|     |     |     |
+| }   | }   | }   |
+
+Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
+![certbot_1](./grafics/certbot_email.png)<br />
+Nach der Eingabe der Email-Addresse drücken wir Enter.<br />
+![certbot_2](./grafics/certbot_email_Yes.png)<br />
+Nach der Eingabe von **Y** mit Enter bestätigen.<br />
+![certbot_3](./grafics/certbot_email_Yes_Yes.png)<br />
+Ich habe auch **Y** eingegeben und mit Enter bestätigen. (Es geht bestimmt auch **N** dann gibt es keine Mails!)<br />
+![certbot_4](./grafics/Certbot_HTTPS.png)<br />
+Hier stehen Ihr eingeben Subdomains.<br />
+![certbot_5](./grafics/certbot_https_successfully.png)<br />
+Bei der Eingabe von https://ihre-subdomain.de im Browser erschien die obige Melung jetzt nicht mehr.<br />
+Als Beispiel hier mal https://stratopve.webolchi.de<br />
 ## Installation von Docker
 ### Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
 ![docker-netwerk](./grafics/docker-netwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in das root Verzeichniss.<br />
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
-Bitte hier Klicken: [Einrichten und Anpassen von _Docker_ im LXC-Container](#einrichten-und-anpassen-von-docker-im-lxc-container-).<br />
+Mit der Eingabe auf der Konsole als root **docker start portainer** starten wir den Portainer.<br />
+Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
+Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
+Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
 ## Installation von Apache Guacamole
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
 ![guac-netzwerk](./grafics/guac-netzwerk.png)<br />
@@ -177,54 +220,6 @@ Download der Datei **_update.sh_**:<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/update.sh_**<br />
 in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/[crontab](./downloads/crontab_lxc)**<br />
 **1 1	* * *	root	/usr/local/sbin/update.sh**<br />
-## Einrichten und Anpassen von _Cerbot_ im LXC-Container <br />![ufw_logo](./grafics/ufw_logo.png)
-Bei der Eingabe von https://Die-IP-Addresse:8006 im Browser erschien diese Melung.<br />
-![sichereVerbindung](./grafics/sichereVerbindung.png)<br />
-Mit **certbot** wird diese Meldung verhindert.<br />
-Hier werden die drei Datein im Ordner **/etc/ngnix/sites-available/** und die Links im Ordner **/etc/nginx/sites-enabled/** angezeigt.<br />
-![certbot](./grafics/certbot.png)<br />
-Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.<br />
-**Bitte in der Spalte den Eintrag hinter server_name durch Ihre Subdomain Ersetzen.**<br />
-| docker.conf | guac.conf | pve.conf |
-| :---        | :---      | :---     |
-| server {    | server {  | server { |
-| server_name docker.subdomain.de; | server_name guac.subdomain.de; | server_name pve.subdomain.de; |
-| location / {  | location / {  | location / {  |
-| proxy_pass      https://10.1.0.3:9443; | proxy_pass      https://10.1.0.4:3000; | proxy_pass      https://10.1.0.2:8006; |
-| }    | }    | }    |
-|      |      |      |
-| proxy_set_header HOST $host; | proxy_set_header HOST $host;  | proxy_set_header HOST $host;  |
-| proxy_set_header X-REAL-IP $remote_addr; | proxy_set_header X-REAL-IP $remote_addr; | proxy_set_header X-REAL-IP $remote_addr; |
-| proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; | proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; | proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; |
-|       |       |       |
-| proxy_set_header Upgrade $http_upgrade; | proxy_set_header Upgrade $http_upgrade; | proxy_set_header Upgrade $http_upgrade; |
-| proxy_http_version 1.1; | proxy_http_version 1.1;  | proxy_http_version 1.1; |
-| proxy_set_header Connection "upgrade"; | proxy_set_header Connection "upgrade"; | proxy_set_header Connection "upgrade"; |
-|       |       |       |
-| listen 80; | listen 80; | listen 80; |
-| listen [::]:80; | listen [::]:80; | listen [::]:80;  |
-|     |     |     |
-| }   | }   | }   |
-
-Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.<br />
-![certbot_1](./grafics/certbot_email.png)<br />
-Nach der Eingabe der Email-Addresse drücken wir Enter.<br />
-![certbot_2](./grafics/certbot_email_Yes.png)<br />
-Nach der Eingabe von **Y** mit Enter bestätigen.<br />
-![certbot_3](./grafics/certbot_email_Yes_Yes.png)<br />
-Ich habe auch **Y** eingegeben und mit Enter bestätigen. (Es geht bestimmt auch **N** dann gibt es keine Mails!)<br />
-![certbot_4](./grafics/Certbot_HTTPS.png)<br />
-Hier stehen Ihr eingeben Subdomains.<br />
-![certbot_5](./grafics/certbot_https_successfully.png)<br />
-Bei der Eingabe von https://ihre-subdomain.de im Browser erschien die obige Melung jetzt nicht mehr.<br />
-Als Beispiel hier mal https://stratopve.webolchi.de<br />
-## Einrichten und Anpassen von _Docker_ im LXC-Container <br />![docker_logo](./grafics/docker_logo.png)
-Mit der Eingabe auf der Konsole als root **docker start portainer** starten wir den Portainer.<br />
-Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
-Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
-Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
-
-## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container <br />![guac_logo](./grafics/guac_logo.png)
 
 
 
