@@ -117,7 +117,7 @@ Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in das root Verzeichniss.<br />
 **Download:**<br />
 **_wget -q --show-progress https://github.com/TheoRichter/Schulungsumgebung/blob/main/downloads/docker-schulungen.sh_**<br />
-Bevor wir mit dem Aufruf **_bash docker-schulungen.sh_** mit der Installation beginnen  [Einrichten und Anpassen von _Docker_ im LXC-Container](#einrichten-und-anpassen-von-docker-im-lxc-container-) die .<br />
+Bitte hier Klicken: [Einrichten und Anpassen von _Docker_ im LXC-Container](#einrichten-und-anpassen-von-docker-im-lxc-container-).<br />
 ## Installation von Apache Guacamole
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
 ![guac-netzwerk](./grafics/guac-netzwerk.png)<br />
@@ -128,6 +128,7 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **gu
 Mit dem Aufruf **_bash guac_debian11_install_upgrade_debian12.sh_** beginnt die Installation.<br />
 BITTE nach dem Neustart den Status des Tomcat9 mit **_systemctl status tomcat9 --no-pager_**<br />
 und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_** Überprüfen.<br />
+Bitte hier Klicken: [Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container](#einrichten-und-anpassen-von-apache-guacamole-im-lxc-container-).<br />
 ## Vorbereitung der Installation von Windows 11
 Um Windows 11 zu installieren müssen wir die drei ISOs hier Speichern:<br />
 ![ISOs](./grafics/ISOs.png)<br />
@@ -221,6 +222,7 @@ Als Beispiel hier mal https://stratopve.webolchi.de<br />
 Mit der Eingabe auf der Konsole als root **docker start portainer** starten wir den Portainer.<br />
 Die Benutzeroberfläche von Portainer erreicht man jetzt über folgende Url: **docker.subdomain.de**<br />
 Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
+Mit **_bash docker-schulungen.sh_** beginnt die Installation <br />
 
 ## Einrichten und Anpassen von _Apache Guacamole_ im LXC-Container <br />![guac_logo](./grafics/guac_logo.png)
 
