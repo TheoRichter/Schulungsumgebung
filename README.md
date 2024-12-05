@@ -178,7 +178,7 @@ Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
 ![portainer-3](./grafics/portainer-3.png)<br />
 Um die SVWS-Server zu nutzen müssen wir die Container starten.
 ![portainer-4](./grafics/portainer-4.png)<br />
-_SVWS-Server updaten_
+_SVWS-Server updaten_<br />
 **docker-compose.yml:**<br />
 
 version: "3.9"<br />
