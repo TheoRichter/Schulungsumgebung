@@ -186,7 +186,7 @@ docker pull svwsnrw/svws-server<br />
 version: "3.9"<br />
 services:<br />
   svws-server:<br />
-    image: svwsnrw/svws-server:**<version>**<br />
+    image: svwsnrw/svws-server:**[version]**<br />
     ports:<br />
       - "10001:8443"<br />
     environment:<br />
