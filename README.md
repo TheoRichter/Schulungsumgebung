@@ -219,6 +219,7 @@ Die Benutzeroberfläche von von Apache Guacamole ist (wenn mit Certbot aktiviert
 ![guac-4_1](./grafics/guac-4_1.png)<br />
 ![guac-4_2](./grafics/guac-4_2.png)<br />
 ![guac-4_3](./grafics/guac-4_3.png)<br />
+![guac-4_4](./grafics/guac-4_4.png)<br />
 ## Vorbereitung der Installation von Windows 11
 Um Windows 11 zu installieren müssen wir die drei ISOs hier Speichern:<br />
 ![ISOs](./grafics/ISOs.png)<br />
