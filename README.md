@@ -111,7 +111,7 @@ Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **uf
 **Download:**<br />
 **_wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/ufw.sh_**<br />
 Mit dem Aufruf **_bash ufw.sh_** beginnt die Installation.<br />
-Bei der Eingabe von https://Die-IP-Addresse:8006 im Browser erschien diese Melung.<br />
+Bei der Eingabe von https://Die-IP-Addresse:8006 im Browser erscheint diese Melung.<br />
 ![sichereVerbindung](./grafics/sichereVerbindung.png)<br />
 Mit **certbot** wird diese Meldung verhindert.<br />
 Hier werden die drei Datein im Ordner **/etc/ngnix/sites-available/** und die Links im Ordner **/etc/nginx/sites-enabled/** angezeigt.<br />
