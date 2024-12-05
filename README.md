@@ -215,12 +215,12 @@ und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_**
 Um Windows 11 zu installieren müssen wir die drei ISOs hier Speichern:<br />
 ![ISOs](./grafics/ISOs.png)<br />
 <br />
-_Download-Adressen Windows 11:_ https://www.microsoft.com/de-de/software-download/windows11<br />
+_Download-Adresse Windows 11:_ https://www.microsoft.com/de-de/software-download/windows11<br />
 ![Windows11Download](./grafics/Windows11Download.png)<br />
 <br />
-_unattend.iso:_ https://schneegans.de/windows/unattend-generator/<br />
+_Download-Adresse unattend.iso:_ https://schneegans.de/windows/unattend-generator/<br />
 <br />
-_virtio-win-0.1.240.iso:_ https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.240-1/virtio-win-0.1.240.iso<br />
+_Download-Adresse virtio-win-0.1.240.iso:_ https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.240-1/virtio-win-0.1.240.iso<br />
 ## Installation von Windows 11
 Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.<br />
 **Die Angaben für VM ID: und Name: bitte Anpassen.**<br />
