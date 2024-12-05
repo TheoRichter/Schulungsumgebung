@@ -199,7 +199,7 @@ services:<br />
       SVWS_TLS_KEYSTORE_PATH: "${SVWS_TLS_KEYSTORE_PATH}"<br />
       SVWS_TLS_KEYSTORE_PASSWORD: "${SVWS_TLS_KEYSTORE_PASSWORD}"<br />
     volumes:<br />
-      - <path to keystore>:/etc/app/svws/conf/keystore<br />
+      - [path to keystore]:/etc/app/svws/conf/keystore<br />
 
 ## Installation von Apache Guacamole
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
