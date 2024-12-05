@@ -213,6 +213,12 @@ BITTE nach dem Neustart den Status des Tomcat9 mit **_systemctl status tomcat9 -
 und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_** Überprüfen.<br />
 Die Benutzeroberfläche von von Apache Guacamole ist (wenn mit Certbot aktiviert) über folgende Url: **guac.subdomain.de** erreichbar.<br />
 ![guac-login](./grafics/guac-login.png)<br />
+![guac-1](./grafics/guac-1.png)<br />
+![guac-2](./grafics/guac-2.png)<br />
+![guac-3](./grafics/guac-3.png)<br />
+![guac-4_1](./grafics/guac-4_1.png)<br />
+![guac-4_2](./grafics/guac-4_2.png)<br />
+![guac-4_3](./grafics/guac-4_3.png)<br />
 ## Vorbereitung der Installation von Windows 11
 Um Windows 11 zu installieren müssen wir die drei ISOs hier Speichern:<br />
 ![ISOs](./grafics/ISOs.png)<br />
