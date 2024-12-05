@@ -182,8 +182,8 @@ Um die SVWS-Server zu nutzen müssen wir die Container starten.
 docker pull svwsnrw/svws-server<br />
 <br />
 **docker-compose.yml:**<br />
-version: "3.9"<br />
 <br />
+version: "3.9"<br />
 services:<br />
   svws-server:<br />
     image: svwsnrw/svws-server:**<version>**<br />
