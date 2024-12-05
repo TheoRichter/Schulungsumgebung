@@ -171,7 +171,7 @@ Inhalt der Datei: schulungen-erklaerung.txt<br />
 Nach der Anpassung der Datei **schulungen.txt** geben wir **_bash docker-container-schulungen.sh_** um mit der Installation fortzufahren.<br />
 ![docker_bash-docker-schulungen-sh-4](./grafics/docker_bash-docker-schulungen-sh-4.png)<br />
 Mit der Eingabe **docker start portainer** starten wir den Portainer.<br />
-Die Benutzeroberfläche von Portainer erreicht man wenn mit Certbot aktiviert über folgende Url: **docker.subdomain.de**<br />
+Die Benutzeroberfläche von dem Portainer ist (wenn mit Certbot aktiviert) über folgende Url: **docker.subdomain.de** erreichbar.<br />
 Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
 ![portainer-1](./grafics/portainer-1.png)<br />
 ![portainer-2](./grafics/portainer-2.png)<br />
