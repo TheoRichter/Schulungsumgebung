@@ -180,7 +180,7 @@ Um die SVWS-Server zu nutzen müssen wir die Container starten.
 ![portainer-4](./grafics/portainer-4.png)<br />
 ## SVWS-Server updaten
 **docker-compose.yml:**<br />
-<br />
+
 version: "3.9"<br />
 services:<br />
   svws-server:<br />
