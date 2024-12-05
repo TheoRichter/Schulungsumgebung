@@ -24,12 +24,12 @@ Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietser
 Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Adresse_** am Server an.<br /> 
 Aktualisieren und Installieren des Debian 12 mit der Eingabe.<br />
 **_apt update && apt upgrade -y && apt autoremove -y && apt install -y mc_**
-## Anpassen der Datei /etc/hosts und der Datei /etc/hostname (bei HETZNER)
+_Anpassen der Datei /etc/hosts und der Datei /etc/hostname (bei HETZNER)_<br />
 Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
 **Die-IP-Adresse Debian-bookworm-latest-amd64-base** in **Die-IP-Adresse pve.deine-domain pve**<br />
 und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
 Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**<br />
-## Anpassen der Datei /etc/hosts und der Datei /etc/hostname (bei STRATO)
+_Anpassen der Datei /etc/hosts und der Datei /etc/hostname (bei STRATO)_<br />
 Mit **_mcedit /etc/hosts_** ändern wir die Eintragung<br />
 **127.0.1.1 h3014859.stratoserver.net h3014859** in **Die-IP-Adresse pve.deine-domain pve**<br />
 und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**<br />
@@ -50,8 +50,8 @@ Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_nachher](./grafics/interfaces_nachher.png)<br />
 **ENDE: Änderungen für den STRATO-Server**<br />
-### Jetzt starten wir des System mit der Eingabe _systemctl reboot_ neu.<br />
-## SSH-Dienst absichern
+**Jetzt starten wir des System mit der Eingabe _systemctl reboot_ neu.**<br />
+_SSH-Dienst absichern_<br />
 Jetz legen wir mit **_useradd -m {Benutzername}_** einen neuen Benutzer an, und mit **_passwd {Benutzername}_** erstellen wir das Passwort.<br />
 Sicherungskopie der Originalen sshd_config Datei erstellen **_cp /etc/ssh/{sshd_config,sshd_config.orig}_**<br />
 Um nur ausgewählten Benutzern den Zugung über den SSH-Dienst zu erlauben, erstellen wir mit groupadd sshgroup_** die neue Gruppe mit Namen sshgroup.<br />
@@ -65,7 +65,7 @@ Download der neuen SSH-Serverkonfiguration: sshd_config<br />
 Nach dem Download überschreiben wir den alten Inhalt der Datei im Verzeichniss /etc/ssh/sshd_config.<br />
 SSH-Dienst restarten: **_systemctl restart ssh_**<br />
 Status SSH-Dienst überpüfen: **_systemctl status --lines=20 ssh_**
-## Vorbereitung der Proxmox Installation.
+_Vorbereitung der Proxmox Installation._<br />
 Um Proxmox zu installieren benötigen wir noch einige Programme: **_apt install -y curl htop lsof ethtool ifupdown2_**<br />
 Jetzt Booten wir unseren Server neu mit **_systemctl reboot_**<br />
 In die Datei /etc/apt/sources.list den Eintrag<br />
@@ -82,17 +82,17 @@ Installation des Proxmox VE Kernels mit dem Befehl **_apt install -y proxmox-def
 Neustarten des Rechners mit **_systemctl reboot_**<br />
 Installation des Proxmox VE Pakete mit dem Befehl **_apt install -y proxmox-ve postfix open-iscsi chrony_**<br />
 Entfernen des Debian-Kernels mit dem Befehl ___apt remove linux-image-amd64 'linux-image-6.1*'___<br />
-## Anmeldung bei der Proxmox VE
+_Anmeldung bei der Proxmox VE_<br />
 Auf unserem Windows PC öffnen wir einen Browser und geben die IP-Adresse unserer Proxmox VE ein.<br />
 https://Die-IP-Addresse:8006<br />
 Wenn alles geklappt erscheint diese Bildschirmausgabe.<br />
 ![ProxmoxVElogin](./grafics/ProxmoxVElogin.png)<br />
-## Hier die Eingabe Daten der ersten Anmeldung
+_Hier die Eingabe Daten der ersten Anmeldung_<br>
 ![ProxmoxErsteAnmeldung](./grafics/ersteAnmeldung.png)<br />
-## Netzwerkeinstellungen
+_Netzwerkeinstellungen_<br />
 Erstellen der Linux Bridge vmbr0 mit der IP 10.1.0.2/24 und der Linux Bridge vmbr1 mit der IP 10.0.0.0/31<br />
 ![LinuxBridge](./grafics/LinuxBridge.png)<br>
-#### Ergänzungen in der in der Datei /etc/network/interfaces <br />
+_Ergänzungen in der in der Datei /etc/network/interfaces_<br />
 Eintragungen **HETZNER /etc/network/interfaces VORHER**<br />
 ![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)<br />
 Eintragungen **STRATO /etc/network/interfaces VORHER**<br />
@@ -101,11 +101,11 @@ Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untens
 Eintragungen **/etc/network/interfaces NACHHER**<br />
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**<br />
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)<br />
-## Vorbereitung der Installation von LXC-Containern
+_Vorbereitung der Installation von LXC-Containern_
 Um LXC-Container zu Erstellen müssen wir die zwei Templates hier Speichern:<br />
 ![Templates](./grafics/Templates.png)<br />
 ## Installation der UFW mit Certbot (Reverse-Proxy)
-### Neuen LXC-Container mit 1CPU, 512KiB RAM und 2GB Festplattenspeicher benötigt.
+_Neuen LXC-Container mit 1CPU, 512KiB RAM und 2GB Festplattenspeicher benötigt._<br />
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **ufw.sh** in das root Verzeichniss.<br />
 **Download:**<br />
@@ -151,8 +151,8 @@ Hier stehen Ihr eingeben Subdomains.<br />
 ![certbot_5](./grafics/certbot_https_successfully.png)<br />
 Bei der Eingabe von https://ihre-subdomain.de im Browser erschien die obige Melung jetzt nicht mehr.<br />
 Als Beispiel hier mal https://stratopve.webolchi.de<br />
-## Installation von Docker
-### Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt.
+_Installation von Docker_<br />
+_Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt._<br />
 ![docker-netwerk](./grafics/docker-netwerk.png)<br />
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in das root Verzeichniss.<br />
 ![docker_login](./grafics/docker_login.png)<br />
@@ -178,7 +178,7 @@ Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
 ![portainer-3](./grafics/portainer-3.png)<br />
 Um die SVWS-Server zu nutzen müssen wir die Container starten.
 ![portainer-4](./grafics/portainer-4.png)<br />
-## SVWS-Server updaten
+_SVWS-Server updaten_
 **docker-compose.yml:**<br />
 
 version: "3.9"<br />
@@ -201,9 +201,9 @@ services:<br />
 Aktualisieren mit **_docker pull svwsnrw/svws-server_** in dem jeweiligen Verzeichniss.<br />
 
 ## Installation von Apache Guacamole
-### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
+_Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer._<br />
 ![guac-netzwerk](./grafics/guac-netzwerk.png)<br />
-### !!!Installierbar leider nur mit Template debian-11-standard_11.7-1_amd64.tar.zst!!!
+_!!!Installierbar leider nur mit Template debian-11-standard_11.7-1_amd64.tar.zst!!!_
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **guac_debian11_install_upgrade_debian12.sh** in das root Verzeichniss.<br />
 **Download:**<br />
 **_wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/guac_debian11_install_upgrade_debian12.sh_**<br />
@@ -213,13 +213,13 @@ und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_**
 ## Vorbereitung der Installation von Windows 11
 Um Windows 11 zu installieren müssen wir die drei ISOs hier Speichern:<br />
 ![ISOs](./grafics/ISOs.png)<br />
-## Download-Adressen
-### Windows 11
+_Download-Adressen_
+_Windows 11_
 https://www.microsoft.com/de-de/software-download/windows11<br />
 ![Windows11Download](./grafics/Windows11Download.png)<br />
-### unattend.iso
+_unattend.iso_
 https://schneegans.de/windows/unattend-generator/<br />
-### virtio-win-0.1.240.iso
+_virtio-win-0.1.240.iso_
 https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.240-1/virtio-win-0.1.240.iso<br />
 ## Installation von Windows 11
 Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.<br />
