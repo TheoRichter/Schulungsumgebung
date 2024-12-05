@@ -178,6 +178,27 @@ Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.<br>
 ![portainer-3](./grafics/portainer-3.png)<br />
 Um die SVWS-Server zu nutzen müssen wir die Container starten.
 ![portainer-4](./grafics/portainer-4.png)<br />
+## SVWS-Server updaten
+docker pull svwsnrw/svws-server<br />
+**docker-compose.yml:**<br />
+version: "3"<br />
+services:<br />
+  svws-server:<br />
+    image: svwsnrw/svws-server:<version><br />
+    ports:<br />
+      - "10001:8443"<br />
+    environment:<br />
+      MariaDB_HOST: "${MariaDB_HOST}"<br />
+      MariaDB_ROOT_PASSWORD: "${MariaDB_ROOT_PASSWORD}"<br />
+      MariaDB_DATABASE: "${MariaDB_DATABASE}"<br />
+      MariaDB_USER: "${MariaDB_USER}"<br />
+      MariaDB_PASSWORD: "${MariaDB_PASSWORD}"<br />
+      SVWS_TLS_KEY_ALIAS: "${SVWS_TLS_KEY_ALIAS}"<br />
+      SVWS_TLS_KEYSTORE_PATH: "${SVWS_TLS_KEYSTORE_PATH}"<br />
+      SVWS_TLS_KEYSTORE_PASSWORD: "${SVWS_TLS_KEYSTORE_PASSWORD}"<br />
+    volumes:<br />
+      - <path to keystore>:/etc/app/svws/conf/keystore<br />
+
 ## Installation von Apache Guacamole
 ### Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer.
 ![guac-netzwerk](./grafics/guac-netzwerk.png)<br />
