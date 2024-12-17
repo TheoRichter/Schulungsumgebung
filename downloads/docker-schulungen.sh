@@ -49,14 +49,10 @@ case $CHOICE in
             echo
             ;;
         2)
-            wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/schulungen.txt
-            wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/schulungen-erklaerung.txt
+            wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/schulungen-erstellen.sh
             wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/docker-container-schulungen.sh
             wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/docker-schemata.sh
-            echo
-            echo -e -n "${HELLBLAU}Download der ${WEISS}schulungen-erklaerung.txt ${HELLBLAU}zur Erklaerung der ${WEISS}schulungen.txt und zur Anpassung an das Schulungssystem ${NC}"
-            echo
-            echo -e -n "${HELLGRUEN}Nach der Anpassung ${HELLROT}bash docker-container-schulungen.sh ${HELLGRUEN} Eingeben um mit der Installation fortzufahren. ${NC}" 
+            bash docker-container-schulungen.sh 
             echo
             ;;
 esac
