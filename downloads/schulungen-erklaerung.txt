@@ -1,5 +1,0 @@
-   1 :    2      :        3        :       4          :     5         :      6       :       7       :    8   :          9          :     10    :     11   : 12
-STACK:MariaDBPort:WebserverPortHTTP:WebserverPortHTTPS:  WebserverName:PHPmyAdminPort: PHPmyAdminName:SVWSPort:MariaDB_ROOT_PASSWORD:SVWSVersion:SERVERNAME:Pfad
- pc-1:       3001:             8001:              8101: pc-1-WebServer:          9001:pc-1-PHPmyAdmin:   10001:                 root:      1.0.1:  10.1.0.3:netzlaufwerk
- pc-2:       3002:             8002:              8102: pc-2-WebServer:          9002:pc-2-PHPmyAdmin:   10002:                 root:      1.0.1:  10.1.0.3:netzlaufwerk
-### BITTE NICHT LOESCHEN !!!!
