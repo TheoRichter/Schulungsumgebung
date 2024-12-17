@@ -50,9 +50,6 @@ echo
 echo -e -n "${TUERKIS}Einstellen des Deutschen Tastaurlayout. ${NC}"
 echo
 sleep 1
-##############################
-###apt install task-german -y#
-##############################
 dpkg-reconfigure locales
 wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/ssh.zip
 unzip ssh.zip
@@ -66,16 +63,9 @@ echo -e -n "${TUERKIS}Installation des SAMBA-SERVERS erstellen ${NC}"
 echo
 sleep 2
 mkdir /netzlaufwerk/
-###mkdir /netzlaufwerk/Programme
 git clone https://github.com/SVWS-NRW/SVWS-TestMDBs /netzlaufwerk/SVWS-TestMDBs/
-###cd /netzlaufwerk
-###wget -q --show-progress https:/raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/SVWS-TestDBs.zip
-###unzip SVWS-TestDBs.zip
-###rm SVWS-TestDBs.zip
-###ls -a -l
 cd /$Pfad
 ls -a -l
-###exit N
 tee -a /etc/samba/smb.conf <<EOF
 
 [netzlaufwerk]
@@ -92,9 +82,6 @@ echo
 echo -e -n "${TUERKIS} Ausgabe des Samba-Server Status  ${NC}"
 echo
 systemctl status smbd.service --no-pager
-###wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/Admin.zip
-###unzip Admin.zip
-###mv Admin /netzlaufwerk/Programme
 chmod -R 777 /netzlaufwerk/
 #
 echo
