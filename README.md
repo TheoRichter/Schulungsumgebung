@@ -1,87 +1,112 @@
 # Aufgabenstellung
-Erstellen einer  Online Schulungsmöglichkeit bestehend aus Windows und Linux Betriebs-Systemen.
+Die 2024 vorgestellte Schulverwaltungssoftware des Landes Nordrhein-Westfalen besteht aus einem SVWS-Server, der wiederum auf eine MariaDB-Datenbank zugreift sowie aus der Software SchILD-NRW.
+Im Rahmen einer Online-Schulung braucht man eine Möglichkeit, viele Rechner mit den dazugehörigen Datenbankservern bereit zu stellen.
+
+Die Lösungs besteht darin, sich einen Server zu mieten und darauf die Virtualisierungsumgebung Proxmox zu installiern.
+
 # Lösungsansatz
 ![PROXMOX](./grafics/proxmox_logo.png)
 <!-- ![PROXMOX](https://www.proxmox.com/images/proxmox/Proxmox_logo_standard_hex_200px.png) -->
 
 **Firmeninformation**   
-**Firma:** Proxmox Server Solutions GmbH   
-**Adresse:** Bräuhausgasse 37, 1050 Vienna, Austria   
+| **Firma:** | Proxmox Server Solutions GmbH |
+|-----|-----|
+|**Adresse:** | Bräuhausgasse 37, 1050 Vienna, Austria|
+| E-Mail: |office@proxmox.com|
+| URL | https://www.proxmox.com|
+| **Firmenbuchnummer:**   | FN 258879f|
+|**Firmenbuchgericht:** | Handelsgericht Wien|
+|**Geschäftsführer:** | Martin Maurer, Tim Marx|
+|UID-Nr.: |ATU 61587900|
 
-E-Mail: office@proxmox.com
-
-https://www.proxmox.com
-
-**Firmenbuchnummer:** FN 258879f   
-**Firmenbuchgericht:** Handelsgericht Wien  
-**Geschäftsführer:** Martin Maurer, Tim Marx   
-
-UID-Nr.: ATU 61587900
 # Ausblick
+
 ![Ausblick](./grafics/Ausblick.png)
+
 # PROXMOX auf einem Internet-Server installieren.
-Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab.   
-Nach der Installation melden wir uns per Textconsole mit der Eingabe **_ssh root@Die-IP-Adresse_** am Server an.   
-Aktualisieren und Installieren des Debian 12 mit der Eingabe.  
+Die jeweilge intallation des Linux: Debian 12 "brookworm" hängt von dem Mietserver-Betreiber ab. 
+Nach der Installation melden wir uns per Textconsole mit der Eingabe `ssh root@Die-IP-Adresse` am Server an.   
+Aktualisieren und Installieren des Debian 12 geschieht mit der Eingabe  
 
 	apt update && apt upgrade -y && apt autoremove -y && apt install -y mc
 
 _Anpassen der Datei /etc/hosts und der Datei /etc/hostname (bei HETZNER)_  
-Mit **_mcedit /etc/hosts_** ändern wir die Eintragung  
+Mit `mcedit /etc/hosts` ändern wir die Eintragung  
 **Die-IP-Adresse Debian-bookworm-latest-amd64-base** in **Die-IP-Adresse pve.deine-domain pve**  
-und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**  
-Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**  
+und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdomain localhost**  
+Mit `mcedit /etc/hostname` ändern wir die Eintragung **Debian-bookworm-latest-amd64-base** in **pve**  
 _Anpassen der Datei /etc/hosts und der Datei /etc/hostname (bei STRATO)_  
-Mit **_mcedit /etc/hosts_** ändern wir die Eintragung  
+Mit `mcedit /etc/hosts` ändern wir die Eintragung  
 **127.0.1.1 h3014859.stratoserver.net h3014859** in **Die-IP-Adresse pve.deine-domain pve**  
 und ändern die Zeile **127.0.0.1 localhost** in **127.0.0.1 localhost.localdoain localhost**  
-Mit **_mcedit /etc/hostname_** ändern wir die Eintragung **h3014859.stratoserver.net h3014859** in **pve**  
+Mit `mcedit /etc/hostname` ändern wir die Eintragung **h3014859.stratoserver.net h3014859** in **pve**  
+
 # !!! ACHTUNG nur bei einem STRATO-Server !!!
 **ANFANG: Änderungen für den STRATO-Server**   
 Um Proxmox installieren zukönnen müßen wir Änderungen in **/etc/networks/interfaces** vornehmen.  
-Mit dem Befehl **_ip a_** finden wir die Netzwerkeinstellungen:  
+Mit dem Befehl `ip a` finden wir die Netzwerkeinstellungen:  
 ![ip-a](./grafics/ip-a.png)  
 Unsere Netzwerkschnittstelle heißt **eno1** die IP-Addresse ist: **xxx.xxx.xxx.xxx** mit der Subnetmaske: **255.255.255.255** oder **/32**.  
-Mit dem Befehl **_ip r_** ermitteln wir den gateway.  
+Mit dem Befehl `ip r` ermitteln wir den gateway.  
 ![iproute](./grafics/iproute.png)  
 Unser Gateway wird angezeigt  
-Eintragungen ** /etc/network/interfaces VORHER**  
+Eintragungen **/etc/network/interfaces VORHER**  
 ![interfaces_vorher](./grafics/interfaces_vorher.png)  
-Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untenstehend ab.  
+Mit `mcedit /etc/network/interfaces` ändern wir die Eintragungen wie untenstehend ab.  
 Eintragungen **/etc/network/interfaces NACHHER**  
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**  
 ![interfaces_nachher](./grafics/interfaces_nachher.png)  
 **ENDE: Änderungen für den STRATO-Server**  
-**Jetzt starten wir des System mit der Eingabe _systemctl reboot_ neu.**  
+
+**Jetzt starten wir des System mit der Eingabe `systemctl reboot` neu.**  
 _SSH-Dienst absichern_  
-Jetz legen wir mit **_useradd -m {Benutzername}_** einen neuen Benutzer an, und mit **_passwd {Benutzername}_** erstellen wir das Passwort.  
-Sicherungskopie der Originalen sshd_config Datei erstellen **_cp /etc/ssh/{sshd_config,sshd_config.orig}_**  
-Um nur ausgewählten Benutzern den Zugung über den SSH-Dienst zu erlauben, erstellen wir mit groupadd sshgroup_** die neue Gruppe mit Namen sshgroup.  
-Mit der Eingabe (_Bitte nicht Kopieren!!_) **_usermod –a -G sshgroup {Benutzername}_** weisen wir den Benutzer der **sshgroup** zu.  
-Löschen der vom System automatisch erstellte SSH-Key mit Befehl **_rm /etc/ssh/ssh_host_***  
+Jetz legen wir mit `useradd -m {Benutzername}` einen neuen Benutzer an, und mit `passwd {Benutzername}` erstellen wir das Passwort.
+
+Sicherungskopie der Originalen sshd_config Datei erstellen `cp /etc/ssh/{sshd_config,sshd_config.orig}`
+
+Um nur ausgewählten Benutzern den Zugung über den SSH-Dienst zu erlauben, erstellen wir mit `groupadd sshgroup` die neue Gruppe mit Namen sshgroup.  
+Mit der Eingabe (_Bitte nicht Kopieren!!_) `usermod –a -G sshgroup {Benutzername}` weisen wir den Benutzer der **sshgroup** zu.  
+Löschen der vom System automatisch erstellte SSH-Key mit Befehl `rm /etc/ssh/ssh_host`
+
 SSH-Key ed25519 erstellen 
 
-	sh-keygen -o -a 9999 -t ed25519 -N "" -f /etc/ssh/ssh_host_ed25519_key -C "$(whoami)@$(hostname)-$(date -I)"
+    sh-keygen -o -a 9999 -t ed25519 -N "" -f /etc/ssh/ssh_host_ed25519_key -C "$(whoami)@$(hostname)-$(date -I)"
   
-SSH-Key rsa erstellen **_ssh-keygen -o -a 9999 -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key -C "$(whoami)@$(hostname)-$(date -I)"_**  
+SSH-Key rsa erstellen 
+
+    ssh-keygen -o -a 9999 -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key -C "$(whoami)@$(hostname)-$(date -I)"
+
 Download der neuen SSH-Serverkonfiguration: sshd_config  
-**_wget https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/sshd_config_**  
-**_mv sshd_config /etc/ssh/_**  
+
+    wget https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/sshd_config
+
+    mv sshd_config /etc/ssh/
+
 Nach dem Download überschreiben wir den alten Inhalt der Datei im Verzeichniss /etc/ssh/sshd_config.  
-SSH-Dienst restarten: **_systemctl restart ssh_**  
-Status SSH-Dienst überpüfen: **_systemctl status --lines=20 ssh_**
+SSH-Dienst restarten: `systemctl restart ssh`
+
+Status SSH-Dienst überpüfen: `systemctl status --lines=20 ssh`
+
 _Vorbereitung der Proxmox Installation._  
-Um Proxmox zu installieren benötigen wir noch einige Programme: **_apt install -y curl htop lsof ethtool ifupdown2_**  
-Jetzt Booten wir unseren Server neu mit **_systemctl reboot_**  
+Um Proxmox zu installieren benötigen wir noch einige Programme: `apt install -y curl htop lsof ethtool ifupdown2`
+
+Jetzt Booten wir unseren Server neu mit `systemctl reboot`
+
 In die Datei /etc/apt/sources.list den Eintrag  
-**_echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bookworm pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list_**  
+
+    echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bookworm pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
+
 für das Proxmox VE-Repository hinzufügen.  
 Mit dem Befehl  
-**_wget https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg_**  
+
+    wget https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg
+
 wird der Proxmox VE-Repository-Schlüssel hinzugefügt. Bitte den Befehl als root (oder als sudo) ausführen.  
-verifizieren **_sha512sum /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg_**  
+verifizieren `sha512sum /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg`
+
 Die Ausgabe müsste genau so aussehen:  
-**_7da6fe34168adc6e479327ba517796d4702fa2f8b4f0a9833f5ea6e6b48f6507a6da403a274fe201595edc86a84463d50383d07f64bdde2e3658108db7d6dc87 /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg_**  
+> 7da6fe34168adc6e479327ba517796d4702fa2f8b4f0a9833f5ea6e6b48f6507a6da403a274fe201595edc86a84463d50383d07f64bdde2e3658108db7d6dc87 /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg  
+
 Jetzt aktualisieren wir das Sytem mit der Eingabe **_apt update && apt full-upgrade -y_**  
 Installation des Proxmox VE Kernels mit dem Befehl **_apt install -y proxmox-default-kernel_**  
 Neustarten des Rechners mit **_systemctl reboot_**  
