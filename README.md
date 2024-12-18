@@ -214,123 +214,189 @@ Folgende Bridges werden eingerichtet:
 | vmbr1 | 10.0.0.0/31 | Netz nach außen und zur Firewall|
 
 ![LinuxBridge](./grafics/LinuxBridge.png)  
-_Ergänzungen in der in der Datei /etc/network/interfaces_  
+
+#### Ergänzungen in der in der Datei _/etc/network/interfaces_
+
 Eintragungen **HETZNER /etc/network/interfaces VORHER**  
 ![interfaces_vmbrs](./grafics/interfaces_hetzner_vmbrs.png)  
 Eintragungen **STRATO /etc/network/interfaces VORHER**  
 ![stratopve_interfaces_vorher](./grafics/stratopve_interfaces_vorher.png)  
-Mit **_mcedit /etc/network/interfaces_** ändern wir die Eintragungen wie untenstehend ab.  
+Mit 'mcedit /etc/network/interfaces' ändern wir die Eintragungen wie untenstehend ab.  
 Eintragungen **/etc/network/interfaces NACHHER**  
 **_!!!BITTE DIE NETZWERK-ANGABEN DEM ENTSPRECHEND ANPASSEN!!!!_**  
 ![interfaces_fertig](./grafics/interfaces_hetzner_fertig.png)  
-_Vorbereitung der Installation von LXC-Containern_
-Um LXC-Container zu Erstellen müssen wir die zwei Templates hier Speichern:  
+
+#### Vorbereitung der Installation von LXC-Containern
+
+Um LXC-Container zu erstellen, müssen wir die zwei Templates hier speichern:  
 ![Templates](./grafics/Templates.png)
 
 ## Installation der UFW mit Certbot (Reverse-Proxy)
 
-_Neuen LXC-Container mit 1CPU, 512KiB RAM und 2GB Festplattenspeicher benötigt._  
+Für die Firewall ufw (uncomplicated firewall) zu installieren, erstellt man einen LXC-Container mit 1 CPU, 512 KiB RAM und 2 GB Festplattenspeicher.
+
 ![ufw-netzwerk](./grafics/ufw-netzwerk.png)  
-Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **ufw.sh** in das root Verzeichniss.  
-**Download:**  
+
+Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: _ufw.sh_ in das root Verzeichniss.  
 
     wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/ufw.sh
 
 Mit dem Aufruf `bash ufw.sh` beginnt die Installation.  
 Bei der Eingabe von <https://Die-IP-Addresse:8006> im Browser erscheint diese Melung.  
 ![sichereVerbindung](./grafics/sichereVerbindung.png)  
-Mit **certbot** wird diese Meldung verhindert.  
-Hier werden die drei Datein im Ordner **/etc/ngnix/sites-available/** und die Links im Ordner **/etc/nginx/sites-enabled/** angezeigt.  
+
+Mit der Software _certbot_ wird diese Meldung verhindert.  
+Hier werden die drei Datein im Ordner _/etc/ngnix/sites-available/_ und die Links im Ordner _/etc/nginx/sites-enabled/_ angezeigt.  
+
 ![certbot](./grafics/certbot.png)  
-Im Ordner **/etc/ngnix/sites-available/** befinden sich diese drei Dateien.  
+
+Im Ordner _/etc/ngnix/sites-available/_ befinden sich diese drei Dateien.  
 **Bitte in der Spalte den Eintrag hinter server_name durch Ihre Subdomain Ersetzen.**  
 
-| docker.conf | guac.conf | pve.conf |
-| :---        | :---      | :---     |
-| server {    | server {  | server { |
-| server_name docker.subdomain.de; | server_name guac.subdomain.de; | server_name pve.subdomain.de; |
-| location / {  | location / {  | location / {  |
-| proxy_pass      <https://10.1.0.3:9443>; | proxy_pass      <https://10.1.0.4:3000>; | proxy_pass      <https://10.1.0.2:8006>; |
-| }    | }    | }    |
-|      |      |      |
-| proxy_set_header HOST $host; | proxy_set_header HOST $host;  | proxy_set_header HOST $host;  |
-| proxy_set_header X-REAL-IP $remote_addr; | proxy_set_header X-REAL-IP $remote_addr; | proxy_set_header X-REAL-IP $remote_addr; |
-| proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; | proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; | proxy_set_header X-Forward-For $proxy_add_x_forwarded_for; |
-|       |       |       |
-| proxy_set_header Upgrade $http_upgrade; | proxy_set_header Upgrade $http_upgrade; | proxy_set_header Upgrade $http_upgrade; |
-| proxy_http_version 1.1; | proxy_http_version 1.1;  | proxy_http_version 1.1; |
-| proxy_set_header Connection "upgrade"; | proxy_set_header Connection "upgrade"; | proxy_set_header Connection "upgrade"; |
-|       |       |       |
-| listen 80; | listen 80; | listen 80; |
-| listen [::]:80; | listen [::]:80; | listen [::]:80;  |
-|     |     |     |
-| }   | }   | }   |
+1. docker.conf
 
-Mit der Eingabe **_certbot_** startet die Installation des Reverse-Proxies.  
-![certbot_1](./grafics/certbot_email.png)  
+        server {  
+          server_name docker.subdomain.de;
+          location / {
+            proxy_pass      <https://10.1.0.3:9443>;
+          } 
+
+        proxy_set_header HOST $host;
+        proxy_set_header X-REAL-IP $remote_addr;
+        proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "upgrade"; 
+
+        listen 80;
+        listen [::]:80;
+        }
+
+2. guac.conf
+
+        server {  
+          server_name guac.subdomain.de;
+          location / {
+            proxy_pass      <https://10.1.0.4:3000>;
+          } 
+
+        proxy_set_header HOST $host;
+        proxy_set_header X-REAL-IP $remote_addr;
+        proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "upgrade"; 
+
+        listen 443 ssl;
+        listen [::]:443 ssl;
+        listen 80;
+        listen [::]:80;
+        }
+
+3. pve.conf
+
+        server {  
+          server_name pve.subdomain.de;
+          location / {
+            proxy_pass      <https://10.1.0.2:8006>;
+          } 
+
+        proxy_set_header HOST $host;
+        proxy_set_header X-REAL-IP $remote_addr;
+        proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "upgrade"; 
+
+        listen 443 ssl;
+        listen [::]:443 ssl;
+        listen 80;
+        listen [::]:80;
+        }
+
+Mit der Eingabe _certbot_ startet die Installation des Reverse-Proxies.  
+![certbot_1](./grafics/certbot_email.png)
+
 Nach der Eingabe der Email-Addresse drücken wir Enter.  
 ![certbot_2](./grafics/certbot_email_Yes.png)  
+
 Nach der Eingabe von **Y** mit Enter bestätigen.  
 ![certbot_3](./grafics/certbot_email_Yes_Yes.png)  
+
 Ich habe auch **Y** eingegeben und mit Enter bestätigen. (Es geht bestimmt auch **N** dann gibt es keine Mails!)  
 ![certbot_4](./grafics/Certbot_HTTPS.png)  
+
 Hier stehen Ihr eingeben Subdomains.  
 ![certbot_5](./grafics/certbot_https_successfully.png)  
+
 Bei der Eingabe von <https://ihre-subdomain.de> im Browser erschien die obige Melung jetzt nicht mehr.  
 Als Beispiel hier mal <https://stratopve.webolchi.de>
 
 ## Installation von Docker
 
-_Neuen LXC-Container mit 7CPUs, 10240GB RAM und 41GB Festplattenspeicher benötigt._  
+Für die Installation von Docker wird ein LXC-Container mit 7 CPUs, 10240 GiB RAM und 41 GiB Festplattenspeicher benöntigt.
 ![docker-netwerk](./grafics/docker-netwerk.png)  
-Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **docker-schulungen.sh** in das root Verzeichniss.  
+
+Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: _docker-schulungen.sh_ in das root Verzeichniss.  
 ![docker_login](./grafics/docker_login.png)  
-**Download:**  
 
     wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/docker-schulungen.sh
 
-Mit **_bash docker-schulungen.sh_** beginnt die Installation  
+Mit `bash docker-schulungen.sh` beginnt die Installation  
 ![docker_bash-docker-schulungen-sh](./grafics/docker_bash-docker-schulungen-sh.png)  
+
 Mit OK bestätigen.  
 ![docker_bash-docker-schulungen-sh-1](./grafics/docker_bash-docker-schulungen-sh-1.png)  
+
 Mit OK bestätigen.  
 ![docker_bash-docker-schulungen-sh-2](./grafics/docker_bash-docker-schulungen-sh-2.png)  
+
 Nach der Bestätigung mit OK müßte es jetzt so aussehen.  
 ![docker_bash-docker-schulungen-sh-3](./grafics/docker_bash-docker-schulungen-sh-3.png)  
+
 Inhalt der Datei: schulungen-erklaerung.txt  
 ![schulungen-erklaerung](./grafics/schulungen-erklaerung.png)  
-Nach der Anpassung der Datei **schulungen.txt** geben wir **_bash docker-container-schulungen.sh_** um mit der Installation fortzufahren.  
+
+Durch die Ausführung von `bash schulungen-erstellen.sh` erhält man eine Datei schulungen.txt, in der die für die Erstellung der Container benötigten Daten verzeichnet sind.
+
+Um mit der Installation fortzufahren, führt man den Befehl `bash docker-container-schulunge.sh` aus.
 ![docker_bash-docker-schulungen-sh-4](./grafics/docker_bash-docker-schulungen-sh-4.png)  
-Mit der Eingabe **docker start portainer** starten wir den Portainer.  
-Die Benutzeroberfläche von dem Portainer ist (wenn mit Certbot aktiviert) über folgende Url: **docker.subdomain.de** erreichbar.  
+
+Mit der Eingabe `docker start portainer` starten wir den Portainer. Ein Portainer ist eine Software, die die verschiedenen Docker-Container verwaltet.
+Ist der Portainer mit certbot aktiviert, so ist dieser dann über die URL <htttps://docker.subdomain.de> erreichbar.
 Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.  
 ![portainer-1](./grafics/portainer-1.png)  
 ![portainer-2](./grafics/portainer-2.png)  
 ![portainer-3](./grafics/portainer-3.png)  
-Um die SVWS-Server zu nutzen müssen wir die Container starten.
+   
+Um die SVWS-Server zu nutzen, müssen wir die Container starten.
 ![portainer-4](./grafics/portainer-4.png)  
 
 _SVWS-Server updaten_  
 **docker-compose.yml:**  
 
-version: "3.9"  
-services:  
-  svws-server:  
-    image: svwsnrw/svws-server:**[Neue Versionsnummer Eintragen]**  
-    ports:  
-      - "10001:8443"  
-    environment:  
-      MariaDB_HOST: "${MariaDB_HOST}"  
-      MariaDB_ROOT_PASSWORD: "${MariaDB_ROOT_PASSWORD}"  
-      MariaDB_DATABASE: "${MariaDB_DATABASE}"  
-      MariaDB_USER: "${MariaDB_USER}"  
-      MariaDB_PASSWORD: "${MariaDB_PASSWORD}"  
-      SVWS_TLS_KEY_ALIAS: "${SVWS_TLS_KEY_ALIAS}"  
-      SVWS_TLS_KEYSTORE_PATH: "${SVWS_TLS_KEYSTORE_PATH}"  
-      SVWS_TLS_KEYSTORE_PASSWORD: "${SVWS_TLS_KEYSTORE_PASSWORD}"  
-    volumes:  
-      - [path to keystore]:/etc/app/svws/conf/keystore  
-Aktualisieren mit **_docker pull svwsnrw/svws-server_** in dem jeweiligen Verzeichniss.  
+    version: "3.9"  
+    services:  
+      svws-server:  
+        image: svwsnrw/svws-server:**[Neue Versionsnummer Eintragen]**  
+        ports:  
+          - "10001:8443"  
+        environment:  
+          MariaDB_HOST: "${MariaDB_HOST}"  
+          MariaDB_ROOT_PASSWORD: "${MariaDB_ROOT_PASSWORD}"  
+          MariaDB_DATABASE: "${MariaDB_DATABASE}"  
+          MariaDB_USER: "${MariaDB_USER}"  
+          MariaDB_PASSWORD: "${MariaDB_PASSWORD}"  
+          SVWS_TLS_KEY_ALIAS: "${SVWS_TLS_KEY_ALIAS}"  
+          SVWS_TLS_KEYSTORE_PATH: "${SVWS_TLS_KEYSTORE_PATH}"  
+          SVWS_TLS_KEYSTORE_PASSWORD: "${SVWS_TLS_KEYSTORE_PASSWORD}"  
+        volumes:  
+          - [path to keystore]:/etc/app/svws/conf/keystore  
+
+Aktualisieren mit `docker pull svwsnrw/svws-server` in dem jeweiligen Verzeichniss.  
 
 ## Installation von Apache Guacamole
 
