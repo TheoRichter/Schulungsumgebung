@@ -371,7 +371,7 @@ Beim ersten Aufruf der GUI muss ein Passwort mit 12 Zeichen vergeben werden.
 ![portainer-1](./grafics/portainer-1.png)  
 ![portainer-2](./grafics/portainer-2.png)  
 ![portainer-3](./grafics/portainer-3.png)  
-   
+
 Um die SVWS-Server zu nutzen, müssen wir die Container starten.
 ![portainer-4](./grafics/portainer-4.png)  
 
@@ -400,18 +400,18 @@ Aktualisieren mit `docker pull svwsnrw/svws-server` in dem jeweiligen Verzeichni
 
 ## Installation von Apache Guacamole
 
-_Neuen LXC-Container mit 1CPU, 2GB RAM und 4GB Festplattenspeicher benötigt. Ausreichend für 25 Benutzer._  
+Guacamole stellt den Bildschirm des Schulungsrechners im Browser dar. Dazu benötigt man einen neuen LXC-Container mit 1 CPU, 2 GiB RAM und 4 GiB Festplattenspeicher.
 ![guac-netzwerk](./grafics/guac-netzwerk.png)  
-_!!!Installierbar leider nur mit Template debian-11-standard_11.7-1_amd64.tar.zst!!!_
-Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: **guac_debian11_install_upgrade_debian12.sh** in das root Verzeichniss.  
-**Download:**  
+Der benötigte Dienst Apache Tomcat lässt sich derzeit (Stand: Dezember 2024) nicht auf Debian 12 installieren, daher muss Debian 11 verwendet werden. In diesem Fall ist es das Template _debian-11-standard_11.7-1_amd64.tar.zst_
+
+Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: `guac_debian11_install_upgrade_debian12.sh` in das root Verzeichniss.  
 
     wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/guac_debian11_install_upgrade_debian12.sh
 
-Mit dem Aufruf **_bash guac_debian11_install_upgrade_debian12.sh_** beginnt die Installation.  
-BITTE nach dem Neustart den Status des Tomcat9 mit **_systemctl status tomcat9 --no-pager_**  
-und den Status des Guacamole-Servers mit **_systemctl status guacd --no-pager_** Überprüfen.  
-Die Benutzeroberfläche von von Apache Guacamole ist (wenn mit Certbot aktiviert) über folgende Url: **guac.subdomain.de** erreichbar.  
+Mit dem Aufruf `bash guac_debian11_install_upgrade_debian12.sh` beginnt die Installation.  
+BITTE nach dem Neustart den Status des Tomcat9 mit `systemctl status tomcat9 --no-pager` und den Status des Guacamole-Servers mit `systemctl status guacd --no-pager` Überprüfen.  
+
+Die Benutzeroberfläche von von Apache Guacamole ist (wenn mit Certbot aktiviert) über folgende Url: <https://guac.subdomain.de> erreichbar.  
 ![guac-login](./grafics/guac-login.png)  
 ![guac-1](./grafics/guac-1.png)  
 ![guac-2](./grafics/guac-2.png)  
@@ -423,15 +423,15 @@ Die Benutzeroberfläche von von Apache Guacamole ist (wenn mit Certbot aktiviert
 
 ## Vorbereitung der Installation von Windows 11
 
-Um Windows 11 zu installieren müssen wir die drei ISOs hier Speichern:  
+Um Windows 11 zu installieren, müssen wir die drei ISOs hier speichern:  
 ![ISOs](./grafics/ISOs.png)  
-  
-_Download-Adresse **Windows 11**:_ <https://www.microsoft.com/de-de/software-download/windows11>
+
+1. _Download-Adresse **Windows 11**:_ <https://www.microsoft.com/de-de/software-download/windows11>
 ![Windows11Download](./grafics/Windows11Download.png)  
   
-_Download-Adresse **unattend.iso**:_ <https://schneegans.de/windows/unattend-generator/>
+2. Download-Adresse **unattend.iso**:_ <https://schneegans.de/windows/unattend-generator/>
   
-_Download-Adresse **virtio-win-0.1.240.iso**:_ <https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.240-1/virtio-win-0.1.240.iso>
+3. _Download-Adresse **virtio-win-0.1.240.iso**:_ <https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.240-1/virtio-win-0.1.240.iso>
 
 ## Installation von Windows 11
 
@@ -461,22 +461,25 @@ Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.
 ## Automatisches Update und Upgrade
 
 ![pve_logo](./grafics/pve_logo.png)  
-Download der Dateien **_pveupgrade.sh_** und **_reboot.sh_**:  
+Download der Dateien _pveupgrade.sh_ und _reboot.sh_:  
 
     wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/pveupgrade.sh
 
     wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/reboot.sh 
 
-in das Verzeichniss: **/usr/local/sbin** und Eintragung der folgenden Zeilen in die Datei **/etc/[crontab](./downloads/crontab_pve)**  
+in das Verzeichniss: **/usr/local/sbin** und Eintragung der folgenden Zeilen in die Datei **/etc/[crontab] (./downloads/crontab_pve)**  
 
     1 1 * * *  root /usr/local/sbin/pveupgrade.sh  
     1 3 1 1,2,3,4,5,6,7,8,9,10,11,12 * root /usr/local/sbin/reboot.sh
-  
+
+Damit wird täglich um 01:01 Uhr das Proxmox-System auf den neuesten Stand gebracht. Weiterhin wird es immer am 1. eines Monats um 03:01 Uhr neu gestartet.
+
 ![ufw_logo](./grafics/ufw_logo.png), ![docker_logo](./grafics/docker_logo.png) und ![guac_logo](./grafics/guac_logo.png)  
+
 Download der Datei **_update.sh_**:  
 
     wget -q --show-progress https://raw.githubusercontent.com/TheoRichter/Schulungsumgebung/refs/heads/main/downloads/update.sh
 
-in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/[crontab](./downloads/crontab_lxc)**  
+in das Verzeichniss: **/usr/local/sbin** und Eintragung der Zeile in die Datei **/etc/[crontab] (./downloads/crontab_lxc)**  
 
     1 1 * * * root /usr/local/sbin/update.sh
