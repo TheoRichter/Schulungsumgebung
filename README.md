@@ -31,7 +31,7 @@ Das Ziel ist es, mit Proxmox mehrere Rechner zu erstellen.
 * ufw: Dieser Rechner dient als Firewall und als reverse Proxy
 * docker: Dieser Rechner beinhaltet Docker-Container, in denen später die SVWS-Server und die MariaDB-Server für die einzelnen PCs eingerichtet werden.
 * guac: Auf diesem Rechner läuft Apache Guacamole. Das ist eine Software, die einen Desktop über RDP (remote desktop protocol) in einen Browser überträgt. Der Schulungs-PC wird später über den Browser gesteuert.
-*PC-01: Das ist ein Windows-PC. Von denen werden so viele benötigt wie Teilnehmer vorhanden sind.
+* PC-01: Das ist ein Windows-PC. Von denen werden so viele benötigt wie Teilnehmer vorhanden sind.
 
 ## PROXMOX auf einem Internet-Server installieren
 
