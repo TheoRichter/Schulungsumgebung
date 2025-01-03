@@ -253,12 +253,12 @@ Hier werden die drei Datein im Ordner _/etc/ngnix/sites-available/_ und die Link
 Im Ordner _/etc/ngnix/sites-available/_ befinden sich diese drei Dateien.  
 **Bitte in der Spalte den Eintrag hinter server_name durch Ihre Subdomain Ersetzen.**  
 
-1. docker.conf
+1. pve.conf
 
         server {  
-          server_name docker.subdomain.de;
+          server_name pve.subdomain.de;
           location / {
-            proxy_pass      https://10.1.0.3:9443;
+            proxy_pass      https://10.1.0.2:8006;
           } 
 
         proxy_set_header HOST $host;
@@ -293,12 +293,12 @@ Im Ordner _/etc/ngnix/sites-available/_ befinden sich diese drei Dateien.
         listen [::]:80;
         }
 
-3. pve.conf
+3. docker.conf
 
         server {  
-          server_name pve.subdomain.de;
+          server_name docker.subdomain.de;
           location / {
-            proxy_pass      https://10.1.0.2:8006;
+            proxy_pass      https://10.1.0.3:9443;
           } 
 
         proxy_set_header HOST $host;
