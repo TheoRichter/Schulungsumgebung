@@ -258,7 +258,7 @@ Im Ordner _/etc/ngnix/sites-available/_ befinden sich diese drei Dateien.
         server {  
           server_name docker.subdomain.de;
           location / {
-            proxy_pass      <https://10.1.0.3:9443>;
+            proxy_pass      https://10.1.0.3:9443;
           } 
 
         proxy_set_header HOST $host;
@@ -278,7 +278,7 @@ Im Ordner _/etc/ngnix/sites-available/_ befinden sich diese drei Dateien.
         server {  
           server_name guac.subdomain.de;
           location / {
-            proxy_pass      <https://10.1.0.4:3000>;
+            proxy_pass      https://10.1.0.4:3000;
           } 
 
         proxy_set_header HOST $host;
@@ -298,7 +298,7 @@ Im Ordner _/etc/ngnix/sites-available/_ befinden sich diese drei Dateien.
         server {  
           server_name pve.subdomain.de;
           location / {
-            proxy_pass      <https://10.1.0.2:8006>;
+            proxy_pass      https://10.1.0.2:8006;
           } 
 
         proxy_set_header HOST $host;
