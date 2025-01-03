@@ -289,8 +289,6 @@ Im Ordner _/etc/ngnix/sites-available/_ befinden sich diese drei Dateien.
         proxy_http_version 1.1;
         proxy_set_header Connection "upgrade"; 
 
-        listen 443 ssl;
-        listen [::]:443 ssl;
         listen 80;
         listen [::]:80;
         }
@@ -311,8 +309,6 @@ Im Ordner _/etc/ngnix/sites-available/_ befinden sich diese drei Dateien.
         proxy_http_version 1.1;
         proxy_set_header Connection "upgrade"; 
 
-        listen 443 ssl;
-        listen [::]:443 ssl;
         listen 80;
         listen [::]:80;
         }
