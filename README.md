@@ -358,7 +358,7 @@ Inhalt der Datei: schulungen-erklaerung.txt
 
 Durch die Ausführung von `bash schulungen-erstellen.sh` erhält man eine Datei schulungen.txt, in der die für die Erstellung der Container benötigten Daten verzeichnet sind.
 
-Um mit der Installation fortzufahren, führt man den Befehl `bash docker-container-schulunge.sh` aus.
+Um mit der Installation fortzufahren, führt man den Befehl `bash docker-container-schulungen.sh` aus.
 ![docker_bash-docker-schulungen-sh-4](./grafics/docker_bash-docker-schulungen-sh-4.png)  
 
 Mit der Eingabe `docker start portainer` starten wir den Portainer. Ein Portainer ist eine Software, die die verschiedenen Docker-Container verwaltet.
