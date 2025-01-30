@@ -441,17 +441,61 @@ Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.
 ![Windows_5_neu](./grafics/Windows_5_neu.png)  
 ![Windows_6_neu](./grafics/Windows_6_neu.png)  
 ![Windows_7_neu](./grafics/Windows_7_neu.png)  
-![Windows_8_neu](./grafics/Windows_8_neu.png)  
+![Windows_8_neu](./grafics/Windows_8_neu.png)
+Hier müsssen noch weitere CD-Laufwerke hinzugefügt werden.
 ![Windows_10_neu](./grafics/Windows_10_neu.png)  
+Um Cloudinit zu nutzen, fügen wir noch ein Cloudinit Drive hinzu. SCSI 0 (bootet am Schnellsten), Storage local, Format QEMU image format
+![Windows_10_cloudinit](./grafics/Windows_10_cloudinit.png)  
+Jetzt muss die Konsole gestartet werden, dann kann Windows installiert werden.
 ![Windows_11_neu](./grafics/Windows_11_neu.png)  
 ![Windows_12_neu](./grafics/Windows_12_neu.png)  
 ![Windows_13_neu](./grafics/Windows_13_neu.png)  
-**Hier steht dann bei Gesamtgröße 41.0 GB und bei Freier Speich: 41.0 GB**  
+**Hier steht dann bei Gesamtgröße 41.0 GB und bei Freier Speicher: 41.0 GB**  
 ![Windows_14_neu](./grafics/Windows_14_neu.png)  
 ![Windows_15_neu](./grafics/Windows_15_neu.png)  
 ![Windows_16_neu](./grafics/Windows_16_neu.png)  
+Da die meisten Bildschirme das Seitenverhältnis 16:9 haben, sollte die Bildschirmauflösung auf 1280 x 720 Pixel gestellt werden.
+![Bildschirmauflösung auf 1280x720 einstellen](./grafics/Bildschirmaufloesung.png)]
+
+Sollte der User den Windows-Rechner herunterfahren, kann ihn nur der Admin wieder starten. Mit den folgenden Einstellungen nimmt man dem User diese Möglichkeit.
+
+* Klick auf Start, Eingabe von gpedit.msc
+* Klick auf Computerkonfiguration
+* Aufklappen von Windows-Einstellungen
+* Aufklappen von Sicherheitseinstellungen
+* Aufklappen von Lokale Richtlinien
+* Klick auf Zuweisen von Benutzuerrechten
+* Auswählen von Herunterfahren des Systems
+* Klick auf Benutzer - Entfernen
+
+![Herunterfahren Verhindern](./grafics/HerunterfahrenVerhindern.png)
+
+Wir benötigen noch einen Editor. Statt des mitgelieferten Notepads, der
+noch aus dem Microsoft Store nachinstalliert werden muss, bevorzuge ich
+Notepad++ (<https://www.notepad-plus.org>)
+
+Dazu muss man den Edge starten und alle nicht notwendigen Einstellungenww
+verweigern. Bei der Gelegenheit kann  man auch gleich die Startseite
+anpassen, z. B. auf <https://svws.nrw.de>
+
+Als nächstes wird die Cloudinit-Software installiert. Diese erhält man über den Link <https://github.com/cloudbase/cloudbase-init>
+selbstverständlich wählt man die stabile 64-Bit-Version. Am Ende noch nicht sysprep aufrufen.
+
+Jetzt muss man unverzüglich im Ordner `C:\Programme\Cloudbase Solutions\Cloudbase-Init\conf` die
+Dateien `cloudbase-init.conf` und `cloudbase-init-unattended.conf` bearbeiten.
+Die Zeile `inject_user_password` muss in beiden Dateien entfernt werden,
+da die VM ansonsten automatisch mit einem zufällig generierten Admin-Passwort
+neu startet.
+
+In der Datei `cloudbase-init-unattended.conf` muss das Plugin zu den
+Netzwerkeinstellungen geladen werden:
+
+    plugins=cloudbaseinit.plugins.common.mtu.MTUPlugin,cloudbaseinit.plugins.common.sethostname.SetHostnamePlugin,cloudbaseinit.plugins.common.windows.extendvolumes.ExtendVolumesPlugin,cloudbaseinit.plugins.common.networking.NetworkConfigPlugin
+
 ![Windows_17_neu](./grafics/Windows_17_neu.png)  
+
 ![Windows_18_neu](./grafics/Windows_18_neu.png)  
+
 ![Windows_19_neu](./grafics/Windows_19_neu.png)
 
 ## Automatisches Update und Upgrade
