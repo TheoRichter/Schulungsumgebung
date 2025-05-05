@@ -47,7 +47,13 @@ Eine Anmeldung an Guacamole ist möglich, Schild3 startet auch, aber es gibt kei
 
 Der Docker-Server funktioniert nicht richtig. Es gibt folgende Lösungsmöglichkeiten:
 1. Der Docker-Server ist heruntergefahren. Logge dich in die [pve-Konsole](https://pve.koeln.svws-schulung.de) ein und starte den docker-Server.
-2. Der Docker läuft. Dann kann es sein, dass die in Docker virtualiserten MariaDB- oder SVWS-Server nicht laufen. Logge dich in den [Docker-Server](https://docker.koeln.svws-schulung.de) ein. Auf der Startseite sieht man "Environments" und einen Kasten mit einem Container-Wal (local). Klicke auf den Kasten, anschließen auf "Containers". Du siehst nun alle Container und ob sie gestartet sind oder nicht. Wähle unten auf der Seite den Wert 50 bei "items per page" und filtere oben nacheinander nach "svws" und "maria". Sollten die Container nicht gestartet sein, kann man nun alle auswählen und starten
+2. Der Docker läuft. Dann kann es sein, dass die in Docker virtualiserten MariaDB- oder SVWS-Server nicht laufen. Logge dich in den [Docker-Server](https://docker.koeln.svws-schulung.de) ein. Auf der Startseite sieht man "Environments" und einen Kasten mit einem Container-Wal (local). Klicke auf den Kasten, anschließen auf "Containers". Du siehst nun alle Container und ob sie gestartet sind oder nicht. Wähle unten auf der Seite den Wert 50 bei "items per page" und filtere oben nacheinander nach "svws" und "maria". Sollten die Container nicht gestartet sein, kann man nun alle auswählen und starten.
+
+### Keine Verbindung zum Webclient
+
+Eine Anmeldung an Schild3 funktioniert und man kann problemlos damit arbeiten. Jedoch funktioniert die Anmeldung an http://10.1.0.3:10007 (für PC7) nicht.
+
+Die Anmeldung muss über eine sichere Webseite mit https erfolgen: http*s*://10.1.0.3:10007. Jedoch haben wir kein Zertifikat für die Rechner hinterlegt, so dass man erst bestätigen muss, dass man das Risiko kennt.
 
 ### Zurücksetzen der Datenbanken
 
