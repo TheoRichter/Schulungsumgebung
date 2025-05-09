@@ -67,3 +67,13 @@ Man muss sich nun mit dem Root-Kennwort der Datenbank einloggen:
         Password: root
 
 Anschließend kann man über die Admnin-Konsole die Datenbank wiederherstellen. Die Datenbanken befinden sich im Laufwerk D: (netzlaufwerk).
+
+### Wie komme ich an welchen Server?
+
+Die Server unterscheiden sich nur durch eine Portnummer. Deren letzte Stelle ist immer die Rechnernummer, bzw. die Login-Nummer. Wer sich mit `svws17` anmeldet, hat also die Rechnernummer 17. 
+| Dienst | URL|
+|-----|-----|
+| WebLuPO | https://10.1.0.3:8117 |
+| SVWS-Oberfläche | https://10.1.0.3:10017 |
+| SVWS-Admin | https://10.1.0.3:10017/admin |
+| SVWS Debug-Konsole |  https://10.1.0.3:10017/debug |
