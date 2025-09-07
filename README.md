@@ -512,7 +512,7 @@ root lautet ebenfalls root. Damit sieht ein Connection-File so aus:
 Dies gilt für PC01 mit der auf 101 endenden IP. Bei weiteren Rechnern ändern sich 
 die Ports zu 3002, 3003, 3004 etc. und 10002, 10003, 10004 etc.
 
-
+<!---
 ### Cloudinit
 
 Cloudinit ist eine Software, die es ermöglicht, einige Einstellugen wie IP-Adresse oder PC-Name dem Windows-Rechner gleich beim Klonen per script von außen mitzugeben. Damit entfällt eine nachträgliche manuelle Anpassung.
@@ -539,6 +539,7 @@ Netzwerkeinstellungen geladen werden:
 
 ![Windows_19_neu](./grafics/Windows_19_neu.png)
 
+--->
 ## Automatisches Update und Upgrade
 
 ![pve_logo](./grafics/pve_logo.png)  
