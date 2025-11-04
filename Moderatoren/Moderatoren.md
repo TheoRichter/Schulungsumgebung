@@ -1,25 +1,49 @@
 # Bedienung für Moderatoren
 
-## Starten der virtuellen Maschinen
+## Proxmox virtual environment (pve)
+Auf den Proxmox gelangt man über die Seite [https://pve.koeln.svws-schulung.de](https://pve.koeln.svws-schulung.de). Das Login lautet "moderator" und das Passwort lautet ebenso. Achte darauf, dass also Realm "Proxmox VE authentication server" eiungestellt ist.
 
-Gehe auf die Seite [https://pve.svws-schulung.de:8006](https://pve.svws-schulung.de:8006) und logge dich ein. Auf der linken Seite siehst du die möglichen Maschinen, die man auswählen kann. Die Linux-Rechner (LXC) sollten immer laufen, nur die Windows-Rechner (qemu) sollten ausgeschaltet sein.
+![Login in den Proxmox](Bilder/Login.png)
+
+Selbstverständlich kann man die Sprache auch auf Deutsch einstellen. Im Rahmen dieser Dokumentation werde ich bei der englischen Sprache bleiben.
+
+### Arten der virtuellen Rechner
+
+Links sieht man alle Rechner, die im Proxmox virtualisiert wurden. Diese werden im Folgenden kurz beschrieben.
+
+* 1001 ufw. Das ist die Firewall, die auch für den interenen Netzwerkverkehr zuständig ist. Nicht anfassen!
+* 1002 dns. Ist verantwortlich dafür, dass die Teilnehmerrechner nicht ins Internet kommen. Nicht anfassen!
+* 1003 docker. Docker ist ein Virutalisierungssystem, in dem jedem PC ein eigener SVWS- und Datenbankserver bereitgestellt wird. Kann man anfassen, aber nicht hier. Wird später beschrieben.
+* 1004 guac. Hier wird der Dienst Guacamole gehostet, über den sich die Teilnehmer auf die Windows-PCs anmelden. Wird später beschrieben.
+* MO1 und MO2 sind Windows-PCs für die Moderatoren. Die können ins Internet.
+* PC01 ... PCnn sind Teilnehmer-PCs. Diese können nicht ins Internet.
+
+### Starten der virtuellen Maschinen
+
+Gehe auf die Seite [https://pve.koeln.svws-schulung.de:8006](https://pve.koeln.svws-schulung.de:8006) und logge dich ein. Auf der linken Seite siehst du die möglichen Maschinen, die man auswählen kann. Die Linux-Rechner (mit dem Würfel als Symbol) sollten immer laufen, nur die Windows-Rechner (mit dem Bildschirm als Symbol) sollten ausgeschaltet sein.
 
 Zum Starten gibt es mehrere Alternativen.
 
-1. Wähle einen Rechner aus und starte ihn, indem du oben rechts auf "Start" klickst. Wiederhole das für jeden Rechner.
-2. Wenn man mehrere Rechner starten möchte: Klicke links den obere Eintrag "pve" an. Dann bekommst du rechts oben den Button "bulk actions" angezeigt, mieKt dem man viele Computer auf einmal starten kann.
+1. Wähle einen Rechner aus und starte ihn, indem du oben rechts auf "Start" klickst. Wiederhole dasd für jeden Rechner.
+
+2.  Wenn man viele Rechner auf einmal starten will, geht man links auf pve. Anschließend erscheint rechts oben ein Button namens "BulkActions", über den man viele Rechner auf einmal starten kann.
+
+![Button Bulk Actions](Bilder/BulkActions.png)
+
 3. Eher für Experten: Wähle links "pve" und klicke anschließend auf "shell". Dort kannst du das Kommando
 
         qm start 101
         
     eingeben, und der Rechner mit der ID 101 wird gestartet. Mit der Pfeil-hoch-Taste kommt man auf den letzten Befehl, so dass man die 101 leicht gegen eine 102 austauschen kann. Das wiederholst du, bis alle Rechner gestartet sind. Die Konsole kannst du mit "exit" verlassen.
 
-## Stoppen der virtuellen Maschinen
+### Stoppen der virtuellen Maschinen
 
-Das Stoppen der Windows-Rechner funktioniert analog. Auch hier arbeitet man von der pve-Oberfläche.
+Das Herunterfahren aus Windows heraus ist abgeschaltet. Daher muss man die PCs von der pve-Oberfläche herunterfahren. Analog zum Starten gibt es folgende Möglichkeiten:
 
 1. Wähle den Computer aus und klicke auf "shutdown".
 2. Wenn man mehrere Rechner herunterfahren möchte, klickt man wie oben beschrieben auf "pve", dann auf "bulk actions". Nun kann man die Rechner zum Herunterfahren auswählen. Bitte macht das nur mit den Windows-Maschinen (KVM), nicht mit den Server (LXC). Man erkennt sie an den unterschiedlichen Symbolen. Die Server bitte nur in Notfällen neu starten.
+
+2. Wähle den Rechner pve aus und klicke rechts auf "Bulk Actions". Wähle dort "Bulk Shutdown".
 
 3. Und natürlich gibt es auch die Experten-Version. Wähle analog zu eben "pve" aus und starte eine Konsole. Der Befehl lautet nun
 
@@ -27,7 +51,15 @@ Das Stoppen der Windows-Rechner funktioniert analog. Auch hier arbeitet man von 
 
     Auch diesen Befehl musst du für alle virtuellen Windows-Rechner wiederholen.
 
-## Wiederherstellen der Datenbanken in Schild2
+## Docker
+
+Auf den Docker-Rechner kommt man nur von innen, also von einem virtualisierten PC aus. Vom Moderatoren-PC erreicht man ihn über die IP 10.1.0.3, vom Teilnehmer-PC über die IP 10.10.10.2.
+
+![Login auf den Docker-Rechner](Bilder/LoginDocker.png)
+
+Das Login lautet "fachberater" und das Passwort.... heute schon eine Tasse Tee getrunken?
+
+## Antiquität: Wiederherstellen der Datenbanken in Schild2
 
 Es gibt ein Netzlaufwerk, auf das alle virtuellen Windows-Rechner Zugriff haben. Dort sind gemeinsame Dateien hinterlegt. Dieses Laufwerk sollte über Z: zu erreichen sein. Ansonsten muss man im Datei-Explorer die Zeile mit dem Dateipfad ("breadcrumbs") anklicken und von Hand \\10.1.0.3 eingeben und mit Enter bestätigen. Dann sollte man "Netzlaufwerk" auswählen können.
 

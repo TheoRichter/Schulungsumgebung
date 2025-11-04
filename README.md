@@ -333,7 +333,12 @@ Als Beispiel hier mal <https://stratopve.webolchi.de>
 
 ## Installation von Docker
 
-Für die Installation von Docker wird ein LXC-Container mit 7 CPUs, 10240 GiB RAM und 41 GiB Festplattenspeicher benöntigt.
+Im Beispiel wird eine Installation von 25 Windows-PCs und einem Moderatoren-PC
+durchgeführt.
+
+Für die Installation von Docker wird ein LXC-Container mit 10 CPUs,
+12 GiB RAM und 50 GiB Festplattenspeicher mit 5 GiB Swap benöntigt.
+
 ![docker-netwerk](./grafics/docker-netwerk.png)  
 
 Nach der Anmeldung über die Konsole als Benutzer root laden wir die Datei: _docker-schulungen.sh_ in das root Verzeichniss.  
@@ -432,28 +437,109 @@ Um Windows 11 zu installieren, müssen wir die drei ISOs hier speichern:
 ## Installation von Windows 11
 
 Mit ![VM](./grafics/VM.png) wir eine neue virtuelle Maschine erstellt.  
-**Die Angaben für VM ID: und Name: bitte Anpassen.**  
-![Windows_1_neu](./grafics/Windows_1_neu.png)  
-![Windows_2_neu](./grafics/Windows_2_neu.png)  
+**Die Angaben für VM ID: und Name: Bitte anpassen.**  
+![Windows_1_neu](./grafics/Windows_1_neu.png "Nummer und Name der PVE vergeben")
+![Windows_2_neu](./grafics/Windows_2_neu.png "Windows als Betriebssystem angeben")  
 ![Windows_3_neu](./grafics/Windows_3_neu.png)  
 **Bei Disk-Größe(GiB): die Zahl 26 auf die Zahl 41 Ändern.**  
 ![Windows_4_neu](./grafics/Windows_4_neu.png)  
 ![Windows_5_neu](./grafics/Windows_5_neu.png)  
 ![Windows_6_neu](./grafics/Windows_6_neu.png)  
-![Windows_7_neu](./grafics/Windows_7_neu.png)  
-![Windows_8_neu](./grafics/Windows_8_neu.png)  
+![Windows_7_neu mit virtualisierter Netzwerkkarte](./grafics/Windows_7_neu_paravirtualized.png)  
+![Windows_8_neu](./grafics/Windows_8_neu.png)
+Hier müsssen noch weitere CD-Laufwerke hinzugefügt werden.
 ![Windows_10_neu](./grafics/Windows_10_neu.png)  
+Um Cloudinit zu nutzen, fügen wir noch ein Cloudinit Drive hinzu. SCSI 0 (bootet am Schnellsten), Storage local, Format QEMU image format
+![Windows_10_cloudinit](./grafics/Windows_10_cloudinit.png)  
+Jetzt muss die Konsole gestartet werden, dann kann Windows installiert werden.
 ![Windows_11_neu](./grafics/Windows_11_neu.png)  
 ![Windows_12_neu](./grafics/Windows_12_neu.png)  
 ![Windows_13_neu](./grafics/Windows_13_neu.png)  
-**Hier steht dann bei Gesamtgröße 41.0 GB und bei Freier Speich: 41.0 GB**  
+**Hier steht dann bei Gesamtgröße 41.0 GB und bei Freier Speicher: 41.0 GB**  
 ![Windows_14_neu](./grafics/Windows_14_neu.png)  
 ![Windows_15_neu](./grafics/Windows_15_neu.png)  
 ![Windows_16_neu](./grafics/Windows_16_neu.png)  
+Da die meisten Bildschirme das Seitenverhältnis 16:9 haben, sollte die Bildschirmauflösung auf 1280 x 720 Pixel gestellt werden.
+![Bildschirmauflösung auf 1280x720 einstellen](./grafics/Bildschirmaufloesung.png)]
+
+### Anpassen der Benutzerrechte
+
+Sollte der User den Windows-Rechner herunterfahren, kann ihn nur der Admin wieder starten. Mit den folgenden Einstellungen nimmt man dem User diese Möglichkeit.
+
+* Klick auf Start, Eingabe von gpedit.msc
+* Klick auf Computerkonfiguration
+* Aufklappen von Windows-Einstellungen
+* Aufklappen von Sicherheitseinstellungen
+* Aufklappen von Lokale Richtlinien
+* Klick auf Zuweisen von Benutzerrechten
+* Auswählen von Herunterfahren des Systems
+* Klick auf Benutzer - Entfernen
+
+![Herunterfahren Verhindern](./grafics/HerunterfahrenVerhindern.png)
+
+### Editor installieren
+
+Wir benötigen noch einen Editor. Statt des mitgelieferten Notepads, der
+noch aus dem Microsoft Store nachinstalliert werden muss, bevorzuge ich
+Notepad++ (<https://notepad-plus-plus.org>)
+
+Dazu muss man den Edge starten und alle nicht notwendigen Einstellungen
+verweigern. Bei der Gelegenheit kann  man auch gleich die Startseite
+anpassen, z. B. auf <https://svws.nrw.de>
+
+### Installation von Schild3
+
+Auf dem Rechner `10.1.0.3` befindet sich die Freigabe "Netzwerklaufwerk".
+In diese werden die Installationsdateien von Schild3 gelegt. Als nächstes wird
+das Verzeichnis `C:\SVWS-Arbeitsverzeichnis` angelegt und die Rechte für 
+jeden Benutzer angepasst. Der Ordner `Schild-Reports` wird mit den aktuellen
+Basisreports befüllt.
+
+Die Connection-Files müssen ebenfalls angelegt werden. Die kann mit dem Tool
+`Schild_DBConfig.exe` geschehen. Das Passwort für die Datenbank mit dem Benutzer
+root lautet ebenfalls root. Damit sieht ein Connection-File so aus:
+
+    [SchILDConnection]
+    ProviderName=MYSQL
+    ProviderType=MARIADB
+    Server=10.1.0.3
+    Port=3001
+    Database=ENM01
+    Username=root
+    Password=AAjcM0WrUSlfbBrr5EtcPS3CvCy88zOyt3toJ8oeH11YRFFnRYJNiYw==
+    SVWSServerURL=10.1.0.3:10001
+
+Dies gilt für PC01 mit der auf 101 endenden IP. Bei weiteren Rechnern ändern sich 
+die Ports zu 3002, 3003, 3004 etc. und 10002, 10003, 10004 etc.
+
+<!---
+### Cloudinit
+
+Cloudinit ist eine Software, die es ermöglicht, einige Einstellugen wie IP-Adresse oder PC-Name dem Windows-Rechner gleich beim Klonen per script von außen mitzugeben. Damit entfällt eine nachträgliche manuelle Anpassung.
+
+Zunächst wird dem Windows-Rechner unter "Hardware" - Add ein Cloudinit-Laufwerk hinzugefügt. Unter Cloud-Init kann dann ab sofort die IP-Adresse eingetragen werden.
+
+Als nächstes wird die Widnows-Maschine gestartet und die Cloudinit-Software installiert. Diese erhält man über den Link <https://github.com/cloudbase/cloudbase-init>
+selbstverständlich wählt man die stabile 64-Bit-Version. Am Ende noch nicht sysprep aufrufen.
+
+Jetzt muss man unverzüglich im Ordner `C:\Programme\Cloudbase Solutions\Cloudbase-Init\conf` die
+Dateien `cloudbase-init.conf` und `cloudbase-init-unattended.conf` bearbeiten.
+Die Zeile `inject_user_password` muss in beiden Dateien entfernt werden,
+da die VM ansonsten automatisch mit einem zufällig generierten Admin-Passwort
+neu startet.
+
+In der Datei `cloudbase-init-unattended.conf` muss das Plugin zu den
+Netzwerkeinstellungen geladen werden:
+
+    plugins=cloudbaseinit.plugins.common.mtu.MTUPlugin,cloudbaseinit.plugins.common.sethostname.SetHostnamePlugin,cloudbaseinit.plugins.common.windows.extendvolumes.ExtendVolumesPlugin,cloudbaseinit.plugins.common.networking.NetworkConfigPlugin
+
 ![Windows_17_neu](./grafics/Windows_17_neu.png)  
+
 ![Windows_18_neu](./grafics/Windows_18_neu.png)  
+
 ![Windows_19_neu](./grafics/Windows_19_neu.png)
 
+--->
 ## Automatisches Update und Upgrade
 
 ![pve_logo](./grafics/pve_logo.png)  
