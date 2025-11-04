@@ -103,9 +103,9 @@ Anschließend kann man über die Admnin-Konsole die Datenbank wiederherstellen. 
 ### Wie komme ich an welchen Server?
 
 Die Server unterscheiden sich nur durch eine Portnummer. Deren letzte Stelle ist immer die Rechnernummer, bzw. die Login-Nummer. Wer sich mit `svws17` anmeldet, hat also die Rechnernummer 17. 
-| Dienst | URL|
-|-----|-----|
-| WebLuPO | https://10.1.0.3:8117 |
-| SVWS-Oberfläche | https://10.1.0.3:10017 |
-| SVWS-Admin | https://10.1.0.3:10017/admin |
-| SVWS Debug-Konsole |  https://10.1.0.3:10017/debug |
+| Dienst | URL vom Moderatorrechner MO1/MO1| URL vom Schulungsrechner|
+|-----|-----|-----|
+| WebLuPO | https://10.1.0.3:8117 | https://10.10.10.2:8117 |
+| SVWS-Oberfläche | https://10.1.0.3:10017 |https://10.10.10.2:10017 |
+| SVWS-Admin | https://10.1.0.3:10017/admin |https://10.10.10.2:10017/admin |
+| SVWS Debug-Konsole |  https://10.1.0.3:10017/debug |https://10.10.10.2:10017/debug |
