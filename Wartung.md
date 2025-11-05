@@ -55,7 +55,7 @@ Der Benutername lautet "fachberater" und für das Passwort muss man eine Tasse T
 
 ![Startseite der Wartungsoberfläche](grafics/Wartung/Startseite_Wartung.png)
 
-Hier klickt man auf Schild3-Update, was daraufhin nach vorne rutscht.
+Hier klickt man auf den Button Schild3-Update, worauf dieser nach vorne rutscht.
 
 ![Start des Schild3-Updates](grafics/Wartung/Start_Schild3_Update.png)
 
